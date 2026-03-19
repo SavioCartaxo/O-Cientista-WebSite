@@ -1,0 +1,97 @@
+/*Fonte do titulo do site*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+/*CSS da pagina de "boas-vindas" do site, aqui será a estilização - 19/03/26*/
+
+:root {
+  --light_Gray : #E6E6E6;
+  --gray : #999999;
+  --dark_gray : #0066FF
+;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  height: 56px;
+  background: #161618;
+  border-bottom: 1px solid #2a2a2e;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 24px;
+  flex-shrink: 0;
+  background-color: var(--dark_gray);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.page-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/*Lateral Esquerda*/
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-right: 1px solid #2a2a2e;
+  background-color: var(--gray);
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--light_Gray);
+}
+
+/*Lateral Direita*/
+.toc {
+  width: 220px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-left: 1px solid #2a2a2e;
+  background-color: var(--gray);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding: 2rem 0rem;
+}
+
+.p-main {
+  padding : 0rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.h2-sidebar {
+  padding : 0.5rem 1rem;
+  text-align: center;
+}
+
+a {
+  padding : 0.20rem 1rem;
+}
+/* Tablet: esconde TOC */
+@media (max-width: 1024px) {
+  .toc { display: none; }
+}
+
+/* Mobile: esconde sidebar */
+@media (max-width: 720px) {
+  .sidebar { display: none; }
+}
