@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!--Iniciando o desenvolvimento da pagina inicial do site, ainda nao sei mt bem oq fazer pois é
-meu primeiro projeto nesse estilo, nesse HTML mesmo eu tenho muita coisa para melhorar e preciso
-melhorar a forma que eu organizei essas divs iniciais - 19/03/26-->
-
-<!--Estava pensando, eu deveria iniciar o Site falando sobre introdução à computação, depois eu 
-falaria sobre FMCC2 e depois logica para computação-->
-
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big-O Academy</title>
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
 </head>
+
 
 <body>
 
-    <div id="nav"></div>
+    <header id="header"></header>
 
-    <div class="page-body">
+    <div class="layout">
 
         <!--DIV 1-->
         <aside class="sidebar" id="sidebar"></aside>
 
         <!--DIV 2-->
-        <main>
+        <main id="main">
             <h1>Bem-vindo ao Big-O Academy</h1>
             <p class="p-main">
                 Uma plataforma dedicada ao estudo dos fundamentos da Ciência da Computação. Aqui você encontrará 
@@ -37,12 +36,12 @@ falaria sobre FMCC2 e depois logica para computação-->
         </main>
 
         <!--DIV 3-->  
-        <aside class="toc"></aside>
+        <aside class="toc" id="toc"></aside>
 
     </div>
 
-    <script src="/test-site/scripts/loadComponents.js"></script>
-
+    <footer id="footer"></footer>
+    
 </body>
 
 </html>

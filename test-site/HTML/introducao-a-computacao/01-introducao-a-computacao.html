@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
 </head>
 
 <!--https://pvae.virtual.ufcg.edu.br/pvae/pluginfile.php/451963/mod_page/content/14/01%20-%20Primeiros%20Conceitos.pdf-->
 <body>
 
-    <div id="nav"></div>
+    <header id="header"></header>
 
-    <div class="page-body">
+    <div class="layout">
+        
         <aside class="sidebar" id="sidebar"></aside>
         
-        <main>
+        <main id="main">
             
-            <h1>Introdução à Computação</h1>
-                <p>
-                    Ao longo deste artigo, serão apresentados os conceitos fundamentais da área de computação, incluindo definições 
-                    de computador, computação e informática, além da explicação sobre sistemas computacionais e seus componentes. 
-                    Também serão abordadas as diferenças entre dados e informações, bem como o papel de cada elemento no processamento 
-                    e na geração de resultados dentro dos sistemas computacionais.
-                </p>
-            <hr>
+            <header>
+                <h1>Introdução à Computação</h1>
+                    <p>
+                        Ao longo deste artigo, serão apresentados os conceitos fundamentais da área de computação, incluindo definições 
+                        de computador, computação e informática, além da explicação sobre sistemas computacionais e seus componentes. 
+                        Também serão abordadas as diferenças entre dados e informações, bem como o papel de cada elemento no processamento 
+                        e na geração de resultados dentro dos sistemas computacionais.
+                    </p>
+                <hr>
+            </header>
 
 
-            <h1>Conceitos Iniciais</h1>
+            <h2>Conceitos Iniciais</h2>
                 
-                <h2>Computador</h2>
+                <h3>Computador</h3>
                     
                     <p>
                         A palavra "Computador" vem do latim <em>computare</em> e significa calcular. De forma simples, o 
                         <strong>Computador</strong> é um dispositivo capaz de receber dados (entradas), processá-los e 
                         produzir resultados (saídas). Computadores são classificados de acordo com muitas de suas caracteristicas,
                         como porte, âmbito, princípio de construção, entre outros, essa classificação é melhor abordada em 
-                        <a href=CONFIG.pages.oQueEUmComputador, target="_blank">O que é um Computador</a>.
+                        <a href="/test-site/HTML/introducao-a-computacao/02-oque-e-um-computador.html" target="_blank">O que é um Computador</a>.
                     </p>
 
                 <hr>
 
-                <h2>Computação</h2>
+                <h3>Computação</h3>
                     
                     <p>
                          Computação é a <b>área do conhecimento</b> que estuda como os problemas podem ser resolvidos por meio de algoritmos, 
@@ -59,12 +68,12 @@
                         A imagem abaixo exemplifica bem o processo da computação.
                     </p>
 
-                    <img src="/test-site/assets/IMAGES/introducao-a-computacao/processamento-de-dados.png">
+                    <img src="/test-site/assets/IMAGES/introducao-a-computacao/processamento-de-dados.png" alt="Diagrama de processamento de dados">
 
                 <hr>
 
 
-                <h2>Informática</h2>
+                <h3>Informática</h3>
                     
                     <p>
                         O termo <strong>“informática”</strong> surge da junção das palavras informação 
@@ -87,7 +96,7 @@
                 
                 <hr>
 
-                <h2>Computação x Informática</h2>
+                <h3>Computação x Informática</h3>
                     
                     <p>
                         Ficou confuso né? como imagino que os conceitos de informática e computação sejam deveras confusos, 
@@ -136,7 +145,7 @@
             <hr>
 
 
-            <h1>Sistema Computacional</h1>
+            <h2>Sistema Computacional</h2>
                     
                 <p>
                     Sistema Computacional é o conjunto de componentes que trabalham juntos para processar dados e gerar 
@@ -146,7 +155,7 @@
 
                 <hr>
                 
-                <h2>Dados x Informação</h2>
+                <h3>Dados x Informação</h3>
 
                     <p>
                         Dados são valores brutos, sem interpretação ou contexto. Eles 
@@ -185,7 +194,7 @@
                     A imagem abaixo ilustra bem o que veremos a seguir
                 </p>
 
-                <img src="/test-site/assets/IMAGES/introducao-a-computacao/peopleware-hardware-and-software.png">
+                <img src="/test-site/assets/IMAGES/introducao-a-computacao/peopleware-hardware-and-software.png" alt="Diagrama Peopleware, Hardware, Software">
 
                 <hr>
 
@@ -229,7 +238,7 @@
             
             <hr>
 
-            <h1>REVISÃO</h1>
+            <h2>REVISÃO</h2>
 
             <ul>
                 <li>Computador: Dispositivo capaz de receber dados, processa-los e gerar um resultado.</li>
@@ -247,7 +256,7 @@
                 <li>Software: conjunto de programas e instruções responsáveis por controlar o funcionamento do hardware.</li>
             </ul>
 
-            <h1>Questões</h1>
+            <h2>Questões</h2>
 
         </main>
 
@@ -255,9 +264,7 @@
         
     </div>
 
-    <script src="/test-site/scripts/config.js"></script>
-    <script src="/test-site/scripts/loadComponents.js"></script>
-    <script src="/test-site/scripts/generatorToc.js"></script>
+    <footer id="footer"></footer>
 
 </body>
 </html>
