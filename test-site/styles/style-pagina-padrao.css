@@ -1,8 +1,8 @@
 /*Fonte do titulo do site*/
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 
-/*CSS da pagina de "boas-vindas" do site, aqui será a estilização - 19/03/26*/
-
+/*Geral*/
 :root {
     --light_Gray : #E6E6E6;
     --gray : #999999;
@@ -13,10 +13,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-/*Parte de cima*/
-nav {
+/*nav - barra superior com logo e menu de navegação*/
+header nav {
     height: 56px;
     background: #161618;
     border-bottom: 1px solid #2a2a2e;
@@ -28,18 +29,6 @@ nav {
     background-color: var(--dark_gray);
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.page-body {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-}
-
 /*Lateral Esquerda*/
 .sidebar {
     width: 240px;
@@ -47,12 +36,6 @@ body {
     overflow-y: auto;
     border-right: 1px solid #2a2a2e;
     background-color: var(--gray);
-}
-
-main {
-    flex: 1;
-    overflow-y: auto;
-    background-color: var(--light_Gray);
 }
 
 /*Lateral Direita*/
@@ -63,40 +46,45 @@ main {
     border-left: 1px solid #2a2a2e;
     background-color: var(--gray);
     margin: 0;
-    }
+}
 
+/*MAIN*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-/*PARAGRAFOS*/
+.layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--light_Gray);
+    
+}
+
+/*TITULOS*/
 h1, h2, h3, h4 {
     font-family: 'Space Grotesk', sans-serif;
     padding: 0.5rem 1rem;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
-.h2-sidebar {
-    padding : 0.5rem 1rem;
-    text-align: center;
-}
-
-.h2-aligne_center {
-    padding : 0.5rem 1rem;
-    text-align: center;
-}
-
-
-/*Paragrafos*/
+/*PARAGRAFOS*/
 p {
-    font-family: 'Poppins', sans-serif;
     line-height: 1.3;
     font-weight: 400;
-
     text-indent: 1.5rem;
     padding: 0.5rem 1rem;
     text-align: justify;
-
 }
 
 /*OUTROS*/
@@ -118,31 +106,25 @@ table {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 th, td {
-    padding: 0.2em 0.4em;
     border: 1px solid black;
     padding: 8px;
 }
 
 ul {
-    font-family: 'Poppins', sans-serif;
     line-height: 1.3;
     margin: 0em 4em;
 }
 
 .ul-main-content {
-    font-family: 'Poppins', sans-serif;
     line-height: 1.3;
     font-weight: 400;
     margin: 0em 4em;
 }
 
 .ul-toc {
-    font-family: 'Poppins', sans-serif;
     line-height: 1.3;
     font-weight: 400;
     margin: 0em 4em;
@@ -151,14 +133,41 @@ ul {
 /* Tablet: esconde TOC */
 @media (max-width: 1024px) {
     .toc { display: none; }
+
 }
 
 /* Tablet também: esconde sidebar em telas menores */
 @media (max-width: 900px) {
     .sidebar { display: none; }
+
 }
 
 /* Mobile */
 @media (max-width: 720px) {
     .sidebar { display: none; }
+
+}
+
+/*FOOT*/
+footer {
+    background-color: var(--dark_gray);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    opacity: 0.8;
+    text-indent: 0;
 }

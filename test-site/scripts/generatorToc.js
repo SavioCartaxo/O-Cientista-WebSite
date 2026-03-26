@@ -7,15 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const titles = document.querySelectorAll("main h1, main h2, main h3");
     if (titles.length === 0) return;
 
-    // Cria o título da TOC
+    // Cria o título da TOC (usando h2 com estilos do CSS padrão)
     const tocTitle = document.createElement("h2");
     tocTitle.textContent = "Nesta página";
-    tocTitle.classList.add("h2-sidebar");
     toc.appendChild(tocTitle);
 
     // Cria a lista
     const ul = document.createElement("ul");
-    ul.classList.add("ul-toc");
+    ul.style.listStyle = "none";
+    ul.style.margin    = "0";
+    ul.style.padding   = "0 0.75rem";
 
     titles.forEach((title, index) => {
 
@@ -27,12 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const li = document.createElement("li");
         const a  = document.createElement("a");
 
-        a.href        = `#${title.id}`;
-        a.textContent = title.textContent;
+        a.href                 = `#${title.id}`;
+        a.textContent          = title.textContent;
+        a.style.textDecoration = "none";
+        a.style.color          = "#222";
+        a.style.fontSize       = "0.85rem";
+        a.style.display        = "block";
+        a.style.padding        = "0.2rem 0";
+
+        // Hover
+        a.addEventListener("mouseenter", () => a.style.color = "#0066FF");
+        a.addEventListener("mouseleave", () => a.style.color = "#222");
 
         // Indentação visual por nível (h1, h2, h3)
-        const level = parseInt(title.tagName.replace("H", ""));
-        li.style.marginLeft = `${(level - 1) * 0.5}rem`;
+        const level          = parseInt(title.tagName.replace("H", ""));
+        li.style.paddingLeft = `${(level - 1) * 0.8}rem`;
+        li.style.margin      = "0.1rem 0";
 
         li.appendChild(a);
         ul.appendChild(li);
