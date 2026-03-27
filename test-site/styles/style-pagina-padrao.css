@@ -64,18 +64,26 @@ body {
 main {
     flex: 1;
     overflow-y: auto;
-    background-color: var(--light_Gray);
-    
+    background-color: var(--light_Gray);   
 }
 
 /*TITULOS*/
 h1, h2, h3, h4 {
     font-family: 'Space Grotesk', sans-serif;
     padding: 0.5rem 1rem;
+    text-align: center;
 }
 
-h1, h2 {
-    text-align: center;
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 180%;
+}
+
+h3 {
+    font-size: 130%;
 }
 
 /*PARAGRAFOS*/
@@ -98,6 +106,25 @@ img {
     display: block;
     margin: 0 auto;
     padding: 0.5rem 0rem;
+}
+
+.img-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.img-group img {
+    width: 45%;
+    object-fit: contain;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    padding: 0rem 1rem;
+    padding-bottom: 0.5rem;
 }
 
 table {
