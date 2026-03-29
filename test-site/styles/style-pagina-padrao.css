@@ -6,7 +6,11 @@
 :root {
     --light_Gray : #E6E6E6;
     --gray : #999999;
+    --dark_gray: #2a2a2e;
     --nav_color : #0052CC;
+    --transparent_white: rgba(255, 255, 255, 0.1);
+    --hr_color: #ccc;
+    --figcaption_color: #666;
 }
 
 * {
@@ -20,7 +24,7 @@
 header nav {
     height: 56px;
     background: #161618;
-    border-bottom: 1px solid #2a2a2e;
+    border-bottom: 1px solid var(--dark_gray);
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -43,7 +47,7 @@ header nav a {
     width: 240px;
     flex-shrink: 0;
     overflow-y: auto;
-    border-right: 1px solid #2a2a2e;
+    border-right: 1px solid var(--dark_gray);
     background-color: var(--gray);
     padding: 0.5rem 0; /* padding vertical, sem horizontal */
 }
@@ -62,7 +66,7 @@ header nav a {
 }
 
 .sidebar li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--transparent_white);
 }
 
 .sidebar h2 {
@@ -75,7 +79,7 @@ header nav a {
     width: 220px;
     flex-shrink: 0;
     overflow-y: auto;
-    border-left: 1px solid #2a2a2e;
+    border-left: 1px solid var(--dark_gray);
     background-color: var(--gray);
     margin: 0;
 }
@@ -141,16 +145,28 @@ img {
     padding: 0.5rem 0;
 }
 
-.img-group img {
+.img-group figure {
     width: 45%;
+}
+
+.img-group img {
+    width: 100%;
+    height: 15em;
     object-fit: contain;
 }
 
-figcaption {
+.img-group figcaption {
+    text-align: center;
     font-size: 0.85rem;
-    color: #666;
-    padding: 0rem 1rem;
-    padding-bottom: 0.5rem;
+    color: var(--figcaption_color);
+    padding: 0.3rem 0;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--figcaption_color);
+    padding: 0.3rem 0;
 }
 
 /*Tabelas*/
@@ -187,26 +203,8 @@ ul {
 hr {
     border: none;
     height: 2px;
-    background-color: #ccc;
+    background-color: var(--hr_color);
     margin: 0.5em;
-}
-
-/* Tablet: esconde TOC */
-@media (max-width: 1024px) {
-    .toc { display: none; }
-
-}
-
-/* Tablet também: esconde sidebar em telas menores */
-@media (max-width: 900px) {
-    .sidebar { display: none; }
-
-}
-
-/* Mobile */
-@media (max-width: 720px) {
-    .sidebar { display: none; }
-
 }
 
 /*FOOT*/
@@ -231,4 +229,19 @@ footer a:hover {
 .footer-copy {
     opacity: 0.8;
     text-indent: 0;
+}
+
+/* Tablet: esconde TOC */
+@media (max-width: 1024px) {
+    .toc { display: none; }
+}
+
+/* Tablet também: esconde sidebar em telas menores */
+@media (max-width: 900px) {
+    .sidebar { display: none; }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .sidebar { display: none; }
 }
