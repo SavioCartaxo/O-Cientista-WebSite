@@ -1,0 +1,55 @@
+/* table, img, hr, .img-group, nav */
+
+/*IMAGENS*/
+img {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 0rem;
+}
+
+.img-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.img-group figure {
+    width: 45%;
+}
+
+.img-group img {
+    width: 100%;
+    height: 20em;
+    object-fit: contain;
+}
+
+.img-group figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--figcaption_color);
+    padding: 0.3rem 0;
+}
+
+
+/*Tabelas*/
+table {
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+
+/*OUTROS*/
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--hr_color);
+    margin: 0.5em;
+}

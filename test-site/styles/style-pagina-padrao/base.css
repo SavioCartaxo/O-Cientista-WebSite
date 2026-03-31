@@ -1,0 +1,18 @@
+/* reset, :root, * , body */
+
+:root {
+    --light_Gray : #E6E6E6;
+    --gray : #999999;
+    --dark_gray: #2a2a2e;
+    --nav_color : #0052CC;
+    --transparent_white: rgba(255, 255, 255, 0.1);
+    --hr_color: #ccc;
+    --figcaption_color: #666;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,16 @@
+/* @media queries */
+
+/* Tablet: esconde TOC */
+@media (max-width: 1024px) {
+    .toc { display: none; }
+}
+
+/* Tablet também: esconde sidebar em telas menores */
+@media (max-width: 900px) {
+    .sidebar { display: none; }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .sidebar { display: none; }
+}
