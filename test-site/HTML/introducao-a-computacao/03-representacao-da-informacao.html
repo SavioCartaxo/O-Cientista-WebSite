@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+
+    <header id="header"></header>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main id="main">
+            <article>
+                <header>
+                    <h1>Representação de Informação em Computadores</h1>
+
+                    <p>
+                        O sistema de numeração binário é aquele que representa valores atrasvés de bits, sendo que esses bits podem ser representados como 0 ou 1. Computadores modernos utilizam esses mesmos bits para representar todo tipo de informação: cores, imagens, sons, simbolos, entre outros. É sobre isso que vamos falar agora.
+                    </p>
+                </header>
+
+                <hr>
+
+                <h2>Bits e Bytes</h2>
+                
+                <p>
+                    Como mencionado anteriormente, computadores representam toda e qualquer informação através de valores binários. Na prática, o computador não interpreta literalmente os valores "0" e "1" - ele trabalha com sinais elétricos: a <b>presença de corrente elétrica</b> representa 1, e a <b>ausência</b> representa 0. É sobre essa base simples que toda a computação moderna é construída.
+                </p>
+                
+                <p>
+                    A menor unidade de informação que um computador pode processar é chamada de <strong>BIT</strong> (<em>Binary Digit</em>) - que assume apenas dois valores possíveis: 0 ou 1. Um único bit, por si só, pode representar apenas duas situações distintas. Para representar os mais diversos tipos de dados - letras, números, imagens, sons - é necessário combinar múltiplos bits em sequências, <strong>mapeando</strong> cada combinação possível para um símbolo ou valor diferente.
+                </p>
+
+                <img src="/test-site/assets/IMAGES/introducao-a-computacao/bits.png" alt="Bits">
+
+                <p>
+                    Mapear significa <strong>associar uma sequência de bits a um símbolo ou valor específico</strong>. Imagine o teclado do seu computador: quando você pressiona a tecla "A", o teclado não envia a letra "A" para o computador - ele envia uma sequência de bits, como <b>01000001</b>, que corresponde ao código do caractere "A" na tabela <strong>ASCII</strong> - veremos isso melhor mais a frente. O computador então consulta essa tabela, encontra o símbolo associado àquela sequência e exibe a letra na tela. É exatamente isso que significa mapear - cada sequência de bits possível é associada a um símbolo, número, cor, ou qualquer outro tipo de dado, formando um código que tanto o hardware quanto o software entendem.
+                </p>
+                
+                <p>
+                    Quanto mais bits em um conjunto, maior a quantidade de combinações possíveis - e portanto, maior a quantidade de informações que podem ser representadas. Com <b>1 bit</b>, temos 2 combinações possíveis (0 ou 1). Com <b>2 bits</b>, temos 4 combinações (00, 01, 10, 11). Com <b>8 bits</b>, temos 256 combinações diferentes. Esse agrupamento de 8 bits é tão fundamental que recebeu um nome próprio: o <strong>Byte</strong> - a unidade básica de armazenamento de dados utilizada em praticamente toda a computação moderna.
+                </p>
+                
+                <p>
+                    Esse conceito também explica a diferença entre computadores de <strong>32 bits</strong> e <strong>64 bits</strong>. Um processador de 32 bits consegue trabalhar com conjuntos de 32 bits de uma só vez, podendo endereçar até 4 GB de memória. Já um processador de <strong>64 bits</strong> trabalha com conjuntos de 64 bits simultaneamente, podendo endereçar quantidades de memória muito maiores e processar informações com muito mais eficiência - o que explica por que praticamente todos os computadores modernos são de 64 bits.
+                </p>
+
+                <p>
+                    À medida que a quantidade de dados cresce, torna-se necessário utilizar unidades de medida maiores para representá-los. Assim como usamos quilômetros em vez de metros para medir grandes distâncias, na computação agrupamos Bytes em unidades progressivamente maiores. A tabela abaixo apresenta essas unidades, da menor à maior, com seus respectivos acrônimos e equivalências:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unidade de Medida</th>
+                            <th>Acrônimo</th>
+                            <th>Quantidade de Bytes</th>
+                            <th>Quantidade de Bits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bit</td>
+                            <td>b</td>
+                            <td>0,125 B</td>
+                            <td>1 bit</td>
+                        </tr>
+                        <tr>
+                            <td>Byte</td>
+                            <td>B</td>
+                            <td>1 B</td>
+                            <td>8 bits</td>
+                        </tr>
+                        <tr>
+                            <td>Kilobyte</td>
+                            <td>KB</td>
+                            <td>1.024 B</td>
+                            <td>8.192 bits</td>
+                        </tr>
+                        <tr>
+                            <td>Megabyte</td>
+                            <td>MB</td>
+                            <td>1.048.576 B</td>
+                            <td>8.388.608 bits</td>
+                        </tr>
+                        <tr>
+                            <td>Gigabyte</td>
+                            <td>GB</td>
+                            <td>1.073.741.824 B</td>
+                            <td>8.589.934.592 bits</td>
+                        </tr>
+                        <tr>
+                            <td>Terabyte</td>
+                            <td>TB</td>
+                            <td>1.099.511.627.776 B</td>
+                            <td>8.796.093.022.208 bits</td>
+                        </tr>
+                        <tr>
+                            <td>Petabyte</td>
+                            <td>PB</td>
+                            <td>2<sup>50</sup> B</td>
+                            <td>2<sup>53</sup> bits</td>
+                        </tr>
+                        <tr>
+                            <td>Exabyte</td>
+                            <td>EB</td>
+                            <td>2<sup>60</sup> B</td>
+                            <td>2<sup>63</sup> bits</td>
+                        </tr>
+                        <tr>
+                            <td>Zettabyte</td>
+                            <td>ZB</td>
+                            <td>2<sup>70</sup> B</td>
+                            <td>2<sup>73</sup> bits</td>
+                        </tr>
+                        <tr>
+                            <td>Yottabyte</td>
+                            <td>YB</td>
+                            <td>2<sup>80</sup> B</td>
+                            <td>2<sup>83</sup> bits</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                falar sobre os diferentes dispositivos de armazenamento
+                letras, numeros e simbolos sao codificados e decodificados pelos equipamentos atraves dos bytes que os representam, permitindo a comunicacao entre usuarios maquinas e outras maquinas
+                a representação precisa ser a mesma independente do sistema.
+                no passado essa representação nao era muito bem feita e cada empresa tinha a sua, mas hoje em dia é diferente.
+                EBCDIC - 8 bits: Extended binary coded Decimal interchange code - codigo amplicado de caracteres decimais codificados em binario para o intercambio de dados.
+                unidade de memoria usado para representar um caractere é normalmente um byte(256 caracteres)
+
+                ASCII - 8 bits onde 1 desses bits é sacrificado para para ser o bit de checagem ou bit de paridade
+                UNICODE - padrao mais completo utiliza 16bits (mais de 65.000 simbolos)
+                falar sobre ascii e colocar a tabela
+
+                Os bits surgiram como a contração de "binary digit" (dígito binário), cunhada pelo estatístico John Tukey em 1947 e popularizada por Claude Shannon em 1948. Eles representam a unidade básica de informação na computação, baseando-se em dois estados físicos (ligado/desligado, furo/sem furo) para codificar dados em números binários (0 ou 1). 
+
+                A Origem e Evolução dos Bits:
+
+                    Fundamentos Matemáticos: A base vem do sistema binário, popularizado por Gottfried Leibniz no século XVII, e da lógica booleana do século XIX.
+                    Cartões Perfurados (Pré-computação): No século XIX, teares e máquinas de tabulação usavam cartões perfurados para armazenar "bits" de informação, representando presença (1) ou ausência (0) de furos.
+                    A "Teoria da Informação" (1948): O engenheiro Claude Shannon, em seu artigo "A Mathematical Theory of Communication", definiu o bit como a unidade fundamental para medir informação e transmissão de dados, consolidando o conceito.
+                    Por que 8 bits (Byte)? A padronização de 8 bits para formar 1 byte consolidou-se posteriormente (principalmente pela IBM nos anos 50/60) por ser eficiente para representar caracteres alfanuméricos no código ASCII, suportando 256 combinações possíveis 2 a 8.
+                
+            </article>
+            
+            <footer id="footer"></footer>
+        </main>
+        
+        <aside class="toc" id="toc"></aside>
+
+</body>
+</html>
