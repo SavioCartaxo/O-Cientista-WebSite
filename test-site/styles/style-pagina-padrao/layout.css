@@ -30,7 +30,7 @@ header nav a {
     overflow-y: auto;
     border-right: 1px solid var(--dark_gray);
     background-color: var(--gray);
-    padding: 0.5rem 0; /* padding vertical, sem horizontal */
+    padding: 0.5rem 0;
 }
 
 .sidebar ul {
@@ -42,7 +42,7 @@ header nav a {
 .sidebar li a {
     display: block;
     font-size: 0.85rem;
-    padding: 0.3rem 10px; /* 5px da borda */
+    padding: 0.3rem 10px;
     text-decoration: none;
 }
 
@@ -52,7 +52,7 @@ header nav a {
 
 .sidebar h2 {
     padding: 0.5rem 5px;
-    text-align: left;
+    text-align: center;
 }
 
 
