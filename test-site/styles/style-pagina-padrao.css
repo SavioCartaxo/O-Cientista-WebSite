@@ -5,4 +5,6 @@
 @import url(style-pagina-padrao/typography.css);
 @import url(style-pagina-padrao/components.css);
 @import url(style-pagina-padrao/responsive.css);
-@import url(style-pagina-padrao/summary-class.css);
+
+@import url(class/summary-class.css);
+@import url(class/bibliography-class.css);
