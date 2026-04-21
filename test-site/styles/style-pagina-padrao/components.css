@@ -5,6 +5,8 @@ img {
     display: block;
     margin: 0 auto;
     padding: 0.5rem 0rem;
+    height: 50vh;
+    width: auto
 }
 
 .img-group {
