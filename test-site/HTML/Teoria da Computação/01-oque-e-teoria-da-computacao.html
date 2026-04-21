@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+
+    <header id="header"></header>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main id="main">
+            <article>
+                <header>
+                    
+                    <h1>Introdução à Teoria da Computação</h1>
+
+                    <p>
+                        A <strong>Teoria da Computação</strong> oferece a base teórica para compreendermos como os computadores realmente funcionam, quais são os limites do que pode ser computado e como encontrar soluções eficientes para problemas algorítmicos.
+                        Seu estudo contribui diretamente para a concepção de algoritmos eficientes, o desenvolvimento de software robusto e a compreensão dos avanços tecnológicos que moldam o mundo moderno.
+                    </p>
+
+                    <p>
+                        Sua compreensão é essencial em áreas como <strong>inteligência artificial</strong>, <strong>segurança de dados</strong> e <strong>ciência de dados</strong> - que fazem uso direto de conceitos como reconhecimento de padrões, criptografia e compressão de dados.
+                        Além disso, a Teoria da Computação apresenta os fundamentos por trás da concepção de linguagens de programação, incluindo gramáticas formais e compiladores - ferramentas que todo programador utiliza no dia a dia, muitas vezes sem perceber.
+                    </p>
+
+                    <hr>
+
+                </header>
+
+                <h2>A Origem da Teoria da Computação</h2>
+
+                    <p>
+                        A <strong>Teoria da Computação</strong> é um subcampo da matemática e da ciência da computação que estuda a capacidade e as limitações dos computadores, definindo quais <strong>classes de problemas</strong> podem ou não ser resolvidos por meio de algoritmos.
+                        Seu desenvolvimento está intrinsecamente ligado a duas figuras históricas: <strong>Charles Babbage</strong>, que no século XIX antecipou os conceitos fundamentais da computação, e <strong>Alan Turing</strong>, que no século XX formalizou matematicamente o que significa computar.
+                    </p>
+
+                    <p>
+                        A teoria teve início no começo do século XX, muito antes dos computadores eletrônicos existirem.
+                        Os matemáticos da época debatiam sobre uma questão central: o que significa resolver um problema por um <strong>método efetivo</strong>?
+                        Em outras palavras, era preciso <strong>definir formalmente o que é um algoritmo</strong>.
+                        Foi nesse contexto que surgiram os primeiros modelos teóricos de computação.
+                    </p>
+
+                    <p>
+                        O percursor dessa ideia foi <strong>Charles Babbage</strong>, que no século XIX já antecipava os conceitos fundamentais da computação com sua Máquina Analítica - um dispositivo mecânico programável que possuía unidades de entrada, saída, memória e processamento.
+                        Esses conceitos só seriam plenamente compreendidos e realizados mais de um século depois, quando os primeiros computadores eletrônicos foram desenvolvidos.
+                    </p>
+
+                    <p>
+                        Foi <strong>Alan Turing</strong> (1912-1954), matemático inglês considerado o pai da Ciência da Computação, quem formalizou definitivamente essas ideias.
+                        Em 1936, Turing propôs um modelo teórico chamado <strong>Máquina de Turing - uma máquina hipotética capaz de executar qualquer algoritmo possível, desde que fornecidas as instruções corretas</strong>.
+                        Esse modelo estabeleceu os fundamentos teóricos sobre os quais toda a computação moderna foi construída.
+                        A tese de que qualquer computação possível pode ser realizada por uma Máquina de Turing é conhecida até hoje como a <strong>Tese de Church-Turing</strong>.
+                    </p>
+
+                    <img src="/test-site/assets/IMAGES/teoria-da-computacao/simbolo-ciencia-da-computacao.png" alt="Simbolo ciência da computação sem fundo">
+
+                    <p>
+                        Você pode ler mais sobre esses dois gigantes da computação em <a href="/test-site/HTML/introducao-a-computacao/00-historia-da-computacao-01-primordios.html" target="_blank">História da computação - os Primórdios</a> e <a href="/test-site/HTML/introducao-a-computacao/00-historia-da-computacao-02-computadores-eletricos.html" target="_blank">História da computação - Computadores elétricos</a>.
+                    </p>
+
+                <hr>
+
+                <h2>O que é Teoria da Computação?</h2>
+
+                    <p>
+                        Como já mencionado anteriormente, a <strong>Teoria da Computação</strong> é "um subcampo da matemática e da ciência da computação que <strong>estuda a capacidade e as limitações dos computadores</strong>, definindo <strong>quais classes de problemas podem ou não ser resolvidos por meio de algoritmos</strong>".
+                        Essa definição já foi apresentada antes, mas o que, de fato, é a Teoria da Computação?
+                        Para responder essa pergunta, vamos destrinchar e definir cada elemento dessa frase, a fim de promover uma maior compreensão do assunto.
+                    </p>
+
+                    <p>
+                        Sobre a <strong>capacidade e as limitações dos computadores</strong>: o computador possui limitações claras - ele só consegue resolver um problema se existir um passo a passo claro de como fazê-lo, ou seja, um algoritmo.
+                        Um exemplo clássico dessas limitações é o <strong>Problema da Parada</strong>, proposto pelo próprio Alan Turing em 1936: é impossível criar um algoritmo capaz de determinar, para qualquer programa e qualquer entrada, se esse programa irá terminar ou ficará executando para sempre.
+                    </p>
+
+                    <p>
+                        Em outras palavras, <strong>existem problemas que um computador simplesmente não consegue resolver</strong> - não por falta de velocidade ou memória, mas porque a solução é matematicamente impossível de ser computada.
+                        Parafraseando Ada Byron ao falar sobre a Máquina Analítica de Babbage:
+                    </p>
+
+                    <blockquote>
+                        <p>"Ele não tem pretensões de originar nada, mas pode processar qualquer coisa que nós soubermos programá-lo para realizar."</p>
+                        <footer>- Ada Byron</footer>
+                    </blockquote>
+
+                    <hr>
+
+                    <h3>O problema da Parada</h3>
+
+                    <p>
+                        Para ilustrar o Problema da Parada, considere o seguinte programa simples em pseudocódigo:
+                    </p>
+
+                    <img src="/test-site/assets/IMAGES/teoria-da-computacao/code-problema-da-parada.png" alt="texto">
+
+                    <p>
+                        A função <code>vai_parar(programa)</code> representa um verificador hipotético - um programa que tentaria analisar qualquer outro programa e dizer se ele termina ou entra em loop infinito.
+                        Ela retorna <code>True</code> se o programa termina, e <code>False</code> se ele roda para sempre.
+                    </p>
+
+                    <p>
+                        A função <code>paradoxo()</code> é construída justamente para desafiar esse verificador.
+                        Ela pergunta: <strong>"eu vou terminar?"</strong>.
+                        Se o verificador responde <strong>"sim"</strong>, o programa faz o oposto e entra em loop infinito.
+                        Se responde <strong>"não"</strong>, ele também faz o oposto e termina imediatamente.
+                    </p>
+
+                    <p>
+                        Isso gera uma contradição: qualquer resposta do verificador leva a um erro.
+                        Portanto, não pode existir um algoritmo que determine corretamente, para <strong>todos os programas possíveis</strong>, se eles vão parar ou não.
+                    </p>
+
+                    <p>
+                        Esse resultado não depende de tecnologia, desempenho ou linguagem de programação.
+                        Trata-se de um limite fundamental da computação.
+                        Esse é o <strong>Problema da Parada</strong>.
+                    </p>
+
+                <hr>
+
+                <h2>Qual são os Ramos da Teoria da Computação e o que estudam?</h2>
+
+                    <p>
+                        A Teoria da Computação é uma área ampla, dividida em diversos ramos de estudo.
+                        Cada ramo investiga um aspecto diferente dos limites e capacidades da computação, desde a definição formal de algoritmos até a análise de quão difícil é resolver determinados problemas.
+                        A seguir, apresentamos os três principais ramos da Teoria da Computação.
+                    </p>
+
+                    <h3>Autômatos e Linguagens Formais</h3>
+
+                    <p>
+                        Estuda os modelos matemáticos de computação e suas propriedades - definindo formalmente o que um computador pode calcular e como reconhecer padrões em sequências de símbolos. 
+                        Um autômato é uma máquina abstrata que recebe uma sequência de símbolos como entrada e decide se essa sequência pertence ou não a uma determinada linguagem.
+                        Esse ramo é fundamental para o desenvolvimento de compiladores, interpretadores e sistemas de reconhecimento de padrões - como as expressões regulares usadas em linguagens de programação.
+                    </p>
+
+                    <h3>Computabilidade</h3>
+
+                    <p>
+                        A Computabilidade investiga quais problemas podem ou não ser resolvidos por um computador.
+                        Como vimos com o Problema da Parada, existem problemas que são matematicamente impossíveis de serem computados - independentemente da velocidade ou memória disponível.
+                        Esse ramo define os limites absolutos da computação, separando os problemas <strong>decidíveis</strong> - aqueles que podem ser resolvidos por um algoritmo - dos <strong>indecidíveis</strong> - aqueles que não podem.
+                    </p>
+
+                    <h3>Complexidade Computacional</h3>
+
+                    <p>
+                        A Complexidade Computacional vai além da pergunta "esse problema pode ser resolvido?" e questiona: <strong>"quão difícil é resolvê-lo?"</strong>
+                        Mesmo que um problema seja computável, ele pode exigir uma quantidade absurda de tempo ou memória para ser resolvido na prática.
+                        Esse ramo classifica os problemas de acordo com os recursos necessários para resolvê-los, estabelecendo uma hierarquia entre problemas simples e problemas que, apesar de teoricamente possíveis, são inviáveis na prática.
+                    </p>
+
+                <hr>
+
+                <h2>Problemas da Teoria da Computação.</h2>
+
+                    <h3>Problema de parada - Halting problem</h3>
+                        <p>
+                            O <strong>Problema da Parada</strong>, proposto por <strong>Alan Turing</strong> em 1936, questiona se é possível criar um algoritmo capaz de determinar, para qualquer programa e qualquer entrada, se esse programa irá terminar ou ficará executando para sempre.
+                            A resposta, provada pelo próprio Turing, é <strong>não</strong> - tal algoritmo é matematicamente impossível de existir.
+                            Independentemente da velocidade ou memória disponível, esse é um limite fundamental da computação: existem problemas que nenhum computador jamais poderá resolver.
+                        </p>
+
+                    <h3>Problema da Totalidade - Totality problem</h3>
+                        <p>
+                            O <strong>Problema da Totalidade</strong> é semelhante ao Problema da Parada, mas com uma diferença fundamental: enquanto o Problema da Parada questiona se um programa termina para <strong>uma entrada específica</strong>, o Problema da Totalidade questiona se um programa termina para <strong>todas as entradas possíveis</strong>.
+                            Em outras palavras, ele pergunta: "existe alguma entrada capaz de fazer esse programa rodar para sempre?"
+                            Assim como o Problema da Parada, o Problema da Totalidade é <strong>indecidível</strong> - não existe algoritmo capaz de responder essa pergunta para qualquer programa arbitrário.
+                        </p>
+
+                    <h3>Problema de parada sem entrada - No-input halting problem.</h3>
+
+                        <p>
+                            O <strong>Problema da Parada sem Entrada</strong> é uma variação mais simples do Problema da Parada: em vez de perguntar se um programa termina para uma entrada específica, ele questiona se um programa termina quando <strong>nenhuma entrada é fornecida</strong>.
+                            Apesar de parecer mais simples, esse problema também é <strong>indecidível</strong> - não existe algoritmo capaz de determinar, para qualquer programa sem entrada, se ele irá terminar ou não.
+                            É uma prova de que a indecidibilidade não depende da complexidade da entrada, mas sim da natureza do problema em si.
+                        </p>
+
+                    <h3>Problema da Equivalência - Program equivalence</h3>
+                        <p>
+                            O <strong>Problema da Equivalência</strong> questiona se dois programas distintos produzem <strong>exatamente a mesma saída para qualquer entrada possível</strong> - ou seja, se os dois programas são funcionalmente idênticos, mesmo que escritos de formas diferentes.
+                            Esse problema também é <strong>indecidível</strong>: não existe algoritmo capaz de determinar, para quaisquer dois programas arbitrários, se eles são equivalentes entre si.
+                            Na prática, isso significa que não é possível criar uma ferramenta que verifique automaticamente se duas implementações diferentes de um mesmo algoritmo produzem sempre os mesmos resultados.
+                        </p>
+
+                    <h3>Variável não inicilizada - Uninitialized variables</h3>
+                        <p>
+                            O problema de <strong>variáveis não inicializadas</strong> questiona se é possível determinar, para qualquer programa, se ele utiliza alguma variável antes de atribuir um valor a ela.
+                            Utilizar uma variável sem inicializá-la é um erro comum em programação - o programa pode ler um valor indefinido da memória, produzindo resultados imprevisíveis e inconsistentes.
+                            Assim como os problemas anteriores, determinar automaticamente se um programa arbitrário possui esse tipo de erro é <strong>indecidível</strong> - não existe algoritmo capaz de garantir a detecção de todas as variáveis não inicializadas em qualquer programa possível.
+                        </p>
+
+                        
+                    <h3>Eliminação de código morto - Dead-code elimination</h3>
+                        <p>
+                            <strong>Código morto</strong> é todo trecho de código que nunca será executado, independentemente da entrada fornecida ao programa.
+                            O problema da Eliminação de Código Morto questiona se é possível determinar, para qualquer programa, quais partes do código jamais serão alcançadas durante a execução.
+                            Identificar e remover código morto é desejável pois torna o programa mais limpo, eficiente e fácil de manter.
+                            No entanto, assim como os problemas anteriores, determinar automaticamente se um trecho de código é morto em qualquer programa arbitrário é <strong>indecidível</strong> - os compiladores modernos conseguem detectar apenas casos simples e específicos, mas não podem garantir a detecção completa em todos os casos possíveis.
+                        </p>
+                
+                <hr>
+
+                <div class="questions"></div>
+                <div class="summary"></div>
+                <div class="bibliography">
+                    <h2>Referências</h2>
+                    <ul>
+                        <li><a href="https://pt.wikipedia.org/wiki/Teoria_da_computa%C3%A7%C3%A3o" target="_blank">Teoria da computa  (wikipedia)</a></li>
+                    </ul>
+                </div>
+
+            </article>
+            
+            <footer id="footer"></footer>
+        </main>
+        
+        <aside class="toc" id="toc"></aside>
+    </div>
+
+</body>
+</html>
