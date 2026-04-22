@@ -24,10 +24,214 @@
         <main id="main">
             <article>
                 <header>
-
+                    <h1>Tabela de Frequência</h1>
+                        <p>
+                        Neste artigo, aprenderemos a organizar e interpretar dados estatísticos por meio da <strong>tabela de frequência</strong> — uma das ferramentas mais fundamentais da Estatística.
+                        Abordaremos os conceitos de frequência absoluta, frequência relativa e frequência acumulada, com exemplos práticos e tabelas para facilitar a compreensão.
+                        </p>
+                    <hr>
                 </header>
 
-                <p>antes de começar a ler aqui, tem q saber a diferença de dados e informações</p>
+                <h2>O que é uma Tabela de Frequência?</h2>
+
+                    <p>
+                    Quando coletamos dados — seja de uma pesquisa, de um experimento ou de um censo — geralmente obtemos uma grande quantidade de valores que, sozinhos, são difíceis de interpretar.
+                    A <strong>tabela de frequência</strong> é uma forma de organizar esses dados, agrupando os valores e mostrando quantas vezes cada um aparece no conjunto.
+                    </p>
+
+                    <p>
+                    Para construir uma tabela de frequência, utilizamos os conceitos de <strong>frequência absoluta</strong>, <strong>frequência relativa</strong> e, opcionalmente, <strong>frequência acumulada</strong>.
+                    Vamos entender cada um deles a seguir.
+                    </p>
+
+                <hr>
+
+                <h2>Frequência Absoluta (N)</h2>
+
+                    <p>
+                    A <strong>frequência absoluta</strong>, representada pela letra <strong>N</strong>, é simplesmente a <strong>contagem de quantas vezes um determinado valor aparece</strong> no conjunto de dados.
+                    É o conceito mais intuitivo — se 10 alunos tiraram nota 7 em uma prova, a frequência absoluta da nota 7 é 10.
+                    </p>
+
+                    <p>
+                    A soma de todas as frequências absolutas é sempre igual ao total de dados coletados, representado por <strong>n</strong>:
+                    </p>
+
+                    <p>
+                    &sum;N<sub>i</sub> = n
+                    </p>
+
+                    <p>
+                    <strong>Exemplo:</strong> Em uma turma de 30 alunos, foram registradas as seguintes notas em uma prova:
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nota</th>
+                                <th>Frequência Absoluta (N)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>3</td></tr>
+                            <tr><td>6</td><td>7</td></tr>
+                            <tr><td>7</td><td>10</td></tr>
+                            <tr><td>8</td><td>6</td></tr>
+                            <tr><td>9</td><td>4</td></tr>
+                            <tr><td><strong>Total</strong></td><td><strong>30</strong></td></tr>
+                        </tbody>
+                    </table>
+
+                <hr>
+
+                <h2>Frequência Relativa (F)</h2>
+
+                    <p>
+                    A <strong>frequência relativa</strong>, representada pela letra <strong>F</strong>, expressa a <strong>proporção</strong> de cada valor em relação ao total de dados.
+                    Ela é calculada dividindo a frequência absoluta de cada valor pelo total de dados:
+                    </p>
+
+                    <p>
+                    F<sub>i</sub> = N<sub>i</sub> &divide; n
+                    </p>
+
+                    <p>
+                    O resultado pode ser expresso como um número decimal ou como porcentagem, multiplicando por 100.
+                    A soma de todas as frequências relativas é sempre igual a 1 (ou 100%):
+                    </p>
+
+                    <p>
+                    &sum;F<sub>i</sub> = 1
+                    </p>
+
+                    <p>
+                    <strong>Exemplo:</strong> Usando os mesmos dados da turma de 30 alunos:
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nota</th>
+                                <th>Frequência Absoluta (N)</th>
+                                <th>Frequência Relativa (F)</th>
+                                <th>Frequência Relativa (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>3</td><td>0,10</td><td>10%</td></tr>
+                            <tr><td>6</td><td>7</td><td>0,23</td><td>23%</td></tr>
+                            <tr><td>7</td><td>10</td><td>0,33</td><td>33%</td></tr>
+                            <tr><td>8</td><td>6</td><td>0,20</td><td>20%</td></tr>
+                            <tr><td>9</td><td>4</td><td>0,13</td><td>13%</td></tr>
+                            <tr><td><strong>Total</strong></td><td><strong>30</strong></td><td><strong>1,00</strong></td><td><strong>100%</strong></td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                    A frequência relativa é útil quando queremos <strong>comparar grupos de tamanhos diferentes</strong>.
+                    Por exemplo, dizer que 10 alunos tiraram nota 7 em uma turma de 30 é mais informativo quando expresso como 33% — especialmente ao comparar com outra turma de tamanho diferente.
+                    </p>
+
+                    <hr>
+
+                <h2>Frequência Acumulada (Opcional)</h2>
+
+                    <p>
+                    A <strong>frequência acumulada</strong> é calculada somando progressivamente as frequências, da primeira até a última classe.
+                    Ela responde à pergunta: <strong>"quantos valores são menores ou iguais a este?"</strong>
+                    Existem dois tipos: a frequência acumulada absoluta e a frequência acumulada relativa.
+                    </p>
+
+                    <h3>Frequência Acumulada Absoluta (N<sub>i</sub>)</h3>
+
+                    <p>
+                    A <strong>frequência acumulada absoluta</strong>, representada por <strong>N<sub>i</sub></strong>, é a soma das frequências absolutas de todos os valores até o valor atual:
+                    </p>
+
+                    <p>
+                    N<sub>i</sub> = N<sub>1</sub> + N<sub>2</sub> + ... + N<sub>i</sub>
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nota</th>
+                                <th>Frequência Absoluta (N)</th>
+                                <th>Freq. Acumulada Absoluta (N<sub>i</sub>)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>3</td><td>3</td></tr>
+                            <tr><td>6</td><td>7</td><td>10</td></tr>
+                            <tr><td>7</td><td>10</td><td>20</td></tr>
+                            <tr><td>8</td><td>6</td><td>26</td></tr>
+                            <tr><td>9</td><td>4</td><td>30</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                    Lendo a tabela: até a nota 7, temos 20 alunos acumulados — ou seja, 20 alunos tiraram nota <strong>menor ou igual a 7</strong>.
+                    </p>
+
+                    <h3>Frequência Acumulada Relativa (F<sub>i</sub>)</h3>
+
+                    <p>
+                    A <strong>frequência acumulada relativa</strong>, representada por <strong>F<sub>i</sub></strong>, é a soma das frequências relativas de todos os valores até o valor atual.
+                    Funciona da mesma forma que a acumulada absoluta, mas com proporções:
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nota</th>
+                                <th>Freq. Relativa (F)</th>
+                                <th>Freq. Acumulada Relativa (F<sub>i</sub>)</th>
+                                <th>Freq. Acumulada Relativa (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>0,10</td><td>0,10</td><td>10%</td></tr>
+                            <tr><td>6</td><td>0,23</td><td>0,33</td><td>33%</td></tr>
+                            <tr><td>7</td><td>0,33</td><td>0,67</td><td>67%</td></tr>
+                            <tr><td>8</td><td>0,20</td><td>0,87</td><td>87%</td></tr>
+                            <tr><td>9</td><td>0,13</td><td>1,00</td><td>100%</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                    Lendo a tabela: até a nota 7, temos 67% dos alunos acumulados — ou seja, 67% dos alunos tiraram nota <strong>menor ou igual a 7</strong>.
+                    </p>
+
+                    <hr>
+
+                <h2>Tabela de Frequência Completa</h2>
+
+                    <p>
+                    Reunindo todos os conceitos, a tabela de frequência completa da nossa turma de 30 alunos fica assim:
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nota</th>
+                                <th>N</th>
+                                <th>F</th>
+                                <th>F (%)</th>
+                                <th>N<sub>i</sub></th>
+                                <th>F<sub>i</sub></th>
+                                <th>F<sub>i</sub> (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5</td><td>3</td><td>0,10</td><td>10%</td><td>3</td><td>0,10</td><td>10%</td></tr>
+                            <tr><td>6</td><td>7</td><td>0,23</td><td>23%</td><td>10</td><td>0,33</td><td>33%</td></tr>
+                            <tr><td>7</td><td>10</td><td>0,33</td><td>33%</td><td>20</td><td>0,67</td><td>67%</td></tr>
+                            <tr><td>8</td><td>6</td><td>0,20</td><td>20%</td><td>26</td><td>0,87</td><td>87%</td></tr>
+                            <tr><td>9</td><td>4</td><td>0,13</td><td>13%</td><td>30</td><td>1,00</td><td>100%</td></tr>
+                            <tr><td><strong>Total</strong></td><td><strong>30</strong></td><td><strong>1,00</strong></td><td><strong>100%</strong></td><td>-</td><td>-</td><td>-</td></tr>
+                        </tbody>
+                    </table>
+                <hr>
 
                 <div class="questions"></div>
                 <div class="summary"></div>
