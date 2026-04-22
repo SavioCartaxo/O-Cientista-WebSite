@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main id="main">
+            <article>
+                <header>
+                    <h1>Linguagens Formais e Gramáticas</h1>
+                    
+                        <p>
+                        Neste artigo, exploramos os fundamentos das <strong>linguagens formais</strong> na Teoria da Computação.
+                        Começamos pelos conceitos básicos, como <strong>alfabetos e cadeias</strong>, passamos pelos modelos de <strong>máquinas abstratas</strong> responsáveis por reconhecer linguagens, e chegamos às <strong>gramáticas</strong>, que descrevem como essas linguagens são geradas.
+                        </p>
+
+                        <p>
+                        Ao final, você terá uma visão clara de como esses conceitos se conectam e por que são essenciais para áreas como <strong>compiladores</strong>, <strong>interpretadores</strong> e o estudo dos limites da computação.
+                        </p>
+
+                        <img src="/test-site/assets/IMAGES/teoria-da-computacao/alan-turing.png" alt="Alan Turing">
+
+                    <hr>
+                </header>
+
+                <h2>O que é uma Linguagem Formal?</h2>
+
+                    <p>
+                    No dia a dia, usamos a palavra "linguagem" para nos referir a formas de comunicação - português, inglês, libras.
+                    Na Teoria da Computação, o conceito é semelhante, mas mais preciso: uma <strong>linguagem formal</strong> é definida como um <strong>conjunto de elementos (símbolos, caracteres, palavras, entre outros) e um conjunto de métodos (regras) para combinar esses elementos, usado e entendido por uma determinada comunidade</strong>.
+                    Em termos práticos, uma linguagem formal é composta por dois elementos fundamentais:
+                    </p>
+
+                    <ul>
+                        <li><strong>sintaxe</strong>: as regras que definem quais combinações de símbolos são válidas.</li>
+                        <li><strong>semântica</strong>: o significado atribuído a essas combinações.</li>
+                    </ul>
+                    
+                    <p>
+                    Você já viu isso em linguagens de programação: existem regras sintaxicas que definem o que é um código válido, enquanto isso, cada script que você faz realiza alguns passos para cumprir um propósito, e isso chamamos de semântica.
+                    </p>
+
+                    <p>
+                    Linguagens formais são, portanto, <strong>mecanismos matemáticos para representar e especificar linguagens</strong> de forma precisa e não ambígua - algo essencial para que um computador possa interpretá-las corretamente.
+                    </p>
+
+                <hr>
+
+                <h2>Máquinas Abstratas</h2>
+
+                    <p>
+                    Na Teoria da Computação, utilizamos <strong>máquinas abstratas</strong> para modelar o funcionamento de computadores de forma matemática e simplificada.
+                    Essas máquinas não são físicas, mas sim modelos teóricos que nos permitem entender <strong>como linguagens podem ser reconhecidas</strong>.
+                    </p>
+
+                    <p>
+                    Uma máquina abstrata recebe uma sequência de símbolos como entrada e decide se essa sequência pertence ou não a uma determinada linguagem.
+                    Por isso, dizemos que essas máquinas atuam como <strong>reconhecedores de linguagens</strong>.
+                    </p>
+
+                    <p>
+                    Dependendo do tipo de máquina utilizada, conseguimos reconhecer linguagens mais simples ou mais complexas.
+                    Por exemplo:
+                    </p>
+
+                    <ul>
+                        <li><strong>Autômatos finitos</strong>: reconhecem linguagens regulares.</li>
+                        <li><strong>Autômatos com pilha</strong>: reconhecem linguagens livres de contexto.</li>
+                        <li><strong>Máquinas de Turing</strong>: reconhecem linguagens recursivamente enumeráveis.</li>
+                    </ul>
+
+                    <p>
+                    Esses modelos estão diretamente relacionados à <a href="/test-site/HTML/Teoria da Computação/04-hierarquia-de-chomsky.html" target="_blank">Hierarquia de Chomsky</a> e ajudam a entender os limites do que pode ser reconhecido por um sistema computacional.
+                    </p>
+
+                <hr>
+
+                <h2>Alfabeto e Cadeias</h2>
+
+                    <p>
+                    Toda linguagem formal é construída a partir de elementos básicos chamados <strong>símbolos</strong>.
+                    Um símbolo é a unidade indivisível de uma linguagem - pode ser uma única letra ou até mesmo uma palavra inteira, como <code>if</code> ou <code>else</code>, desde que seja tratada como um único elemento.
+                    </p>
+
+                    <p>
+                    Um <strong>alfabeto</strong>, geralmente representado pela letra grega &Sigma; (sigma), é um <strong>conjunto finito e não vazio de símbolos</strong>.
+                    </p>
+
+                    <p>
+                    Exemplos de alfabetos:
+                    <strong>&Sigma; = { a, b, 0, 1 }</strong> ou <strong>&Sigma; = { if, then, else }</strong>.
+                    </p>
+
+                    <p>
+                    A partir de um alfabeto, podemos formar <strong>cadeias (ou strings)</strong>, que são sequências finitas de símbolos.
+                    </p>
+
+                    <p>
+                    Se &Sigma; = { a, b, 0, 1 }, então exemplos de cadeias são: ab, aba, a0b1 e 01.
+                    A cadeia sem símbolos é chamada de <strong>cadeia vazia</strong> e é representada por <strong>&epsilon;</strong>.
+                    </p>
+
+                    <hr>
+
+                    <h3>Prefixos e Sufixos</h3>
+
+                    <p>
+                    Uma cadeia pode ser analisada a partir de suas partes. Um <strong>prefixo</strong> é uma sequência inicial da cadeia, enquanto um <strong>sufixo</strong> é uma sequência final.
+                    </p>
+
+                    <p>
+                    Para a cadeia <strong>a0b1</strong>, temos:
+                    </p>
+
+                    <ul>
+                        <li>prefixos: &epsilon;, a, a0, a0b, a0b1</li>
+                        <li>Sufixos: &epsilon;, 1, b1, 0b1, a0b1</li>
+                    </ul>
+
+                    <hr>
+                    
+                    <h3>Operações com Cadeias</h3>
+
+                    <p>
+                    Podemos realizar diversas operações com cadeias.
+                    </p>
+
+                    <p>
+                    O <strong>reverso</strong> de uma cadeia é obtido invertendo a ordem dos símbolos.
+                    Por exemplo, se &alpha; = a01b, então seu reverso é &alpha;<sup>R</sup> = b10a.
+                    </p>
+
+                    <p>
+                    A <strong>concatenação</strong> consiste em juntar duas cadeias.
+                    Se &alpha; = ab e β = bb, então:
+                    </p>
+
+                    <ul>
+                        <li>&alpha; · β = abbb</li>
+                        <li>β · &alpha; = bbab</li>
+                        <li>&alpha; · &epsilon; = ab</li>
+                        <li> &alpha; · &alpha; · &alpha; = ababab</li>
+                    </ul>
+
+                    <p>
+                    Também podemos repetir uma cadeia várias vezes.
+                    A notação <b>x<sup>k</sup></b> representa a concatenação de x com ele mesmo k vezes.
+                    </p>
+
+                    <hr>
+
+                    <h3>Comprimento e Conjuntos de Cadeias</h3>
+
+                    <p>
+                    O <strong>comprimento</strong> de uma cadeia &alpha;, representado por |&alpha;|, é a quantidade de símbolos que ela possui.
+                    </p>
+
+                    <p>
+                    O conjunto de todas as cadeias de tamanho k sobre um alfabeto &Sigma; é representado por <strong>&Sigma;<sup>k</sup></strong>.
+                    </p>
+
+                    <p>
+                    Se &Sigma; = { a, b }, então:
+                    </p>
+
+                    <ul>
+                        <li>&Sigma;<sup>0</sup> = { &epsilon; }</li>
+                        <li>&Sigma;<sup>1</sup> = { a, b }</li>
+                        <li>&Sigma;<sup>2</sup> = { aa, ab, ba, bb }</li>
+                    </ul>
+
+                    <p>
+                    O conjunto <strong>&Sigma;<sup>*</sup></strong> representa todas as cadeias possíveis (incluindo a vazia), enquanto <strong>&Sigma;<sup>+</sup></strong> representa todas as cadeias não vazias.
+                    </p>
+
+                    <hr>
+
+                    <h3>Ordem das Cadeias - Ordem Lexicográfica</h3>
+
+                    <p>
+                    As cadeias podem ser organizadas em uma <strong>ordem lexicográfica</strong>, semelhante à ordem de um dicionário.
+                    </p>
+
+                    <p>
+                    Existe também a <strong>ordem shortlex</strong>, onde cadeias menores vêm antes das maiores, e em caso de empate, utiliza-se a ordem lexicográfica.
+                    </p>
+
+                    <p>
+                    Exemplo:
+                    &epsilon;, 0, 1, 00, 01, 10, 11, 000, ...
+                    </p>
+
+                <hr>
+
+                <h2>O que é uma Gramática?</h2>
+
+                    <p>
+                    Uma gramática é um conjunto de regras que define as cadeias de uma linguagem. A gramática especifica como as cadeias podem ser formadas a partir de um alfabeto, determinando quais cadeias são válidas na linguagem.
+                    </p>
+
+                    <p>
+                    Uma <strong>gramática</strong> é um <strong>conjunto finito de regras formais que descreve a sintaxe de uma linguagem</strong>, ou seja, define como as sentenças dessa linguagem podem ser formadas.
+                    De forma informal, podemos pensar em uma gramática como um sistema gerador de linguagens - ela descreve de maneira finita e precisa um conjunto potencialmente infinito de sentenças válidas.
+                    </p>
+
+                    <p>
+                    Os conceitos de <strong>gramática</strong> e <strong>sintaxe</strong> são muito próximos. A <strong>sintaxe</strong> é o conjunto de regras que define quais estruturas são válidas em uma linguagem, enquanto a <strong>gramática</strong> é a forma formal de descrever essas regras.
+                    </p>
+
+                    <p>
+                    Por exemplo, dizer que um if deve ter uma condição entre parênteses é uma regra sintática; já escrevê-la como <b>Comando -> if (Expressão) Comando</b> é representá-la por meio de uma gramática.
+                    </p>
+
+                    <p>
+                    Outro exemplo simples: a gramática do português define que uma frase válida é composta por sujeito e predicado, que um sujeito pode ser formado por artigo e substantivo, e assim por diante.
+                    As linguagens de programação funcionam da mesma forma - sua linguagem favorita possui uma gramática que define o que é um código válido, validando estruturas como <code>{ }</code>, <code>( )</code>, <code>if</code>, <code>else</code> e muito mais.
+                    </p>
+
+                <hr>
+
+                <div class="questions"></div>
+                <div class="summary">
+                    <h2>Resumo</h2>
+                                    
+                    <ul>
+                        <li><strong>Linguagem Formal</strong>: conjunto de elementos (símbolos, caracteres, palavras, entre outros) e um conjunto de métodos (regras) para combinar esses elementos, usado e entendido por uma determinada comunidade.</li>
+                        <li><strong>sintaxe</strong>: as regras que definem quais combinações de símbolos são válidas.</li>
+                        <li><strong>semântica</strong>: o significado atribuído a essas combinações.</li>
+                        <li><strong></strong>: </li>
+                        <li><strong></strong>: </li>
+                        <li><strong></strong>: </li>
+                        <li><strong></strong>: </li>
+                        <li><strong></strong>: </li>
+                        
+                    </ul>
+                </div>
+
+                    <div class="bibliography">
+                    <h2>Referências</h2>
+                    <ul>
+                        <li><a href="https://dev.to/guidev115/linguagens-formais-a-uniao-com-linguagens-e-computacao-30d5" target="_blank">Linguagens Formais: A União com Linguagens e Computação - DEV Community</a></li>
+                        <li><a href="https://pt.wikipedia.org/wiki/Hierarquia_de_Chomsky" target="_blank">Hierarquia de Chomsky - Wikipedia</a></li>
+                        <li><a href="https://www.ime.usp.br/~jef/tc_gramaticas.pdf" target="_blank">Linguagens Formais e Compiladores - USP</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <footer id="footer"></footer>
+        </main>
+
+        <aside class="toc" id="toc"></aside>
+    </div>
+</body>
+</html>
