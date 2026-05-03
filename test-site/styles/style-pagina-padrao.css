@@ -1,10 +1,16 @@
+/*importe da fonte*/
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;1,400&display=swap');
 
+/*CSS's gerais*/
 @import url(style-pagina-padrao/base.css);
 @import url(style-pagina-padrao/layout.css);
 @import url(style-pagina-padrao/typography.css);
 @import url(style-pagina-padrao/components.css);
 @import url(style-pagina-padrao/responsive.css);
 
+/*CSS's classes*/
 @import url(class/summary-class.css);
 @import url(class/bibliography-class.css);
+
+/*CSS's siderbar*/
+@import url(class/accordion-btn.css);

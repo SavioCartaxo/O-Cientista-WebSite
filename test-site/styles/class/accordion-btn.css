@@ -1,0 +1,42 @@
+:root {
+    --accordion-bg: rgba(0, 0, 0, 0.15);
+    --accordion-bg-hover: rgba(0, 0, 0, 0.25);
+    --accordion-color: #222;
+    --accordion-border: var(--nav_color);
+}
+
+.accordion-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-left: 3px solid var(--accordion-border);
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--accordion-color);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02rem;
+}
+
+.accordion-btn:hover {
+    background: var(--accordion-bg-hover);
+    border-left: 3px solid var(--accordion-border);
+}
+
+.accordion-btn.open {
+    background: var(--accordion-bg);
+}
+
+.accordion-content {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.5rem 0;
+}
+
+.accordion-content.open {
+    display: block;
+}
