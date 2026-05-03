@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main id="main">
+            <article>
+                <header>
+                    <h1>Linguagens Formais e Gramáticas</h1>
+                    
+                        <p>
+                        Neste artigo, exploramos os fundamentos das <strong>linguagens formais</strong> na Teoria da Computação.
+                        Começamos pelos conceitos básicos, como <strong>alfabetos e cadeias</strong>, passamos pelos modelos de <strong>máquinas abstratas</strong> responsáveis por reconhecer linguagens, e chegamos às <strong>gramáticas</strong>, que descrevem como essas linguagens são geradas.
+                        </p>
+
+                        <p>
+                        Ao final, você terá uma visão clara de como esses conceitos se conectam e por que são essenciais para áreas como <strong>compiladores</strong>, <strong>interpretadores</strong> e o estudo dos limites da computação.
+                        </p>
+
+                        <img src="/test-site/assets/IMAGES/teoria-da-computacao/alan-turing.png" alt="Alan Turing">
+
+                    <hr>
+                </header>
+
+                <h2>O que é uma Linguagem Formal?</h2>
+
+                    <p>
+                    No dia a dia, usamos a palavra "linguagem" para nos referir a formas de comunicação - português, inglês, libras.
+                    Na Teoria da Computação, o conceito é semelhante, mas mais preciso: uma <strong>linguagem formal</strong> é definida como um <strong>conjunto de elementos (símbolos, caracteres, palavras, entre outros) e um conjunto de métodos (regras) para combinar esses elementos, usado e entendido por uma determinada comunidade</strong>.
+                    Em termos práticos, uma linguagem formal é composta por dois elementos fundamentais:
+                    </p>
+
+                    <ul>
+                        <li><strong>sintaxe</strong>: as regras que definem quais combinações de símbolos são válidas.</li>
+                        <li><strong>semântica</strong>: o significado atribuído a essas combinações.</li>
+                    </ul>
+                    
+                    <p>
+                    Você já viu isso em linguagens de programação: existem regras sintaxicas que definem o que é um código válido, enquanto isso, cada script que você faz realiza alguns passos para cumprir um propósito, e isso chamamos de semântica.
+                    </p>
+
+                    <p>
+                    Linguagens formais são, portanto, <strong>mecanismos matemáticos para representar e especificar linguagens</strong> de forma precisa e não ambígua - algo essencial para que um computador possa interpretá-las corretamente.
+                    </p>
+
+                <hr>
+
+                <h2>Alfabeto e Cadeias</h2>
+
+                    <p>
+                    Toda linguagem formal é construída a partir de elementos básicos chamados <strong>símbolos</strong>.
+                    Um símbolo é a unidade indivisível de uma linguagem - pode ser uma única letra ou até mesmo uma palavra inteira, como if ou else, desde que seja tratada como um único elemento.
+                    </p>
+
+                    <p>
+                    Um <strong>alfabeto</strong>, geralmente representado pela letra grega &Sigma; (sigma), é um <strong>conjunto finito e não vazio de símbolos</strong>.
+                    </p>
+
+                    <p>
+                    Exemplos de alfabetos:
+                    <strong>&Sigma; = { a, b, 0, 1 }</strong> ou <strong>&Sigma; = { if, then, else }</strong>.
+                    </p>
+
+                    <p>
+                    A partir de um alfabeto, podemos formar <strong>cadeias (ou strings)</strong>, que são sequências finitas de símbolos.
+                    </p>
+
+                    <p>
+                    Se &Sigma; = { a, b, 0, 1 }, então exemplos de cadeias são: ab, aba, a0b1 e 01.
+                    A cadeia sem símbolos é chamada de <strong>cadeia vazia</strong> e é representada por <strong>&epsilon;</strong>.
+                    </p>
+
+                    <hr>
+
+                    <h3>Prefixos e Sufixos</h3>
+
+                    <p>
+                    Uma cadeia pode ser analisada a partir de suas partes. Um <strong>prefixo</strong> é uma sequência inicial da cadeia, enquanto um <strong>sufixo</strong> é uma sequência final.
+                    </p>
+
+                    <p>
+                    Para a cadeia <strong>a0b1</strong>, temos:
+                    </p>
+
+                    <ul>
+                        <li>prefixos: &epsilon;, a, a0, a0b, a0b1</li>
+                        <li>Sufixos: &epsilon;, 1, b1, 0b1, a0b1</li>
+                    </ul>
+
+                    <hr>
+                    
+                    <h3>Operações com Cadeias</h3>
+
+                    <p>
+                    Podemos realizar diversas operações com cadeias.
+                    </p>
+
+                    <p>
+                    O <strong>reverso</strong> de uma cadeia é obtido invertendo a ordem dos símbolos.
+                    Por exemplo, se &alpha; = a01b, então seu reverso é &alpha;<sup>R</sup> = b10a.
+                    </p>
+
+                    <p>
+                    A <strong>concatenação</strong> consiste em juntar duas cadeias.
+                    Se &alpha; = ab e &beta; = bb, então:
+                    </p>
+
+                    <ul>
+                        <li>&alpha; · &beta; = abbb</li>
+                        <li>&beta; · &alpha; = bbab</li>
+                        <li>&alpha; · &epsilon; = ab</li>
+                        <li> &alpha; · &alpha; · &alpha; = ababab</li>
+                    </ul>
+
+                    <p>
+                    Também podemos repetir uma cadeia várias vezes.
+                    A notação <b>x<sup>k</sup></b> representa a concatenação de x com ele mesmo k vezes.
+                    </p>
+
+                    <hr>
+
+                    <h3>Comprimento e Conjuntos de Cadeias</h3>
+
+                    <p>
+                    O <strong>comprimento</strong> de uma cadeia &alpha;, representado por |&alpha;|, é a quantidade de símbolos que ela possui.
+                    </p>
+
+                    <p>
+                    O conjunto de todas as cadeias de tamanho k sobre um alfabeto &Sigma; é representado por <strong>&Sigma;<sup>k</sup></strong>.
+                    </p>
+
+                    <p>
+                    Se &Sigma; = { a, b }, então:
+                    </p>
+
+                    <ul>
+                        <li>&Sigma;<sup>0</sup> = { &epsilon; }</li>
+                        <li>&Sigma;<sup>1</sup> = { a, b }</li>
+                        <li>&Sigma;<sup>2</sup> = { aa, ab, ba, bb }</li>
+                    </ul>
+
+                    <p>
+                    O conjunto <strong>&Sigma;<sup>*</sup></strong> representa todas as cadeias possíveis (incluindo a vazia), enquanto <strong>&Sigma;<sup>+</sup></strong> representa todas as cadeias não vazias.
+                    </p>
+
+                    <hr>
+
+                    <h3>Ordem das Cadeias - Ordem Lexicográfica</h3>
+
+                    <p>
+                    As cadeias podem ser organizadas em uma <strong>ordem lexicográfica</strong>, semelhante à ordem das palavras de um dicionário.
+                    </p>
+
+                    <p>
+                    Existe também a <strong>ordem shortlex</strong>, onde cadeias menores vêm antes das maiores, e em caso de empate, utiliza-se a ordem lexicográfica.
+                    </p>
+
+                    <p>
+                    Exemplo:
+                    &epsilon;, 0, 1, 00, 01, 10, 11, 000, ...
+                    </p>
+
+                <hr>
+
+                <h2>Gramática</h2>
+
+                    <p>
+                    Uma gramática é um conjunto de regras que define as cadeias de uma linguagem. A gramática especifica como as cadeias podem ser formadas a partir de um alfabeto, determinando quais cadeias são válidas na linguagem.
+                    </p>
+
+                    <p>
+                    Uma <strong>gramática</strong> é um <strong>conjunto finito de regras formais que descreve a sintaxe de uma linguagem</strong>, ou seja, define como as sentenças dessa linguagem podem ser formadas.
+                    De forma informal, podemos pensar em uma gramática como um sistema gerador de linguagens - ela descreve, de maneira finita e precisa, um conjunto potencialmente infinito de sentenças válidas.
+                    </p>
+
+                    <p>
+                        Formalmente, uma gramática pode ser definida como uma tupla <strong>G = (V, &Sigma;, R, S)</strong>, onde:
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Elemento</th>
+                                <th>Símbolo</th>
+                                <th>Definição</th>
+                                <th>Exemplo</th>
+                                <th>Explicação do Exemplo</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Regras de Produção</td>
+                                <td>R</td>
+                                <td>Conjunto de regras que definem como os símbolos podem ser substituídos durante a geração das cadeias.</td>
+                                <td>S → aS <br> S → b</td>
+                                <td>A regra permite substituir S por "aS" (continuando o processo) ou por "b" (encerrando a cadeia).</td>
+                            </tr>
+
+                            <tr>
+                                <td>Símbolo Inicial</td>
+                                <td>S</td>
+                                <td>Elemento a partir do qual a geração das cadeias começa.</td>
+                                <td>S → aS → aaS → aaab</td>
+                                <td>Começamos com S e aplicamos regras até obter apenas símbolos terminais, formando a cadeia final "aaab".</td>
+                            </tr>
+
+                            <tr>
+                                <td>Não-terminais</td>
+                                <td>V</td>
+                                <td>Conjunto de símbolos usados como partes intermediárias na construção das cadeias. Não aparecem no resultado final.</td>
+                                <td>V = {S, A}</td>
+                                <td>Aqui, S representa a estrutura principal da linguagem, enquanto A representa uma parte auxiliar. Ambos serão substituídos até desaparecerem.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Terminais</td>
+                                <td>&Sigma;</td>
+                                <td>Conjunto de símbolos definitivos da linguagem. Formam as cadeias finais e não podem ser substituídos.</td>
+                                <td>&Sigma; = {a, b}</td>
+                                <td>As cadeias resultantes finais serão formadas apenas por 'a' e 'b', como "ab", "aab" ou "b".</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                    Para entender como esses elementos funcionam juntos, vamos considerar uma gramática simples que gera cadeias formadas por várias letras "a" seguidas de uma única letra "b", como: b, ab, aab, aaab, entre outras.
+                    </p>
+
+                    <p>
+                    Essa gramática pode ser descrita pelas seguintes regras:
+                    </p>
+
+                    <p>
+                    S → aS
+                    </p>
+
+                    <p>
+                    S → b
+                    </p>
+
+                    <p>
+                    O processo começa a partir do símbolo inicial S. A cada passo, aplicamos uma das regras de produção:
+                    </p>
+
+                    <p>
+                    S → aS → aaS → aaaS → aaab
+                    </p>
+
+                    <p>
+                    Em cada etapa, substituímos o símbolo não-terminal S por outra cadeia, de acordo com as regras.
+                    Enquanto ainda existir um símbolo não-terminal, o processo continua.
+                    Quando restarem apenas símbolos terminais (neste caso, "a" e "b"), obtemos uma cadeia válida da linguagem.
+                    </p>
+
+                    <p>
+                    Nesse exemplo, podemos identificar claramente cada elemento da gramática:
+                    </p>
+
+                    <ul>
+                        <li><strong>S</strong> é o símbolo inicial, de onde a geração começa.</li>
+                        <li><strong>V</strong> contém os símbolos não-terminais (como S), usados durante a construção.</li>
+                        <li><strong>&Sigma;</strong> contém os símbolos terminais (como a e b), que formam as cadeias finais.</li>
+                        <li><strong>R</strong> é o conjunto de regras que define como as substituições acontecem.</li>
+                    </ul>
+
+                    <p>
+                    Um exemplo prático: em Python, a gramática da linguagem define que um bloco if deve ser seguido de uma condição e terminar com ":", e que o corpo do bloco deve ser indentado.
+                    Se você escrever if x > 5 sem os dois pontos, o interpretador identifica imediatamente que a sentença não pertence à linguagem - é um erro de sintaxe.
+                    É exatamente essa gramática que permite ao Python distinguir código válido de código inválido antes mesmo de executá-lo.
+                    </p>
+
+                <hr>
+
+                <h2>Derivação</h2>
+
+                    <p>
+                        As regras de produção de uma gramática são utilizadas para gerar cadeias por meio de um processo chamado <strong>derivação</strong>.
+                        Nesse processo, substituímos partes de uma cadeia por outras, de acordo com as regras definidas na gramática.
+                    </p>
+
+                    <p>
+                        De forma geral, se uma regra de produção permite substituir uma cadeia por outra (por exemplo, v → w),
+                        então qualquer cadeia que contenha v pode ser transformada substituindo esse trecho por w.
+                        Assim, uma cadeia como "avb" pode ser transformada em "awb" ao aplicar essa regra.
+                    </p>
+
+                    <p>
+                        Essa transformação pode ser representada de forma simbólica.
+                    </p>
+
+                    <p>
+                        avb ⇒ awb
+                    </p>
+
+                    <p>
+                        Dizemos que uma cadeia U <strong>deriva</strong> uma cadeia V se for possível transformar U em V aplicando uma ou mais regras de produção.
+                        Isso é representado por U ⇒ V, e significa que:
+                    </p>
+
+                    <ul>
+                        <li>U e V são iguais.</li>
+                        <li>ou existe uma sequência de transformações que começa em U e, após a aplicação de regra(s), resulta em V.</li>
+                    </ul>
+
+                    <p>
+                        A partir desse conceito, podemos definir a linguagem gerada por uma gramática como o conjunto de todas as cadeias formadas apenas por símbolos terminais que podem ser obtidas a partir do símbolo inicial S.
+                        Em outras palavras, são todas as cadeias w tais que S ⇒* w.
+                    </p>
+                <hr>
+
+                <div class="questions"></div>
+                <div class="summary">
+                    <h2>Resumo</h2>
+                                    
+                    <ul>
+                        <li><strong>Linguagem Formal</strong>: conjunto de símbolos(alfabeto) + conjunto de regras(gramatica) para combinar os símbolos.</li>
+                        <li><strong>Alfabeto (&Sigma;)</strong>: os simbolos que compõem uma linguagem para formar cadeias.</li>
+                        <li><strong>Cadeia (string)</strong>: sequência finita de símbolos de um alfabeto.</li>
+                        <li><strong>Cadeia vazia (&epsilon;)</strong>: cadeia sem símbolos.</li>
+                        <li><strong>Prefixo / Sufixo</strong>: partes inicial e final de uma cadeia.</li>
+                        <li><strong>Concatenação (&alpha; · &beta;)</strong>: denota a junção de duas cadeias.</li>
+                        
+                        <li>Operações com cadeias</li>
+                        
+                        <ol>
+                            <li><strong>Reverso (&alpha;<sup>R</sup>)</strong>: denota a cadeia com a ordem dos símbolos invertida.</li>
+                            <li><strong>Comprimento (|&alpha;|)</strong>: denota o número de símbolos de uma cadeia.</li>
+                            <li><strong>&Sigma;<sup>k</sup></strong>: denota o conjunto de todas as cadeias de tamanho k.</li>
+                            <li><strong>&Sigma;<sup>*</sup></strong>: denota o conjunto de todas as cadeias possíveis (incluindo &epsilon;).</li>
+                            <li><strong>&Sigma;<sup>+</sup></strong>: denota o conjunto de todas as cadeias não vazias.</li>
+                        </ol>
+
+                        <li><strong>Gramática</strong>: Conjunto de regras que formam as cadeias.</li>
+                        <li><strong>sintaxe</strong>: regras que definem quais combinações de símbolos são válidas.</li>
+                        <li><strong>semântica</strong>: significado atribuído a essas combinações.</li>
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <div class="bibliography">
+                    <h2>Referências</h2>
+                    <ul>
+                        <li><a href="https://dev.to/guidev115/linguagens-formais-a-uniao-com-linguagens-e-computacao-30d5" target="_blank">Linguagens Formais: A União com Linguagens e Computação - DEV Community</a></li>
+                        <li><a href="https://pt.wikipedia.org/wiki/Hierarquia_de_Chomsky" target="_blank">Hierarquia de Chomsky - Wikipedia</a></li>
+                        <li><a href="https://www.ime.usp.br/~jef/tc_gramaticas.pdf" target="_blank">Linguagens Formais e Compiladores - USP</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <footer id="footer"></footer>
+        </main>
+
+        <aside class="toc" id="toc"></aside>
+    </div>
+</body>
+</html>
