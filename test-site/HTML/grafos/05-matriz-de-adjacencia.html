@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução à matriz de adjacência: conceito, propriedades e exemplos práticos para representação de grafos.">
+    <title>Matriz de Adjacência | Big-O Academy</title>
+
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+
+    <header id="header"></header>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main id="main">
+            <article>
+                <header>
+                    <h1>Matriz de Adjacência</h1>
+                    <p>
+                    Neste artigo, exploraremos uma das formas mais comuns de representar grafos computacionalmente: a <strong>matriz de adjacência</strong>.
+                    Veremos como construí-la, como interpretá-la e quais são suas propriedades fundamentais, com um exemplo prático para consolidar o entendimento.
+                    </p>
+                    <hr>
+                </header>
+
+                <h2>O que é uma Matriz de Adjacência?</h2>
+
+                <p>
+                Grafos podem ser representados de diversas formas dentro de um computador.
+                Uma das mais utilizadas é a <strong>matriz de adjacência</strong> - uma estrutura matemática que permite visualizar, de forma compacta, quais vértices de um grafo estão conectados entre si.
+                </p>
+
+                <p>
+                Sua definição matemática é: Dado um grafo G, onde V(G) é o conjunto de vértices e E(G) é o conjunto de arestas, a matriz de adjacência é uma matriz <strong>n x n</strong> - sendo n o número de vértices do grafo.
+                Cada posição da matriz, identificada por um par de vértices (u, v), armazena o <strong>número de arestas que conectam esses dois vértices</strong> - você entenderá melhor esse conceito com o exemplo, não se preocupe em entender agora.
+                </p>
+
+                <p>
+                Um detalhe importante: quando um vértice possui um <strong>loop</strong> - ou seja, uma aresta que parte e chega no mesmo vértice - esse loop é contado como <strong>duas arestas</strong> na posição correspondente da matriz, pois o vértice é terminal duas vezes.
+                </p>
+
+                <hr>
+
+                <h2>Exemplo Prático</h2>
+
+                <p>
+                Considere um grafo G1 com 5 vértices: <b>a, b, c, d, e</b>.
+                A matriz de adjacência completa de G1 é:
+                </p>
+
+                <div class="img-group">
+                    <figure>
+                        <img src="/test-site/assets/IMAGES/grafos/matriz-de-adjacencia.png" alt="Grafo de referencia para matriz de adjacência">
+                        <figcaption>Grafo G1</figcaption>
+                    </figure>
+                    <figure>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>X</th>
+                                    <th>a</th>
+                                    <th>b</th>
+                                    <th>c</th>
+                                    <th>d</th>
+                                    <th>e</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>a</strong></td><td>2</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                                <tr><td><strong>b</strong></td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                                <tr><td><strong>c</strong></td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                                <tr><td><strong>d</strong></td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                                <tr><td><strong>e</strong></td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                        <figcaption>Matriz de adjacência de G1</figcaption>
+                    </figure>
+                </div>
+
+                <p>Esse grafo possui as seguintes conexões:</p>
+                
+                <ul>
+                    <li>O vértice <b>a</b> possui um loop - portanto, o valor da posição (a, a) na matriz é <b>2</b>.</li>
+                    <li>Existe uma aresta entre <b>a</b> e <b>b</b> - portanto, as posições (a, b) e (b, a) têm valor <b>1</b>.</li>
+                    <li>Não existe nenhuma aresta entre <b>a</b> e <b>c</b> - portanto, as posições (a, c) e (c, a) têm valor <b>0</b>.</li>
+                </ul>
+
+                <hr>
+
+                <h2>Propriedades</h2>
+
+                <p>
+                A matriz de adjacência possui algumas propriedades importantes que facilitam sua interpretação:
+                </p>
+
+                <ul>
+                    <li>Em grafos <b>não-direcionados</b>, a matriz é sempre <b>simétrica</b> - o valor da posição (u, v) é sempre igual ao valor da posição (v, u), pois se existe uma aresta de u para v, ela também vai de v para u.</li>
+                    <li>O valor <b>0</b> em uma posição indica que não existe nenhuma aresta entre os dois vértices correspondentes.</li>
+                    <li>O valor <b>1</b> indica a existência de uma única aresta entre os dois vértices.</li>
+                    <li>Valores <b>maiores que 1</b> indicam a existência de <b>arestas paralelas</b> - múltiplas arestas conectando os mesmos dois vértices - não há isso no exemplo.</li>
+                    <li>O valor na <b>diagonal principal</b> da matriz representa loops - arestas que partem e chegam no mesmo vértice.</li>
+                </ul>
+
+                <hr>
+
+                <div class="summary">
+                    <h2>Resumo</h2>
+                    <ul>
+                        <li><strong>Matriz de adjacência</strong>: matriz n x n que representa as conexões entre os vértices de um grafo.</li>
+                        <li><strong>Valor 0</strong>: indica ausência de aresta entre dois vértices.</li>
+                        <li><strong>Valor 1</strong>: indica a existência de uma aresta entre dois vértices.</li>
+                        <li><strong>Valor > 1</strong>: indica arestas paralelas entre dois vértices.</li>
+                        <li><strong>Loop</strong>: aresta que parte e chega no mesmo vértice - contado como 2 na diagonal principal.</li>
+                        <li><strong>Simetria</strong>: em grafos não-direcionados, a matriz de adjacência é sempre simétrica.</li>
+                    </ul>
+                </div>
+
+                <div class="questions"></div>
+
+                <div class="bibliography">
+                    <h2>Referências</h2>
+                    <ul>
+                        <li><a href="https://pt.wikipedia.org/wiki/Matriz_de_adjac%C3%AAncia" target="_blank">Matriz de adjacência - Wikipedia</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <footer id="footer"></footer>
+        </main>
+
+        <aside class="toc" id="toc"></aside>
+    </div>
+</body>
+</html>
