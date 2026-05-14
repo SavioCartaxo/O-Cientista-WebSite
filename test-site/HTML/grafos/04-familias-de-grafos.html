@@ -85,7 +85,12 @@
 
                 <p>
                 Um <strong>multigrafo</strong> é uma generalização do grafo simples que <b>permite a existência de arestas paralelas</b> - ou seja, múltiplas arestas conectando os mesmos dois vértices.
-                Além disso, um multigrafo permite loops - arestas que lingam um vértive V a ele mesmo.
+                Vale destacar que a definição de multigrafo varia dependendo do contexto: em algumas definições, loops são permitidos, enquanto em outras não.
+                </p>
+
+                <p>
+                Quando um grafo permite tanto <b>arestas paralelas quanto loops</b>, ele é chamado de <strong>pseudografo</strong>.
+                O pseudografo é, portanto, a forma mais geral de grafo - ele não impõe nenhuma restrição sobre o tipo de arestas que podem existir.
                 </p>
 
                 <p>
@@ -100,7 +105,7 @@
 
                 <figure>
                     <img src="/test-site/assets/IMAGES/grafos/multigrafo.png" alt="Multigrafo" style="width: 45%;height: auto;">
-                    <figcaption>Multigrafo - com arestas paralelas entre vértices</figcaption>
+                    <figcaption>Multigrafo/Pseudografo - com arestas paralelas e loops entre vértices</figcaption>
                 </figure>
 
                 <hr>
@@ -108,10 +113,11 @@
                 <div class="summary">
                     <h2>Resumo</h2>
                     <ul>
-                        <li><strong>Grafo vazio:</strong> nenhum vértice e nenhuma aresta.</li>
-                        <li><strong>Grafo trivial:</strong> um único vértice isolado, sem arestas.</li>
-                        <li><strong>Grafo simples:</strong> sem loops e sem arestas paralelas.</li>
-                        <li><strong>Multigrafo:</strong> permite arestas paralelas entre os mesmos vértices.</li>
+                        <li><strong>Grafo vazio</strong>: nenhum vértice e nenhuma aresta.</li>
+                        <li><strong>Grafo trivial</strong>: um único vértice isolado, sem arestas.</li>
+                        <li><strong>Grafo simples</strong>: sem loops e sem arestas paralelas.</li>
+                        <li><strong>Multigrafo</strong>: permite arestas paralelas entre os mesmos vértices.</li>
+                        <li><strong>Pseudografo</strong>: permite arestas paralelas e loops.</li>
                     </ul>
                 </div>
 
