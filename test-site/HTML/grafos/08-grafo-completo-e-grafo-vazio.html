@@ -9,129 +9,114 @@
     <script src="/test-site/scripts/loadComponents.js" defer></script>
     <script src="/test-site/scripts/generatorToc.js" defer></script>
     <script src="/test-site/scripts/refs.js" defer></script>
-
-    <script defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js">
-    </script>
-
-    <script defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body);">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);">
     </script>
 </head>
 
 <body>
-    <header id="header"></header>
-    <div class="layout">
-        <aside class="sidebar" id="sidebar"></aside>
-        <main id="main">
-            <article>
-                <header>
-                    <h1>Grafo Completo e Grafo Vazio</h1>
-                    <p>
-                    Neste artigo, exploraremos duas famílias especiais de grafos: o <strong>grafo completo</strong> e o <strong>grafo vazio</strong>.
-                    Ambos representam casos extremos na teoria dos grafos - o primeiro com o máximo de conexões possíveis, e o segundo sem nenhuma conexão entre seus vértices.
-                    </p>
-                    <hr>
-                </header>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
 
-                <h2>Grafo Completo</h2>
+    <header>
+        <h1>Grafo Completo e Grafo Vazio</h1>
+        <p>
+        Neste artigo, exploraremos duas famílias especiais de grafos: o <strong>grafo completo</strong> e o <strong>grafo vazio</strong>.
+        Ambos representam casos extremos na teoria dos grafos - o primeiro com o máximo de conexões possíveis, e o segundo sem nenhuma conexão entre seus vértices.
+        </p>
+        <hr>
+    </header>
 
-                <p>
-                Um <strong>grafo completo</strong> é um grafo simples em que <b>todo vértice é adjacente a todos os outros vértices</b>.
-                Lembrando que um grafo simples é aquele que não possui loops nem arestas paralelas - portanto, entre cada par de vértices existe exatamente uma aresta.
-                </p>
+    
+    <h2>Grafo Completo</h2>
+    <p>
+    Um <strong>grafo completo</strong> é um grafo simples em que <b>todo vértice é adjacente a todos os outros vértices</b>.
+    Lembrando que um grafo simples é aquele que não possui loops nem arestas paralelas - portanto, entre cada par de vértices existe exatamente uma aresta.
+    </p>
+    <p>
+    Todo grafo completo de n vértices é chamado de <strong>K<sub>n</sub></strong>.
+    Por exemplo, K<sub>3</sub> é um triângulo, K<sub>4</sub> é um grafo com 4 vértices onde todos estão conectados entre si, e assim por diante. Veja o exemplo abaixo:
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafos-completos-3-e-4.png" alt="Exemplos de 2 grafos completos">
+        <figcaption>Exemplos simples do grafos completos k<sub>3</sub> e k<sub>4</sub>.</figcaption>
+    </figure>
+    <hr>
 
-                <p>
-                Todo grafo completo de n vértices é chamado de <strong>K<sub>n</sub></strong>.
-                Por exemplo, K<sub>3</sub> é um triângulo, K<sub>4</sub> é um grafo com 4 vértices onde todos estão conectados entre si, e assim por diante. Veja o exemplo abaixo:
-                </p>
 
-                <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafos-completos-3-e-4.png" alt="Exemplos de 2 grafos completos">
-                    <figcaption>Exemplos simples do grafos completos k<sub>3</sub> e k<sub>4</sub>.</figcaption>
-                </figure>
+    <h3>Quantidade Máxima de Arestas</h3>
+    <p>
+    A quantidade máxima de arestas em um grafo completo K<sub>n</sub> é dada pela fórmula:
+    </p>
+    <p>
+        $$\frac{n(n-1)}{2}$$
+    </p>
+    <p>
+    Onde <b>n</b> é a quantidade de vértices do grafo.
+    Essa fórmula pode ser interpretada da seguinte forma:
+    </p>
+    <ul>
+        <li>cada vértice é adjacente aos <b>n - 1</b> demais vértices, totalizando <b>n x (n - 1)</b> adjacências possíveis.</li>
+        <li>Dividimos por 2 pois cada aresta representa a adjacência de um vértice <b>a</b> para <b>b</b> e de um vértice <b>b</b> para <b>a</b>, ou seja, cada aresta é contada duas vezes.</li>
+    </ul>
+    <p>
+    Como exemplo, um grafo completo K<sub>5</sub> possui <b>5 x (5 - 1) / 2 = 10 arestas</b>.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-completo.png" alt="Exemplos de grafos completos K3, K4 e K5">
+        <figcaption>Exemplos de grafo completo K<sub>5</sub></figcaption>
+    </figure>
+    <hr>
 
-                <hr>
 
-                <h3>Quantidade Máxima de Arestas</h3>
+    <h2>Grafo Vazio</h2>
+    <p>
+    Um <strong>grafo vazio</strong> é aquele que <b>não possui vértices adjacentes</b> - ou seja, nenhuma aresta conecta qualquer par de vértices.
+    Todos os vértices de um grafo vazio são vértices isolados, com grau 0.
+    </p>
+    <p>
+    É importante não confundir o grafo vazio com o grafo trivial: enquanto o <b>grafo trivial possui exatamente um vértice</b>, o grafo vazio pode possuir qualquer número de vértices - desde que nenhum deles esteja conectado a outro.
+    </p>
+    <p>
+    O grafo vazio representa o extremo oposto do grafo completo: se K<sub>n</sub> possui o <b>máximo de arestas possível</b>, o grafo vazio possui o <b>mínimo - nenhuma aresta</b>.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-vazio.png" alt="Exemplo de grafo vazio com 5 vértices isolados">
+        <figcaption>Grafo vazio com 5 vértices - nenhuma aresta presente</figcaption>
+    </figure>
+    <hr>
 
-                <p>
-                A quantidade máxima de arestas em um grafo completo K<sub>n</sub> é dada pela fórmula:
-                </p>
 
-                <p>
-                    $$\frac{n(n-1)}{2}$$
-                </p>
-
-                <p>
-                Onde <b>n</b> é a quantidade de vértices do grafo.
-                Essa fórmula pode ser interpretada da seguinte forma:
-                </p>
-                
-                <ul>
-                    <li>cada vértice é adjacente aos <b>n - 1</b> demais vértices, totalizando <b>n x (n - 1)</b> adjacências possíveis.</li>
-                    <li>Dividimos por 2 pois cada aresta representa a adjacência de um vértice <b>a</b> para <b>b</b> e de um vértice <b>b</b> para <b>a</b>, ou seja, cada aresta é contada duas vezes.</li>
-                </ul>
-
-                <p>
-                Como exemplo, um grafo completo K<sub>5</sub> possui <b>5 x (5 - 1) / 2 = 10 arestas</b>.
-                </p>
-
-                <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafo-completo.png" alt="Exemplos de grafos completos K3, K4 e K5">
-                    <figcaption>Exemplos de grafo completo K<sub>5</sub></figcaption>
-                </figure>
-
-                <hr>
-
-                <h2>Grafo Vazio</h2>
-
-                <p>
-                Um <strong>grafo vazio</strong> é aquele que <b>não possui vértices adjacentes</b> - ou seja, nenhuma aresta conecta qualquer par de vértices.
-                Todos os vértices de um grafo vazio são vértices isolados, com grau 0.
-                </p>
-
-                <p>
-                É importante não confundir o grafo vazio com o grafo trivial: enquanto o <b>grafo trivial possui exatamente um vértice</b>, o grafo vazio pode possuir qualquer número de vértices - desde que nenhum deles esteja conectado a outro.
-                </p>
-
-                <p>
-                O grafo vazio representa o extremo oposto do grafo completo: se K<sub>n</sub> possui o <b>máximo de arestas possível</b>, o grafo vazio possui o <b>mínimo - nenhuma aresta</b>.
-                </p>
-
-                <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafo-vazio.png" alt="Exemplo de grafo vazio com 5 vértices isolados">
-                    <figcaption>Grafo vazio com 5 vértices - nenhuma aresta presente</figcaption>
-                </figure>
-
-                <hr>
-
-                <div class="summary">
-                    <h2>Resumo</h2>
-                    <ul>
-                        <li><strong>Grafo completo K<sub>n</sub>:</strong> grafo simples onde todo vértice é adjacente a todos os outros.</li>
-                        <li><strong>Quantidade de arestas em K<sub>n</sub>:</strong> n x (n - 1) / 2.</li>
-                        <li><strong>Grafo vazio:</strong> grafo sem nenhuma aresta - todos os vértices são isolados.</li>
-                        <li>Grafo completo e grafo vazio representam os dois extremos em termos de conectividade.</li>
-                    </ul>
-                </div>
-
-                <div class="questions"></div>
-
-                <div class="bibliography">
-                    <h2>Referências</h2>
-                    <ul>
-                        <li><a href="https://pt.wikipedia.org/wiki/Grafo_completo" target="_blank">Grafo completo - Wikipedia</a></li>
-                        <li><a href="https://pt.wikipedia.org/wiki/Grafo" target="_blank">Grafo - Wikipedia</a></li>
-                    </ul>
-                </div>
-
-            </article>
-            
-            <footer id="footer"></footer>
-        </main>
-        <aside class="toc" id="toc"></aside>
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grafo completo K<sub>n</sub>:</strong> grafo simples onde todo vértice é adjacente a todos os outros.</li>
+            <li><strong>Quantidade de arestas em K<sub>n</sub>:</strong> n x (n - 1) / 2.</li>
+            <li><strong>Grafo vazio:</strong> grafo sem nenhuma aresta - todos os vértices são isolados.</li>
+            <li>Grafo completo e grafo vazio representam os dois extremos em termos de conectividade.</li>
+        </ul>
+        <hr>
     </div>
+
+
+    <div class="questions"></div>
+
+    
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_completo" target="_blank">Grafo completo - Wikipedia</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo" target="_blank">Grafo - Wikipedia</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>

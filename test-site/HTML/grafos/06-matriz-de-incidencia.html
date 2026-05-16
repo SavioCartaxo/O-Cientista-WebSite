@@ -5,123 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Introdução às matrizes de adjacência e incidência: conceitos, propriedades e exemplos práticos para representação de grafos.">
     <title>Matrizes de Grafos | Big-O Academy</title>
-
     <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
-
     <script src="/test-site/scripts/loadComponents.js" defer></script>
     <script src="/test-site/scripts/generatorToc.js" defer></script>
     <script src="/test-site/scripts/refs.js" defer></script>
 </head>
 
 <body>
-    <header id="header"></header>
-    <div class="layout">
-        <aside class="sidebar" id="sidebar"></aside>
-        <main id="main">
-            <article>
-                <header>
-                    <h1>Matriz de Incidência</h1>
-                    <p>
-                    Neste artigo, exploraremos uma das formas de representar grafos computacionalmente por meio de matrizes: a <strong>matriz de incidência</strong>.
-                    Veremos como construí-la, como interpretá-la e quais são suas propriedades fundamentais, com um exemplo prático para consolidar o entendimento.
-                    </p>
-                </header>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
 
-                <hr>
+    <header>
+        <h1>Matriz de Incidência</h1>
+        <p>
+        Neste artigo, exploraremos uma das formas de representar grafos computacionalmente por meio de matrizes: a <strong>matriz de incidência</strong>.
+        Veremos como construí-la, como interpretá-la e quais são suas propriedades fundamentais, com um exemplo prático para consolidar o entendimento.
+        </p>
+    </header>
+    <hr>
 
-                <h2>O que é uma Matriz de Incidência?</h2>
 
-                <p>
-                A <strong>matriz de incidência</strong> é uma forma de representar grafos computacionalmente, relacionando <strong>vértices com arestas</strong>.
-                Diferentemente da matriz de adjacência - que relaciona vértices com vértices - a matriz de incidência foca na relação entre cada vértice e cada aresta do grafo.
-                </p>
+    <h2>O que é uma Matriz de Incidência?</h2>
+    <p>
+    A <strong>matriz de incidência</strong> é uma forma de representar grafos computacionalmente, relacionando <strong>vértices com arestas</strong>.
+    Diferentemente da matriz de adjacência - que relaciona vértices com vértices - a matriz de incidência foca na relação entre cada vértice e cada aresta do grafo.
+    </p>
+    <p>
+    Formalmente, dado um grafo G com n vértices e m arestas, a matriz de incidência é uma matriz <strong>n &times; m</strong>.
+    Cada posição da matriz, identificada por um par (vértice v, aresta e), armazena o número de vezes que esse vértice e essa aresta são incidentes, podendo assumir três valores:
+    </p>
+    <ul>
+        <li><strong>0</strong> - o vértice não é terminal da aresta.</li>
+        <li><strong>1</strong> - o vértice é terminal da aresta, e a aresta é um link.</li>
+        <li><strong>2</strong> - o vértice é terminal da aresta, e a aresta é um loop.</li>
+    </ul>
+    <hr>
 
-                <p>
-                Formalmente, dado um grafo G com n vértices e m arestas, a matriz de incidência é uma matriz <strong>n &times; m</strong>.
-                Cada posição da matriz, identificada por um par (vértice v, aresta e), armazena o número de vezes que esse vértice e essa aresta são incidentes, podendo assumir três valores:
-                </p>
-
-                <ul>
-                    <li><strong>0</strong> - o vértice não é terminal da aresta.</li>
-                    <li><strong>1</strong> - o vértice é terminal da aresta, e a aresta é um link.</li>
-                    <li><strong>2</strong> - o vértice é terminal da aresta, e a aresta é um loop.</li>
-                </ul>
-
-                <hr>
-
-                <h2>Exemplo Prático</h2>
-
-                <p>
-                Considere um grafo G2 com 5 vértices: <b>a, b, c, d, e</b>.
-                A matriz de adjacência completa de G2 é:
-                </p>
-
-                <div class="img-group">
-                    <figure>
-                        <img src="/test-site/assets/IMAGES/grafos/matriz-de-incidencia.png" alt="Grafo G2">
-                        <figcaption>Grafo G2</figcaption>
-                    </figure>
-                    <figure>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>s</th>
-                                    <th>t</th>
-                                    <th>u</th>
-                                    <th>v</th>
-                                    <th>w</th>
-                                    <th>x</th>
-                                    <th>y</th>
-                                    <th>z</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><strong>a</strong></td><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-                                <tr><td><strong>b</strong></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-                                <tr><td><strong>c</strong></td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td><strong>d</strong></td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-                                <tr><td><strong>e</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-                            </tbody>
-                        </table>
-                        <figcaption>Matriz de incidência de G2</figcaption>
-                    </figure>
-                </div>
-
-                <p>
-                Interpretando alguns valores: o elemento (a, t) possui valor <strong>2</strong>, pois o vértice <strong>a</strong> é terminal do loop <strong>t</strong>.
-                O elemento (a, s) possui valor <strong>1</strong>, indicando que <strong>a</strong> é um dos terminais do link <strong>s</strong>.
-                Já o elemento (a, u) possui valor <strong>0</strong>, indicando que <strong>a</strong> não é terminal de <strong>u</strong>.
-                </p>
-
-                <hr>
-
-                <div class="summary">
-                    <h2>Resumo</h2>
-                    <ul>
-                        <li><strong>Matriz de incidência:</strong> matriz n &times; m que relaciona vértices com arestas.</li>
-                        <li><strong>Valor 0:</strong> ausência de conexão.</li>
-                        <li><strong>Valor 1:</strong> presença de um link.</li>
-                        <li><strong>Valor 2:</strong> presença de loop (adjacência) ou aresta paralela (incidência).</li>
-                        <li><strong>Simetria:</strong> a matriz de Incidência não é necessáriamente simétrica.</li>
-                    </ul>
-                </div>
-
-                <div class="questions"></div>
-
-                <div class="bibliography">
-                    <h2>Referências</h2>
-                    <ul>
-                        <li><a href="https://pt.wikipedia.org/wiki/Matriz_de_incid%C3%AAncia" target="_blank">Matriz de incidência - Wikipedia</a></li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <footer id="footer"></footer>
-        </main>
-
-        <aside class="toc" id="toc"></aside>
+    
+    <h2>Exemplo Prático</h2>
+    <p>
+    Considere um grafo G2 com 5 vértices: <b>a, b, c, d, e</b>.
+    A matriz de adjacência completa de G2 é:
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/matriz-de-incidencia.png" alt="Grafo G2">
+            <figcaption>Grafo G2</figcaption>
+        </figure>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                <th></th>
+                <th>s</th>
+                <th>t</th>
+                <th>u</th>
+                <th>v</th>
+                <th>w</th>
+                <th>x</th>
+                <th>y</th>
+                <th>z</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td><strong>a</strong></td><td>1</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                <tr><td><strong>b</strong></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td><strong>c</strong></td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td><strong>d</strong></td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+                <tr><td><strong>e</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+                </tbody>
+            </table>
+            <figcaption>Matriz de incidência de G2</figcaption>
+        </figure>
     </div>
+    <p>
+    Interpretando alguns valores: o elemento (a, t) possui valor <strong>2</strong>, pois o vértice <strong>a</strong> é terminal do loop <strong>t</strong>.
+    O elemento (a, s) possui valor <strong>1</strong>, indicando que <strong>a</strong> é um dos terminais do link <strong>s</strong>.
+    Já o elemento (a, u) possui valor <strong>0</strong>, indicando que <strong>a</strong> não é terminal de <strong>u</strong>.
+    </p>
+    <hr>
+    
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Matriz de incidência:</strong> matriz n &times; m que relaciona vértices com arestas.</li>
+            <li><strong>Valor 0:</strong> ausência de conexão.</li>
+            <li><strong>Valor 1:</strong> presença de um link.</li>
+            <li><strong>Valor 2:</strong> presença de loop (adjacência) ou aresta paralela (incidência).</li>
+            <li><strong>Simetria:</strong> a matriz de Incidência não é necessáriamente simétrica.</li>
+        </ul>
+        <hr>
+    </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Matriz_de_incid%C3%AAncia" target="_blank">Matriz de incidência - Wikipedia</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>

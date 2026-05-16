@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução aos conceitos de ciclo, ciclo simples e grafo ciclo: definições, exemplos práticos e propriedades fundamentais.">
+    <title>Ciclo e Grafo Ciclo | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Ciclo e Grafo Ciclo</h1>
+        <p>
+        Neste artigo, exploraremos os conceitos de <strong>ciclo</strong> e <strong>grafo ciclo</strong> - duas noções fundamentais da teoria dos grafos que descrevem estruturas circulares e fechadas em grafos.
+        Veremos a diferença entre ciclo simples e ciclo comum, o que caracteriza um grafo ciclo e como medir o tamanho de caminhos e ciclos.
+        </p>
+        <hr>
+    </header>
+
+    
+    <h2>Ciclo</h2>
+    <p>
+    Um <strong>ciclo</strong> em um grafo é um passeio no qual os vértices formam um circuito sequencial <b>sem repetição de arestas</b>.
+    Um <strong>ciclo simples</strong> é um ciclo no qual <b>todos os vértices também são distintos</b> - ou seja, além de não repetir arestas, não repete vértices.
+    </p>
+    <p>
+    No nosso grafo de exemplo, o passeio <b>A - B - E - G - D - B</b> é um ciclo, mas não é um ciclo simples porque passa duas vezes pelo vértice <b>B</b>.
+    Já o passeio <b>B - E - G - D - B</b> é um ciclo simples, pois não repete nem arestas nem vértices.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/ciclo.png" alt="Ciclo não simples: A - B - E - G - D - B">
+            <figcaption>Ciclo (não simples): A - B - E - G - D - B (B repetido)</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/ciclo-simples.png" alt="Ciclo simples: B - E - G - D - B">
+            <figcaption>Ciclo simples: B - E - G - D - B (sem repetições)</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <h2>Grafo Ciclo</h2>
+    <p>
+    Um <strong>grafo ciclo</strong> é um grafo simples com <b>três ou mais vértices</b>, formado por um único ciclo simples.
+    Nesse tipo de grafo, os vértices formam uma sequência circular onde cada vértice é adjacente apenas aos dois vértices vizinhos na sequência.
+    </p>
+    <p>
+    A restrição de três ou mais vértices existe por uma razão específica: para grafos com <b>1 vértice</b>, a noção de ciclo é substituída pelo conceito de <b>loop</b>.
+    Para grafos com <b>2 vértices</b>, a noção de ciclo é substituída pelo conceito de <b>arestas paralelas</b>.
+    Portanto, o grafo ciclo só faz sentido a partir de 3 vértices.
+    </p>
+    <p>
+    É importante destacar que um grafo pode <b>conter ciclos simples sem ser um grafo ciclo</b>.
+    Nosso grafo de exemplo, por possuir múltiplos ciclos e arestas que não fazem parte de um único ciclo simples, não é um grafo ciclo - apesar de conter vários ciclos simples em sua estrutura.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-ciclo-verdadeiro.png" alt="Grafo ciclo verdadeiro">
+            <figcaption>Grafo ciclo - um único ciclo simples</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-loop-paralelas.png" alt="Grafo com loop e arestas paralelas">
+            <figcaption>Loop e arestas paralelas - noção de ciclo em 1 e 2 vértices</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-com-ciclos.png" alt="Grafo que contém ciclos simples mas não é um grafo ciclo">
+            <figcaption>Grafo com ciclos simples - mas não é um grafo ciclo</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <h2>Tamanho de Caminhos e Ciclos</h2>
+    <p>
+    Algumas definições importantes sobre tamanho de caminhos e ciclos:
+    </p>
+    <ul>
+        <li>O <b>tamanho</b> de um caminho ou ciclo é o <b>número de arestas</b> que ele contém.</li>
+        <li>Um caminho ou ciclo de tamanho k é chamado de <b>k-caminho</b> ou <b>k-ciclo</b>.</li>
+        <li>Um caminho ou ciclo simples é <b>máximo</b> se é o de maior tamanho que pode ser definido no grafo.</li>
+    </ul>
+    <p>
+    No nosso grafo de exemplo, o ciclo simples <b>A - B - C - A</b> é um <b>3-ciclo</b>, pois contém 3 arestas.
+    Já o ciclo <b>G - F - H - D - E - G</b> é um <b>6-ciclo</b>.
+    O ciclo simples máximo do grafo é aquele que percorre o maior número possível de arestas sem repetir vértices.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Ciclo:</strong> passeio que forma um circuito sequencial sem repetição de arestas.</li>
+            <li><strong>Ciclo simples:</strong> ciclo onde todos os vértices também são distintos - sem repetição de vértices nem arestas.</li>
+            <li><strong>Grafo ciclo:</strong> grafo simples com 3 ou mais vértices formado por um único ciclo simples.</li>
+            <li>Um grafo pode conter ciclos simples sem ser um grafo ciclo.</li>
+            <li>Para grafos com 1 vértice, a noção de ciclo é contemplada pelo loop. Para 2 vértices, pelas arestas paralelas.</li>
+            <li><strong>Tamanho:</strong> número de arestas contidas no caminho ou ciclo.</li>
+            <li><strong>k-ciclo / k-caminho:</strong> ciclo ou caminho de tamanho k.</li>
+            <li><strong>Máximo:</strong> caminho ou ciclo simples de maior tamanho possível no grafo.</li>
+        </ul>
+        <hr>
+    </div>
+
+
+    <div class="questions">
+    </div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Ciclo_(teoria_dos_grafos)" target="_blank">Ciclo - Teoria dos Grafos (Wikipedia)</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_c%C3%ADclico" target="_blank">Grafo Cíclico (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+            <li><a href="https://repositorio.ufpb.br/jspui/bitstream/tede/7549/5/arquivototal.pdf" target="_blank">Introdução à Teoria dos Grafos (UFPB)</a></li>
+        </ul>
+    </div>
+
+</article>
+
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

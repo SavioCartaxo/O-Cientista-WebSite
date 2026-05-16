@@ -5,158 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Introdução ao conceito de grau de vértices em grafos: grau simples, grau máximo, grau mínimo, vértice isolado e grau médio.">
     <title>Grau de Vértices | Big-O Academy</title>
-
     <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
-
     <script src="/test-site/scripts/loadComponents.js" defer></script>
     <script src="/test-site/scripts/generatorToc.js" defer></script>
     <script src="/test-site/scripts/refs.js" defer></script>
 </head>
 
 <body>
-    <header id="header"></header>
-    <div class="layout">
-        <aside class="sidebar" id="sidebar"></aside>
-        <main id="main">
-            <article>
-                <header>
-                    <h1>Grau de Vértices</h1>
-                    <p>
-                    Neste artigo, exploraremos o conceito de <strong>grau de um vértice</strong> em grafos.
-                    Veremos como calcular o grau de cada vértice, o que são grau máximo, grau mínimo e vértice isolado, e como calcular o grau médio de um grafo, com exemplos práticos.
-                    </p>
-                    <hr>
-                </header>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    
+    <header>
+        <h1>Grau de Vértices</h1>
+        <p>
+        Neste artigo, exploraremos o conceito de <strong>grau de um vértice</strong> em grafos.
+        Veremos como calcular o grau de cada vértice, o que são grau máximo, grau mínimo e vértice isolado, e como calcular o grau médio de um grafo, com exemplos práticos.
+        </p>
+        <hr>
+    </header>
 
-                <h2>O que é o Grau de um Vértice?</h2>
 
-                <p>
-                O <strong>grau de um vértice</strong> v em um grafo G, representado por <strong>d<sub>G</sub>(v)</strong>, é o número de arestas de G que são incidentes a esse vértice.
-                Em outras palavras, o grau indica quantas conexões um vértice possui no grafo.
-                </p>
+    <h2>O que é o Grau de um Vértice?</h2>
+    <p>
+    O <strong>grau de um vértice</strong> v em um grafo G, representado por <strong>d<sub>G</sub>(v)</strong>, é o número de arestas de G que são incidentes a esse vértice.
+    Em outras palavras, o grau indica quantas conexões um vértice possui no grafo.
+    </p>
+    <p>
+    Um detalhe importante: quando uma aresta é um <strong>loop</strong> - ou seja, uma aresta que parte e chega no mesmo vértice - ela é contada como <strong>duas arestas</strong> no cálculo do grau, pois o vértice é terminal duas vezes.
+    Em grafos simples, sem loops nem arestas paralelas, o grau de um vértice pode ser determinado simplesmente contando o número de vizinhos desse vértice.
+    </p>
+    <p>
+    Outro detalhe importante: um vértice de grau <strong>0</strong> é chamado de <strong>vértice isolado</strong>.
+    Esse vértice não possui nenhuma aresta incidente - ou seja, não se relaciona com nenhum outro vértice do grafo.
+    </p>
+    <img src="/test-site/assets/IMAGES/grafos/abertura-pagina-07.png" alt="Imagem qualquer de Grafos" style="width: 50%; height: auto;">
+    <p>
+    Veremos melhor esses conceitos mais a frente, com o exemplo.
+    </p>
+    <hr>
 
-                <p>
-                Um detalhe importante: quando uma aresta é um <strong>loop</strong> - ou seja, uma aresta que parte e chega no mesmo vértice - ela é contada como <strong>duas arestas</strong> no cálculo do grau, pois o vértice é terminal duas vezes.
-                Em grafos simples, sem loops nem arestas paralelas, o grau de um vértice pode ser determinado simplesmente contando o número de vizinhos desse vértice.
-                </p>
 
-                <p>
-                Outro detalhe importante: um vértice de grau <strong>0</strong> é chamado de <strong>vértice isolado</strong>.
-                Esse vértice não possui nenhuma aresta incidente - ou seja, não se relaciona com nenhum outro vértice do grafo.
-                </p>
+    <h2>Grau Máximo e Grau Mínimo</h2>
+    <p>
+    Em um grafo G, dois valores especiais resumem os extremos dos graus de seus vértices:
+    </p>
+    <ul>
+        <li><strong>&Delta;(G)</strong> - grau máximo: o maior grau entre todos os vértices do grafo.</li>
+        <li><strong>&delta;(G)</strong> - grau mínimo: o menor grau entre todos os vértices do grafo.</li>
+    </ul>
+    <p>
+    Esses valores são úteis para caracterizar o grafo - por exemplo, um grafo onde &Delta;(G) = &delta;(G) é chamado de <strong>grafo regular</strong>, pois todos os vértices possuem o mesmo grau.
+    </p>
+    <hr>
 
-                <img src="/test-site/assets/IMAGES/grafos/abertura-pagina-07.png" alt="Imagem qualquer de Grafos" style="width: 50%; height: auto;">
 
-                <p>
-                Veremos melhor esses conceitos mais a frente, com o exemplo.
-                </p>
+    <h2>Grau Médio</h2>
+    <p>
+    O <strong>grau médio</strong> de um grafo G, representado por <strong>d(G)</strong>, é a média aritmética dos graus de todos os vértices do grafo.
+    Ele é calculado pela fórmula:
+    </p>
+    <p>
+    d(G) = (1 &divide; n) x &sum;<sub>v &isin; V(G)</sub> d(v)
+    </p>
+    <p>
+    Onde n é o número total de vértices do grafo e &sum; d(v) é a soma dos graus de todos os vértices.
+    O grau médio fornece uma ideia geral de quão conectado é o grafo - quanto maior o grau médio, mais densa é a rede de conexões.
+    </p>
+    <hr>
 
-                <hr>
 
-                <h2>Grau Máximo e Grau Mínimo</h2>
-
-                <p>
-                Em um grafo G, dois valores especiais resumem os extremos dos graus de seus vértices:
-                </p>
-
-                <ul>
-                    <li><strong>&Delta;(G)</strong> - grau máximo: o maior grau entre todos os vértices do grafo.</li>
-                    <li><strong>&delta;(G)</strong> - grau mínimo: o menor grau entre todos os vértices do grafo.</li>
-                </ul>
-
-                <p>
-                Esses valores são úteis para caracterizar o grafo - por exemplo, um grafo onde &Delta;(G) = &delta;(G) é chamado de <strong>grafo regular</strong>, pois todos os vértices possuem o mesmo grau.
-                </p>
-
-                <hr>
-
-                <h2>Grau Médio</h2>
-
-                <p>
-                O <strong>grau médio</strong> de um grafo G, representado por <strong>d(G)</strong>, é a média aritmética dos graus de todos os vértices do grafo.
-                Ele é calculado pela fórmula:
-                </p>
-
-                <p>
-                d(G) = (1 &divide; n) x &sum;<sub>v &isin; V(G)</sub> d(v)
-                </p>
-
-                <p>
-                Onde n é o número total de vértices do grafo e &sum; d(v) é a soma dos graus de todos os vértices.
-                O grau médio fornece uma ideia geral de quão conectado é o grafo - quanto maior o grau médio, mais densa é a rede de conexões.
-                </p>
-
-                <hr>
-
-                <h2>Exemplo Prático - Grafo G1</h2>
-
-                <p>
-                Considere o grafo G1 apresentado anteriormente.
-                Analisando os graus de seus vértices:
-                </p>
-
-                <ul>
-                    <li>O vértice <strong>b</strong> possui grau <strong>3</strong>, pois 3 arestas são incidentes a ele.</li>
-                    <li>O vértice <strong>a</strong> possui grau <strong>4</strong>, pois 3 arestas são incidentes a ele, mas uma delas - a aresta <strong>t</strong> - é um loop, contando como 2.</li>
-                    <li>G1 <strong>não possui vértices isolados</strong> - todos os vértices possuem pelo menos uma aresta incidente.</li>
-                    <li>O grau máximo é <strong>&Delta;(G1) = 5</strong> e o grau mínimo é <strong>&delta;(G1) = 1</strong>.</li>
-                </ul>
-
-                <div class="img-group">
-                    <figure>
-                        <img src="/test-site/assets/IMAGES/grafos/matriz-de-adjacencia.png" alt="Grafo G1">
-                        <figcaption>Grafo G1</figcaption>
-                    </figure>
-                    <figure>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Vértice</th>
-                                    <th>Grau d<sub>G</sub>(v)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>a</td><td>4</td></tr>
-                                <tr><td>b</td><td>3</td></tr>
-                                <tr><td>c</td><td>2</td></tr>
-                                <tr><td>d</td><td>4</td></tr>
-                                <tr><td>e</td><td>1</td></tr>
-                                <tr><td><strong>Grau máximo &Delta;(G1)</strong></td><td><strong>4</strong></td></tr>
-                                <tr><td><strong>Grau mínimo &delta;(G1)</strong></td><td><strong>1</strong></td></tr>
-                                <tr><td><strong>Grau médio &delta;(G1)</strong></td><td><strong>2,8</strong></td></tr>
-                            </tbody>
-                        </table>
-                        <figcaption>Graus dos vértices de G1</figcaption>
-                    </figure>
-                </div>
-
-                <hr>
-
-                <div class="summary">
-                    <h2>Resumo</h2>
-                    <ul>
-                        <li><strong>Grau d<sub>G</sub>(v):</strong> número de arestas incidentes ao vértice v, onde cada loop conta como 2.</li>
-                        <li><strong>&Delta;(G):</strong> grau máximo - o maior grau entre todos os vértices do grafo.</li>
-                        <li><strong>&delta;(G):</strong> grau mínimo - o menor grau entre todos os vértices do grafo.</li>
-                        <li><strong>Vértice isolado:</strong> vértice de grau 0, sem nenhuma conexão.</li>
-                        <li><strong>Grau médio d(G):</strong> média aritmética dos graus de todos os vértices.</li>
-                        <li><strong>Grafo regular:</strong> grafo onde todos os vértices possuem o mesmo grau.</li>
-                    </ul>
-                </div>
-
-                <div class="questions"></div>
-
-                <div class="bibliography">
-                    <h2>Referências</h2>
-                    <ul>
-                        <li><a href="https://pt.wikipedia.org/wiki/Grau_(teoria_dos_grafos)" target="_blank">Grau - Teoria dos Grafos (Wikipedia)</a></li>
-                    </ul>
-                </div>
-
-            </article>
-            <footer id="footer"></footer>
-        </main>
-        <aside class="toc" id="toc"></aside>
+    <h2>Exemplo Prático - Grafo G1</h2>
+    <p>
+    Considere o grafo G1 apresentado anteriormente.
+    Analisando os graus de seus vértices:
+    </p>
+    <ul>
+        <li>O vértice <strong>b</strong> possui grau <strong>3</strong>, pois 3 arestas são incidentes a ele.</li>
+        <li>O vértice <strong>a</strong> possui grau <strong>4</strong>, pois 3 arestas são incidentes a ele, mas uma delas - a aresta <strong>t</strong> - é um loop, contando como 2.</li>
+        <li>G1 <strong>não possui vértices isolados</strong> - todos os vértices possuem pelo menos uma aresta incidente.</li>
+        <li>O grau máximo é <strong>&Delta;(G1) = 5</strong> e o grau mínimo é <strong>&delta;(G1) = 1</strong>.</li>
+    </ul>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/matriz-de-adjacencia.png" alt="Grafo G1">
+            <figcaption>Grafo G1</figcaption>
+        </figure>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                <th>Vértice</th>
+                <th>Grau d<sub>G</sub>(v)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>a</td><td>4</td></tr>
+                <tr><td>b</td><td>3</td></tr>
+                <tr><td>c</td><td>2</td></tr>
+                <tr><td>d</td><td>4</td></tr>
+                <tr><td>e</td><td>1</td></tr>
+                <tr><td><strong>Grau máximo &Delta;(G1)</strong></td><td><strong>4</strong></td></tr>
+                <tr><td><strong>Grau mínimo &delta;(G1)</strong></td><td><strong>1</strong></td></tr>
+                <tr><td><strong>Grau médio &delta;(G1)</strong></td><td><strong>2,8</strong></td></tr>
+                </tbody>
+            </table>
+            <figcaption>Graus dos vértices de G1</figcaption>
+        </figure>
     </div>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grau d<sub>G</sub>(v):</strong> número de arestas incidentes ao vértice v, onde cada loop conta como 2.</li>
+            <li><strong>&Delta;(G):</strong> grau máximo - o maior grau entre todos os vértices do grafo.</li>
+            <li><strong>&delta;(G):</strong> grau mínimo - o menor grau entre todos os vértices do grafo.</li>
+            <li><strong>Vértice isolado:</strong> vértice de grau 0, sem nenhuma conexão.</li>
+            <li><strong>Grau médio d(G):</strong> média aritmética dos graus de todos os vértices.</li>
+            <li><strong>Grafo regular:</strong> grafo onde todos os vértices possuem o mesmo grau.</li>
+        </ul>
+        <hr>
+    </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grau_(teoria_dos_grafos)" target="_blank">Grau - Teoria dos Grafos (Wikipedia)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>

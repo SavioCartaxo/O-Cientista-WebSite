@@ -5,138 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Introdução às principais famílias de grafos: grafo nulo, grafo trivial, grafo simples e multigrafo.">
     <title>Famílias de Grafos | Big-O Academy</title>
-
     <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
-
     <script src="/test-site/scripts/loadComponents.js" defer></script>
     <script src="/test-site/scripts/generatorToc.js" defer></script>
     <script src="/test-site/scripts/refs.js" defer></script>
 </head>
+
 <body>
-    <header id="header"></header>
-    <div class="layout">
-        <aside class="sidebar" id="sidebar"></aside>
-        <main id="main">
-            <article>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    
+    <header>
+    <h1>Famílias de Grafos</h1>
+    <p>
+    Neste artigo, exploraremos as principais <strong>famílias de grafos</strong> - grupos de grafos que compartilham características estruturais em comum.
+    Veremos desde as formas mais simples, como o grafo nulo e o grafo trivial, até estruturas mais complexas como o multigrafo.
+    </p>
+    <hr>
+    </header>
 
-                <header>
-                    <h1>Famílias de Grafos</h1>
-                    <p>
-                    Neste artigo, exploraremos as principais <strong>famílias de grafos</strong> - grupos de grafos que compartilham características estruturais em comum.
-                    Veremos desde as formas mais simples, como o grafo nulo e o grafo trivial, até estruturas mais complexas como o multigrafo.
-                    </p>
-                    <hr>
-                </header>
 
-                <h2>Grafo Nulo</h2>
+    <h2>Grafo Nulo</h2>
+    <p>
+    O <strong>grafo nulo</strong> é o caso mais simples possível: um grafo que <b>não possui nenhum vértice e nenhuma aresta</b>.
+    É representado por um conjunto nulo de vértices V(G) = {} e um conjunto nulo de arestas E(G) = {}.
+    </p>
+    <p>
+    Apesar de parecer trivial, o grafo nulo é importante do ponto de vista matemático pois representa o caso base em diversas definições e provas da teoria dos grafos. A imagem a seguir representa o grafo nulo (exatamente, não tem imagem, o que você esperava?).
+    </p>
+    <br><br><br><br><br><br>
+    <hr>
 
-                <p>
-                O <strong>grafo nulo</strong> é o caso mais simples possível: um grafo que <b>não possui nenhum vértice e nenhuma aresta</b>.
-                É representado por um conjunto nulo de vértices V(G) = {} e um conjunto nulo de arestas E(G) = {}.
-                </p>
 
-                <p>
-                Apesar de parecer trivial, o grafo nulo é importante do ponto de vista matemático pois representa o caso base em diversas definições e provas da teoria dos grafos. A imagem a seguir representa o grafo nulo (exatamente, não tem imagem, o que você esperava?).
-                </p>
+    <h2>Grafo Trivial</h2>
+    <p>
+    O <strong>grafo trivial</strong> é um grafo que possui <b>apenas um único vértice e nenhuma aresta</b>.
+    Esse vértice, por não possuir nenhuma conexão, é um <strong>vértice isolado</strong>. O grafo trivial é o menor grafo não nulo possível.
+    Assim como o grafo nulo, ele é frequentemente utilizado como caso base em definições e demonstrações matemáticas.
+    </p>
+    <p>
+    Note que, por definição, o grafo trivial é composto por apenas uma única unidade de vértice, ou seja, um grafo em que haja apenas 2 vértices, onde os 2 estejam isolados NÃO É UM GRAFO TRIVIAL.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-trivial.png" alt="Grafo trivial">
+        <figcaption>Grafo trivial - um único vértice isolado</figcaption>
+    </figure>
+    <hr>
 
-                <br><br><br><br><br><br>
 
-                <hr>
+    <h2>Grafo Simples</h2>
+    <p>
+    Um <strong>grafo simples</strong> é um grafo que <b>não possui loops nem arestas paralelas</b>.
+    Isso significa que entre quaisquer dois vértices distintos existe no máximo uma aresta, e nenhum vértice possui uma aresta que parte e chega nele mesmo.
+    </p>
+    <p>
+    É a família de grafos mais comum na prática e a mais estudada na teoria dos grafos.
+    A maioria dos problemas clássicos - como encontrar caminhos, verificar conectividade e detectar ciclos - é definida sobre grafos simples.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-simples.png" alt="Grafo simples">
+        <figcaption>Grafo simples - sem loops e sem arestas paralelas</figcaption>
+    </figure>
+    <hr>
 
-                <h2>Grafo Trivial</h2>
 
-                <p>
-                O <strong>grafo trivial</strong> é um grafo que possui <b>apenas um único vértice e nenhuma aresta</b>.
-                Esse vértice, por não possuir nenhuma conexão, é um <strong>vértice isolado</strong>. O grafo trivial é o menor grafo não nulo possível.
-                Assim como o grafo nulo, ele é frequentemente utilizado como caso base em definições e demonstrações matemáticas.
-                </p>
+    <h2>Multigrafo</h2>
+    <p>
+    Um <strong>multigrafo</strong> é uma generalização do grafo simples que <b>permite a existência de arestas paralelas</b> - ou seja, múltiplas arestas conectando os mesmos dois vértices.
+    Vale destacar que a definição de multigrafo varia dependendo do contexto: em algumas definições, loops são permitidos, enquanto em outras não.
+    </p>
+    <p>
+    Quando um grafo permite tanto <b>arestas paralelas quanto loops</b>, ele é chamado de <strong>pseudografo</strong>.
+    O pseudografo é, portanto, a forma mais geral de grafo - ele não impõe nenhuma restrição sobre o tipo de arestas que podem existir.
+    </p>
+    <p>
+    Multigrafos são úteis para modelar situações do mundo real onde múltiplas conexões entre os mesmos pontos fazem sentido - como rotas de transporte, onde podem existir diferentes linhas de ônibus conectando as mesmas duas cidades, ou redes de computadores com múltiplos cabos entre os mesmos servidores.
+    </p>
+    <p>
+    Observe no exemplo abaixo: o vértice <b>A</b> possui uma aresta que o liga a si mesmo - um loop.
+    O mesmo acontece com o vértice <b>C</b>.
+    Já os vértices <b>D</b> e <b>E</b> possuem duas arestas paralelas que os ligam diretamente entre si.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/multigrafo.png" alt="Multigrafo">
+        <figcaption>Multigrafo/Pseudografo - com arestas paralelas e loops entre vértices</figcaption>
+    </figure>
+    <hr>
 
-                <p>
-                Note que, por definição, o grafo trivial é composto por apenas uma única unidade de vértice, ou seja, um grafo em que haja apenas 2 vértices, onde os 2 estejam isolados NÃO É UM GRAFO TRIVIAL.
-                </p>
 
-                <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafo-trivial.png" alt="Grafo trivial">
-                    <figcaption>Grafo trivial - um único vértice isolado</figcaption>
-                </figure>
-
-                <hr>
-
-                <h2>Grafo Simples</h2>
-
-                <p>
-                Um <strong>grafo simples</strong> é um grafo que <b>não possui loops nem arestas paralelas</b>.
-                Isso significa que entre quaisquer dois vértices distintos existe no máximo uma aresta, e nenhum vértice possui uma aresta que parte e chega nele mesmo.
-                </p>
-
-                <p>
-                É a família de grafos mais comum na prática e a mais estudada na teoria dos grafos.
-                A maioria dos problemas clássicos - como encontrar caminhos, verificar conectividade e detectar ciclos - é definida sobre grafos simples.
-                </p>
-
-                <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafo-simples.png" alt="Grafo simples">
-                    <figcaption>Grafo simples - sem loops e sem arestas paralelas</figcaption>
-                </figure>
-
-                <hr>
-
-                <h2>Multigrafo</h2>
-
-                <p>
-                Um <strong>multigrafo</strong> é uma generalização do grafo simples que <b>permite a existência de arestas paralelas</b> - ou seja, múltiplas arestas conectando os mesmos dois vértices.
-                Vale destacar que a definição de multigrafo varia dependendo do contexto: em algumas definições, loops são permitidos, enquanto em outras não.
-                </p>
-
-                <p>
-                Quando um grafo permite tanto <b>arestas paralelas quanto loops</b>, ele é chamado de <strong>pseudografo</strong>.
-                O pseudografo é, portanto, a forma mais geral de grafo - ele não impõe nenhuma restrição sobre o tipo de arestas que podem existir.
-                </p>
-
-                <p>
-                Multigrafos são úteis para modelar situações do mundo real onde múltiplas conexões entre os mesmos pontos fazem sentido - como rotas de transporte, onde podem existir diferentes linhas de ônibus conectando as mesmas duas cidades, ou redes de computadores com múltiplos cabos entre os mesmos servidores.
-                </p>
-
-                <p>
-                Observe no exemplo abaixo: o vértice <b>A</b> possui uma aresta que o liga a si mesmo - um loop.
-                O mesmo acontece com o vértice <b>C</b>.
-                Já os vértices <b>D</b> e <b>E</b> possuem duas arestas paralelas que os ligam diretamente entre si.
-                </p>
-
-                <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/multigrafo.png" alt="Multigrafo">
-                    <figcaption>Multigrafo/Pseudografo - com arestas paralelas e loops entre vértices</figcaption>
-                </figure>
-
-                <hr>
-
-                <div class="summary">
-                    <h2>Resumo</h2>
-                    <ul>
-                        <li><strong>Grafo Nulo</strong>: nenhum vértice e nenhuma aresta.</li>
-                        <li><strong>Grafo trivial</strong>: um único vértice isolado, sem arestas.</li>
-                        <li><strong>Grafo simples</strong>: sem loops e sem arestas paralelas.</li>
-                        <li><strong>Multigrafo</strong>: permite arestas paralelas entre os mesmos vértices.</li>
-                        <li><strong>Pseudografo</strong>: permite arestas paralelas e loops.</li>
-                    </ul>
-                </div>
-
-                <div class="questions"></div>
-
-                <div class="bibliography">
-                    <h2>Referências</h2>
-                    <ul>
-                        <li><a href="https://pt.wikipedia.org/wiki/Grafo" target="_blank">Grafo - Wikipedia</a></li>
-                        <li><a href="https://pt.wikipedia.org/wiki/Multigrafo" target="_blank">Multigrafo - Wikipedia</a></li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <footer id="footer"></footer>
-        </main>
-
-        <aside class="toc" id="toc"></aside>
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grafo Nulo</strong>: nenhum vértice e nenhuma aresta.</li>
+            <li><strong>Grafo trivial</strong>: um único vértice isolado, sem arestas.</li>
+            <li><strong>Grafo simples</strong>: sem loops e sem arestas paralelas.</li>
+            <li><strong>Multigrafo</strong>: permite arestas paralelas entre os mesmos vértices.</li>
+            <li><strong>Pseudografo</strong>: permite arestas paralelas e loops.</li>
+        </ul>
+        <hr>
     </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo" target="_blank">Grafo - Wikipedia</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Multigrafo" target="_blank">Multigrafo - Wikipedia</a></li>
+        </ul>
+    </div>
+    
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>
