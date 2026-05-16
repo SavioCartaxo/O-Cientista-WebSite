@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Introdução às principais famílias de grafos: grafo vazio, grafo trivial, grafo simples e multigrafo.">
+    <meta name="description" content="Introdução às principais famílias de grafos: grafo nulo, grafo trivial, grafo simples e multigrafo.">
     <title>Famílias de Grafos | Big-O Academy</title>
 
     <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
@@ -23,20 +23,20 @@
                     <h1>Famílias de Grafos</h1>
                     <p>
                     Neste artigo, exploraremos as principais <strong>famílias de grafos</strong> - grupos de grafos que compartilham características estruturais em comum.
-                    Veremos desde as formas mais simples, como o grafo vazio e o grafo trivial, até estruturas mais complexas como o multigrafo.
+                    Veremos desde as formas mais simples, como o grafo nulo e o grafo trivial, até estruturas mais complexas como o multigrafo.
                     </p>
                     <hr>
                 </header>
 
-                <h2>Grafo Vazio</h2>
+                <h2>Grafo Nulo</h2>
 
                 <p>
-                O <strong>grafo vazio</strong> é o caso mais simples possível: um grafo que <b>não possui nenhum vértice e nenhuma aresta</b>.
-                É representado por um conjunto vazio de vértices V(G) = {} e um conjunto vazio de arestas E(G) = {}.
+                O <strong>grafo nulo</strong> é o caso mais simples possível: um grafo que <b>não possui nenhum vértice e nenhuma aresta</b>.
+                É representado por um conjunto nulo de vértices V(G) = {} e um conjunto nulo de arestas E(G) = {}.
                 </p>
 
                 <p>
-                Apesar de parecer trivial, o grafo vazio é importante do ponto de vista matemático pois representa o caso base em diversas definições e provas da teoria dos grafos. A imagem a seguir representa o grafo vazio (exatamente, não tem imagem, o que você esperava?).
+                Apesar de parecer trivial, o grafo nulo é importante do ponto de vista matemático pois representa o caso base em diversas definições e provas da teoria dos grafos. A imagem a seguir representa o grafo nulo (exatamente, não tem imagem, o que você esperava?).
                 </p>
 
                 <br><br><br><br><br><br>
@@ -47,8 +47,8 @@
 
                 <p>
                 O <strong>grafo trivial</strong> é um grafo que possui <b>apenas um único vértice e nenhuma aresta</b>.
-                Esse vértice, por não possuir nenhuma conexão, é um <strong>vértice isolado</strong>. O grafo trivial é o menor grafo não vazio possível.
-                Assim como o grafo vazio, ele é frequentemente utilizado como caso base em definições e demonstrações matemáticas.
+                Esse vértice, por não possuir nenhuma conexão, é um <strong>vértice isolado</strong>. O grafo trivial é o menor grafo não nulo possível.
+                Assim como o grafo nulo, ele é frequentemente utilizado como caso base em definições e demonstrações matemáticas.
                 </p>
 
                 <p>
@@ -56,7 +56,7 @@
                 </p>
 
                 <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafo-trivial.png" alt="Grafo trivial" style="width: 45%;height: auto;">
+                    <img src="/test-site/assets/IMAGES/grafos/grafo-trivial.png" alt="Grafo trivial">
                     <figcaption>Grafo trivial - um único vértice isolado</figcaption>
                 </figure>
 
@@ -75,7 +75,7 @@
                 </p>
 
                 <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/grafo-simples.png" alt="Grafo simples" style="width: 45%;height: auto;">
+                    <img src="/test-site/assets/IMAGES/grafos/grafo-simples.png" alt="Grafo simples">
                     <figcaption>Grafo simples - sem loops e sem arestas paralelas</figcaption>
                 </figure>
 
@@ -104,7 +104,7 @@
                 </p>
 
                 <figure>
-                    <img src="/test-site/assets/IMAGES/grafos/multigrafo.png" alt="Multigrafo" style="width: 45%;height: auto;">
+                    <img src="/test-site/assets/IMAGES/grafos/multigrafo.png" alt="Multigrafo">
                     <figcaption>Multigrafo/Pseudografo - com arestas paralelas e loops entre vértices</figcaption>
                 </figure>
 
@@ -113,7 +113,7 @@
                 <div class="summary">
                     <h2>Resumo</h2>
                     <ul>
-                        <li><strong>Grafo vazio</strong>: nenhum vértice e nenhuma aresta.</li>
+                        <li><strong>Grafo Nulo</strong>: nenhum vértice e nenhuma aresta.</li>
                         <li><strong>Grafo trivial</strong>: um único vértice isolado, sem arestas.</li>
                         <li><strong>Grafo simples</strong>: sem loops e sem arestas paralelas.</li>
                         <li><strong>Multigrafo</strong>: permite arestas paralelas entre os mesmos vértices.</li>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução aos conceitos de passeio e caminho em grafos, com exemplos práticos e ilustrações.">
+    <title>Passeio e Caminho em Grafos | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <main id="main">
+            <article>
+
+                <header>
+                    <h1>Passeio e Caminho em Grafos</h1>
+                    <p>
+                    Neste artigo, exploraremos dois conceitos fundamentais para a análise de grafos: o <strong>passeio</strong> e o <strong>caminho</strong>.
+                    Esses conceitos descrevem como nos movemos por um grafo, percorrendo vértices e arestas em sequência, e são a base para algoritmos de busca, conectividade e análise de redes.
+                    </p>
+                    <hr>
+                </header>
+
+                <h2>Grafo de Exemplo</h2>
+
+                <p>
+                Ao longo deste artigo, utilizaremos um único grafo com os vértices <b>A, B, C, D, E, F, G e H</b> para ilustrar todos os exemplos.
+                Veja:
+                </p>
+
+                <figure>
+                    <img src="/test-site/assets/IMAGES/grafos/grafo-passeio-caminho.png" alt="Grafo com vértices A, B, C, D, E, F, G e H">
+                    <figcaption>Grafo utilizado nos exemplos deste artigo</figcaption>
+                </figure>
+
+                <hr>
+
+                <h2>Passeio</h2>
+
+                <p>
+                Um <strong>passeio</strong> em um grafo é uma sequência de vértices e arestas tal que <b>cada aresta inicia com um vértice no qual a aresta anterior terminou</b>.
+                O tamanho de um passeio é o número de arestas que ele contém.
+                </p>
+
+                <p>
+                Em um passeio, <b>vértices e arestas podem ser repetidos</b> - não há restrição sobre isso.
+                O único requisito é que a sequência seja contínua: o vértice final de uma aresta deve ser o vértice inicial da próxima.
+                </p>
+
+                <h3>Exemplo de Passeio Válido</h3>
+
+                <p>
+                No nosso grafo, a sequência <b>A - B - E - C - E - H</b> é um passeio válido.
+                Ela parte do vértice <b>A</b>, segue para <b>B</b> pela aresta A-B, depois para <b>E</b> pela aresta B-E, depois para <b>C</b> pela aresta C-E, depois volta para <b>E</b> pela mesma aresta C-E, e finalmente chega em <b>H</b> pela aresta E-H.
+                Note que o vértice <b>E</b> e a aresta <b>C-E</b> foram percorridos duas vezes - isso é permitido em um passeio.
+                </p>
+
+                <figure>
+                    <img src="/test-site/assets/IMAGES/grafos/passeio-valido.png" alt="Passeio válido: A - B - E - C - E - H">
+                    <figcaption>Passeio válido: A - B - E - C - E - H (vértice E visitado duas vezes)</figcaption>
+                </figure>
+
+                <h3>Exemplo de Sequência Inválida</h3>
+
+                <p>
+                A sequência <b>A - B - D - F</b> não é um passeio, pois os vértices <b>D</b> e <b>F</b> não são adjacentes no grafo - não existe aresta entre eles.
+                Portanto, a sequência não é contínua e não pode ser considerada um passeio.
+                </p>
+
+                <figure>
+                    <img src="/test-site/assets/IMAGES/grafos/passeio-invalido.png" alt="Sequência inválida: A - B - D - F">
+                    <figcaption>Sequência inválida: A - B - D - F (D e F não são adjacentes)</figcaption>
+                </figure>
+
+                <hr>
+
+                <h2>Caminho</h2>
+
+                <p>
+                Um <strong>caminho</strong> - também chamado de caminho simples - é um passeio no qual <b>todos os vértices são distintos</b>.
+                Ou seja, ao percorrer um caminho, nenhum vértice pode ser visitado mais de uma vez.
+                </p>
+
+                <p>
+                Todo caminho é um passeio, mas nem todo passeio é um caminho.
+                A diferença está justamente na restrição sobre a repetição de vértices.
+                </p>
+
+                <h3>Exemplo de Caminho Válido</h3>
+
+                <p>
+                No nosso grafo, a sequência <b>A - B - D - G - H - F - C</b> é um caminho válido.
+                Ela percorre 7 vértices distintos, sem repetir nenhum, passando pelas arestas A-B, B-D, D-G, G-H, H-F e F-C respectivamente.
+                </p>
+
+                <figure>
+                    <img src="/test-site/assets/IMAGES/grafos/caminho-valido.png" alt="Caminho válido: A - B - D - G - H - F - C">
+                    <figcaption>Caminho válido: A - B - D - G - H - F - C (todos os vértices distintos)</figcaption>
+                </figure>
+
+                <h3>Exemplo de Passeio que Não é Caminho</h3>
+
+                <p>
+                O passeio <b>A - B - E - C - E - H</b>, apresentado anteriormente, <b>não é um caminho</b> pois o vértice <b>E</b> é visitado duas vezes.
+                Apesar de ser um passeio válido, a repetição de vértices o impede de ser classificado como caminho.
+                </p>
+
+                <figure>
+                    <img src="/test-site/assets/IMAGES/grafos/passeio-nao-caminho.png" alt="Passeio que não é caminho: A - B - E - C - E - H">
+                    <figcaption>Passeio que não é caminho: A - B - E - C - E - H (E repetido)</figcaption>
+                </figure>
+
+                <hr>
+
+                <div class="summary">
+                    <h2>Resumo</h2>
+                    <ul>
+                        <li><strong>Passeio:</strong> sequência contínua de vértices e arestas, onde vértices e arestas podem ser repetidos.</li>
+                        <li><strong>Tamanho do passeio:</strong> número de arestas contidas no passeio.</li>
+                        <li><strong>Caminho:</strong> passeio onde todos os vértices são distintos - sem repetições.</li>
+                        <li>Todo caminho é um passeio, mas nem todo passeio é um caminho.</li>
+                        <li>Uma sequência só é um passeio se for contínua - cada aresta deve iniciar no vértice onde a anterior terminou.</li>
+                    </ul>
+                </div>
+
+                <div class="questions"></div>
+
+                <div class="bibliography">
+                    <h2>Referências</h2>
+                    <ul>
+                        <li><a href="https://pt.wikipedia.org/wiki/Caminho_(teoria_dos_grafos)" target="_blank">Caminho - Teoria dos Grafos (Wikipedia)</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <footer id="footer"></footer>
+        </main>
+
+        <aside class="toc" id="toc"></aside>
+    </div>
+</body>
+</html>
