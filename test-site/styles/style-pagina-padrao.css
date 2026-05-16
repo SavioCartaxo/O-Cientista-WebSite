@@ -8,6 +8,7 @@
 @import url(style-pagina-padrao/typography.css);
 @import url(style-pagina-padrao/components.css);
 @import url(style-pagina-padrao/responsive.css);
+@import url(style-pagina-padrao/figcaption.css);
 
 /*CSS's classes*/
 @import url(class/summary-class.css);
