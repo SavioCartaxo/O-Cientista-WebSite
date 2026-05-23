@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução aos conceitos de grafo regular e grafo cúbico: definições, propriedades e exemplos práticos.">
+    <title>Grafo Regular e Cúbico | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    
+    <header>
+        <h1>Grafo Regular e Cúbico</h1>
+        <p>
+        Neste artigo, exploraremos duas famílias especiais de grafos: o <strong>grafo regular</strong> - onde todos os vértices possuem o mesmo grau - e o <strong>grafo cúbico</strong> - um caso especial do grafo regular onde todos os vértices têm grau 3.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>Grafo Regular</h2>
+    <p>
+    Um <strong>grafo regular</strong> é um grafo onde <b>todos os vértices possuem exatamente o mesmo grau</b>.
+    Um grafo regular de grau k é chamado de <b>k-regular</b>.
+    </p>
+    <p>
+    Alguns exemplos de grafos regulares que já estudamos:
+    </p>
+    <ul>
+        <li>O <b>grafo completo K<sub>n</sub></b> é (n-1)-regular - cada vértice é adjacente a todos os outros n-1 vértices.</li>
+        <li>O <b>grafo ciclo C<sub>n</sub></b> é 2-regular - cada vértice possui exatamente 2 vizinhos.</li>
+        <li>O <b>grafo vazio</b> é 0-regular - todos os vértices têm grau 0.</li>
+    </ul>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-regular.png" alt="Grafo 4-regular exemplo 1">
+            <figcaption>Grafo 4-regular - exemplo 1</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-regular-2.png" alt="Grafo 4-regular exemplo 2">
+            <figcaption>Grafo 4-regular - exemplo 2</figcaption>
+        </figure>
+    </div>
+
+
+    <h3>Condição para Existência</h3>
+    <p>
+    Para gerar um grafo k-regular com n vértices, duas condições devem ser obedecidas:
+    </p>
+    <ul>
+        <li><b>n > k</b> - o número de vértices deve ser maior que o grau.</li>
+        <li><b>n x k deve ser par</b> - pois a soma dos graus de todos os vértices é sempre par (cada aresta contribui com 2 para a soma total dos graus).</li>
+    </ul>
+    <p>
+    Se qualquer uma dessas condições não for satisfeita, não é possível construir o grafo regular.
+    </p>
+    <hr>
+
+
+    <h2>Grafo Cúbico</h2>
+    <p>
+    Um <strong>grafo cúbico</strong> é um caso especial de grafo regular onde <b>todos os vértices têm grau 3</b> - ou seja, um grafo cúbico é um grafo 3-regular.
+    </p>
+    <p>
+    Dois exemplos clássicos de grafos cúbicos são o <b>Grafo de Petersen</b> e o <b>Grafo do Cubo</b>.
+    O Grafo de Petersen é um dos grafos mais estudados na teoria dos grafos, sendo utilizado como contraexemplo em diversas conjecturas.
+    Já o Grafo do Cubo representa as arestas e vértices de um cubo tridimensional - onde cada vértice do cubo é adjacente exatamente a outros 3 vértices.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-petersen.png" alt="Grafo de Petersen">
+            <figcaption>Grafo de Petersen - grafo cúbico clássico</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-cubo.png" alt="Grafo do Cubo">
+            <figcaption>Grafo do Cubo - representa as arestas de um cubo 3D</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grafo regular:</strong> grafo onde todos os vértices possuem o mesmo grau.</li>
+            <li><strong>k-regular:</strong> grafo regular de grau k.</li>
+            <li>Para existir um grafo k-regular com n vértices: n > k e n x k deve ser par.</li>
+            <li><strong>Grafo cúbico:</strong> grafo 3-regular - todos os vértices têm grau 3.</li>
+            <li>Exemplos clássicos de grafos cúbicos: Grafo de Petersen e Grafo do Cubo.</li>
+            <li>Grafo completo K<sub>n</sub> é (n-1)-regular, grafo ciclo C<sub>n</sub> é 2-regular e grafo vazio é 0-regular.</li>
+        </ul>
+    </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_regular" target="_blank">Grafo Regular (Wikipedia)</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_de_Petersen" target="_blank">Grafo de Petersen (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

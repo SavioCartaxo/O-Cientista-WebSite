@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução ao conceito de complemento de um grafo: definição, propriedades e exemplos práticos.">
+    <title>Complemento de um Grafo | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    <header>
+        <h1>Complemento de um Grafo</h1>
+        <p>
+        Neste artigo, exploraremos o conceito de <strong>complemento de um grafo</strong> - uma operação que, dado um grafo simples G, produz um novo grafo contendo exatamente as arestas que G não possui.
+        </p>
+        <hr>
+    </header>
+
+    <h2>O que é o Complemento de um Grafo?</h2>
+    <p>
+    Dado um grafo simples G, o seu <strong>complemento</strong> - representado por <b>G̅</b> - é um grafo simples que possui <b>os mesmos vértices de G</b>, mas cujas arestas são exatamente <b>aquelas que não existem em G</b>.
+    </p>
+    <p>
+    Em outras palavras, dois vértices são adjacentes em G̅ <b>se e somente se não são adjacentes em G</b> - o caso contrário também ocorre.
+    O complemento preenche todas as "lacunas" do grafo original - toda aresta possível que G não possui, G̅ possui.
+    </p>
+
+
+    <h3>Exemplo Prático</h3>
+    <p>
+    Considere um grafo simples G com os vértices A, B, C, D e as arestas A-B, B-C e C-D.
+    As arestas que G <b>não possui</b> são: A-C, A-D e B-D.
+    Portanto, o complemento G̅ possui exatamente essas três arestas - A-C, A-D e B-D - mantendo os mesmos vértices A, B, C e D.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-original-12.png" alt="Grafo original G">
+            <figcaption>Grafo original G</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-complemento-12.png" alt="Complemento G̅">
+            <figcaption>Complemento G̅ - arestas que não existiam em G</figcaption>
+        </figure>
+    </div>
+
+
+    <h3>Relação com o Grafo Completo</h3>
+    <p>
+    Uma forma intuitiva de pensar no complemento: se unirmos as arestas de G com as arestas de G̅, obtemos exatamente o <b>grafo completo K<sub>n</sub></b> - onde n é o número de vértices.
+    Isso faz sentido, pois G possui algumas arestas possíveis e G̅ possui todas as outras - juntos, cobrem todas as arestas possíveis entre n vértices.
+    </p>
+    <p>
+    Uma consequência direta disso é que <b>o complemento do grafo completo K<sub>n</sub> é o grafo vazio</b> - e vice-versa.
+    Se G já possui todas as arestas possíveis, seu complemento não possui nenhuma.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Complemento G̅:</strong> grafo com os mesmos vértices de G, mas com as arestas que G não possui.</li>
+            <li>Dois vértices são adjacentes em G̅ se e somente se não são adjacentes em G.</li>
+            <li>G + G̅ = K<sub>n</sub> - juntos formam o grafo completo.</li>
+            <li>O complemento do grafo completo é o grafo vazio, e vice-versa.</li>
+        </ul>
+    </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Complemento_(teoria_dos_grafos)" target="_blank">Complemento - Teoria dos Grafos (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+    
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

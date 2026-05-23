@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução ao conceito de grafo bipartido: definição, propriedades, grafo bipartido completo e o teorema de caracterização.">
+    <title>Grafo Bipartido | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Grafo Bipartido</h1>
+        <p>
+        Neste artigo, exploraremos o conceito de <strong>grafo bipartido</strong> - uma família especial de grafos cujos vértices podem ser divididos em dois grupos, onde todas as arestas conectam vértices de grupos diferentes.
+        Veremos suas propriedades, o caso especial do grafo bipartido completo e o teorema que nos permite identificar se um grafo é bipartido.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>O que é um Grafo Bipartido?</h2>
+    <p>
+    Um <strong>grafo bipartido</strong> é um grafo cujo conjunto de vértices pode ser <b>particionado em dois subconjuntos X e Y</b> tal que <b>todas as arestas possuam um terminal em X e outro em Y</b>.
+    Ou seja, não existe nenhuma aresta que conecte dois vértices do mesmo grupo.
+    </p>
+    <p>
+    É importante destacar que <b>não é necessário que todos os vértices de X sejam adjacentes a todos os vértices de Y</b> - basta que as arestas existentes respeitem a regra de conectar vértices de grupos diferentes.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-bipartido.png" alt="Grafo bipartido">
+            <figcaption>Grafo bipartido - arestas apenas entre X e Y</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-nao-bipartido.png" alt="Grafo não bipartido">
+            <figcaption>Grafo não bipartido - aresta dentro do mesmo grupo</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <h2>Casos Especiais</h2>
+    <h3>Grafos Vazios</h3>
+    <p>
+    <b>Grafos vazios são bipartidos</b> - como não existem arestas, qualquer partição dos vértices em X e Y é válida, pois não há nenhuma aresta que possa violar a regra.
+    </p>
+    <h3>Grafos Desconectados</h3>
+    <p>
+    Grafos desconectados ou com vértices isolados <b>podem ser bipartidos</b>.
+    Um vértice isolado pode fazer parte de qualquer uma das partições, pois não possui arestas que possam violar a regra.
+    Para grafos desconectados, podem existir diferentes opções de partições válidas.
+    </p>
+    <hr>
+
+
+    <h2>Grafo Bipartido Completo</h2>
+    <p>
+    Um grafo G é <strong>bipartido completo</strong> se é bipartido e <b>todos os vértices de X são adjacentes a todos os vértices de Y</b>.
+    Um grafo bipartido completo com partições de tamanho p e q é representado por <b>K<sub>p,q</sub></b>, possui <b>p + q vértices</b> e <b>p x q arestas</b>.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-bipartido-completo.png" alt="Exemplos de grafos bipartidos completos">
+        <figcaption>Exemplos de grafos bipartidos completos K<sub>2,3</sub> e K<sub>3,3</sub></figcaption>
+    </figure>
+    <h3>Grafo Estrela</h3>
+    <p>
+    Um caso especial do grafo bipartido completo é o <strong>grafo estrela</strong> - representado por <b>K<sub>1,q</sub></b>.
+    Nesse grafo, a partição X possui apenas <b>1 vértice</b> e a partição Y possui <b>q vértices</b>.
+    O único vértice de X possui grau q - conectado a todos os vértices de Y - enquanto cada vértice de Y possui grau 1 - conectado apenas ao vértice central de X.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-estrela.png" alt="Grafo estrela K1,5">
+        <figcaption>Grafo estrela K<sub>1,8</sub> - um vértice central conectado a todos os outros</figcaption>
+    </figure>
+    <hr>
+
+
+    <h2>Teorema de Caracterização</h2>
+    <p>
+    Existe um teorema fundamental que nos permite identificar se um grafo é bipartido:
+    </p>
+    <blockquote>
+        <p>"Um grafo é bipartido se e somente se não contém ciclo simples de tamanho ímpar."</p>
+        <footer>- Teorema 01</footer>
+    </blockquote>
+    <p>
+    Esse teorema nos diz que um grafo é bipartido <b>ou</b> contém um ciclo simples de tamanho ímpar - mas nunca os dois ao mesmo tempo.
+    Algumas consequências diretas desse teorema:
+    </p>
+    <ul>
+        <li>Grafos completos de 3 ou mais vértices <b>não são bipartidos</b> - pois sempre contêm triângulos, que são ciclos simples de tamanho 3 (ímpar).</li>
+        <li>Qualquer grafo que <b>não possui ciclos</b> é bipartido - pois sem ciclos, não há ciclos de tamanho ímpar.</li>
+        <li>Grafos com ciclos apenas de tamanho par são bipartidos.</li>
+    </ul>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grafo bipartido:</strong> vértices divididos em X e Y, com todas as arestas conectando um vértice de X a um de Y.</li>
+            <li>Grafos vazios são sempre bipartidos.</li>
+            <li>Vértices isolados e grafos desconectados podem ser bipartidos.</li>
+            <li><strong>Grafo bipartido completo K<sub>p,q</sub>:</strong> todo vértice de X é adjacente a todo vértice de Y - possui p + q vértices e p x q arestas.</li>
+            <li><strong>Grafo estrela K<sub>1,q</sub>:</strong> caso especial com 1 vértice central conectado a todos os outros.</li>
+            <li><strong>Teorema:</strong> um grafo é bipartido se e somente se não contém ciclo simples de tamanho ímpar.</li>
+        </ul>
+    </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_bipartido" target="_blank">Grafo Bipartido (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

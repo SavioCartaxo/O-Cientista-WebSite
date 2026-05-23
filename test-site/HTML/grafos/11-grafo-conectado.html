@@ -1,0 +1,118 @@
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução ao conceito de grafo conectado e desconectado: definições, propriedades e exemplos práticos.">
+    <title>Grafo Conectado | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Grafo Conectado</h1>
+        <p>
+        Neste artigo, exploraremos o conceito de <strong>grafo conectado</strong> - também chamado de grafo conexo.
+        Veremos como identificar se um grafo é conectado ou desconectado, quais são os casos especiais e como esse conceito se relaciona com os tópicos anteriores.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>O que é um Grafo Conectado?</h2>
+    <p>
+    Um <strong>grafo conectado</strong> é um grafo no qual <b>sempre é possível encontrar um passeio entre qualquer par de vértices</b>.
+    Em outras palavras, nenhum vértice ou grupo de vértices fica isolado do restante do grafo - todos estão de alguma forma ligados entre si.
+    </p>
+    <p>
+    Formalmente, um grafo é conectado se, para qualquer divisão de seus vértices em dois grupos não-vazios X e Y, <b>existe pelo menos uma aresta com um terminal em X e um terminal em Y</b>.
+    Se não existir tal aresta para alguma divisão possível, o grafo é chamado de <b>desconectado</b>.
+    </p>
+    <p>
+    Visualmente, identificar um grafo conectado é simples: basta verificar se o grafo está todo ligado em uma única peça.
+    Um grafo desconectado possui partes separadas - chamadas de <b>componentes</b> - que não se comunicam entre si por nenhuma aresta.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-conectado.png" alt="Grafo conectado">
+            <figcaption>Grafo conectado - todos os vértices se comunicam</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/grafo-desconectado.png" alt="Grafo desconectado">
+            <figcaption>Grafo desconectado - existem componentes isoladas</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+    
+    <h2>Como Identificar um Grafo Desconectado?</h2>
+    <p>
+    Para provar que um grafo é desconectado basta encontrar qualquer par de vértices X e Y tal que não exista nenhum caminho que os conecte.
+    </p>
+    <p>
+    Por exemplo, considere o grafo desconectado do conjunto acima.
+    Se tentarmos encontrar algum caminho que ligue os vértices A e F, confirmamos que este não existe - portanto o grafo é desconectado.
+    Os vértices A, B e C formam um componente, D forma outro e os vértices E e F formam outro.
+    </p>
+    <hr>
+
+
+    <h2>Casos Especiais</h2>
+    <h3>Grafo Trivial</h3>
+    <p>
+    O <strong>grafo trivial</strong> - aquele com um único vértice - é <b>conectado por definição</b>.
+    Como não existem dois vértices distintos, não é possível encontrar um par de vértices que prove desconexão.
+    </p>
+    <h3>Grafos Vazios</h3>
+    <p>
+    Os <strong>grafos vazios</strong> - aqueles que não possuem arestas - com dois ou mais vértices são sempre <b>desconectados</b>.
+    Como não possuem nenhuma aresta, qualquer pares de vértices não terá nenhuma aresta conectando os dois.
+    A única exceção é o grafo trivial - o único grafo vazio que é conectado.
+    </p>
+    <h3>Grafo Completo</h3>
+    <p>
+    O <strong>grafo completo K<sub>n</sub></strong> é sempre <b>conectado</b> para qualquer n maior ou igual a 1.
+    Como todo vértice é adjacente a todos os outros, qualquer par de vértices sempre terá arestas conectando os mesmos.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grafo conectado:</strong> grafo onde sempre existe um passeio entre qualquer par de vértices.</li>
+            <li><strong>Grafo desconectado:</strong> grafo que possui componentes isoladas - grupos de vértices sem nenhuma aresta entre si.</li>
+            <li><strong>Componente:</strong> parte isolada de um grafo desconectado.</li>
+            <li>O grafo trivial é conectado por definição.</li>
+            <li>Grafos vazios com 2 ou mais vértices são sempre desconectados.</li>
+            <li>O grafo completo K<sub>n</sub> é sempre conectado.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_conexo" target="_blank">Grafo Conexo (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>
