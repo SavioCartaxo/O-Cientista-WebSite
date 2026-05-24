@@ -1,205 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Entenda o que são problemas indecidíveis na Teoria da Computação, incluindo o Problema da Parada, totalidade, equivalência e outros limites fundamentais dos algoritmos.">
-    <title>Problemas Indecidíveis | Teoria da Computação - Big-O Academy</title>
-
-    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
-
-    <script src="/test-site/scripts/loadComponents.js" defer></script>
-    <script src="/test-site/scripts/generatorToc.js" defer></script>
-    <script src="/test-site/scripts/refs.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entenda o que são problemas indecidíveis na Teoria da Computação, incluindo o Problema da Parada, totalidade, equivalência e outros limites fundamentais dos algoritmos.">
+<title>Problemas Indecidíveis | Teoria da Computação - Big-O Academy</title>
+<link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+<script src="/test-site/scripts/loadComponents.js" defer></script>
+<script src="/test-site/scripts/generatorToc.js" defer></script>
+<script src="/test-site/scripts/refs.js" defer></script>
 </head>
 
 <body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
 
-    <header id="header"></header>
-
-    <div class="layout">
-
-        <aside class="sidebar" id="sidebar"></aside>
-
-        <main id="main">
-            <article>
-
-                <header>
-                    <h1>Problemas Indecidíveis da Teoria da Computação</h1>
-
-                    <p>
-                        Nem todo problema pode ser resolvido por um algoritmo. Neste artigo, exploramos o conceito de indecidibilidade e apresentamos alguns dos principais problemas que estabelecem limites fundamentais da computação - limites que independem de tecnologia, linguagem ou poder de processamento.
-                    </p>
-                </header>
-
-                <hr>
-
-                <h2>O que é decidibilidade?</h2>
-
-                <p>
-                    Antes de apresentar os problemas indecidíveis, é importante entender o conceito de <strong>decidibilidade</strong>.
-                    Um problema é dito <strong>decidível</strong> quando existe um algoritmo capaz de resolvê-lo em um número finito de passos - ou seja, o algoritmo sempre termina e retorna uma resposta correta, seja ela sim ou não.
-                    Já um problema é dito <strong>indecidível</strong> quando não existe nenhum algoritmo capaz de resolvê-lo para todos os casos possíveis.
-                </p>
-
-                <p>
-                    É importante destacar que indecidibilidade <strong>não é uma limitação tecnológica</strong>.
-                    Não se trata de falta de processamento, memória ou tempo, mas sim de uma limitação matemática fundamental.
-                    Esse resultado foi estabelecido por Alan Turing em 1936 e permanece válido até hoje.
-                </p>
-
-                <img src="/test-site/assets/IMAGES/teoria-da-computacao/decidibilidade.png" alt="Ilustração">
-
-                <hr>
-
-                <h2>Máquinas Abstratas</h2>
-
-                    <p>
-                    Na Teoria da Computação, utilizamos <strong>máquinas abstratas</strong> para modelar o funcionamento de computadores de forma matemática e simplificada.
-                    Essas máquinas não são físicas, mas sim modelos teóricos que nos permitem entender <strong>como linguagens podem ser reconhecidas</strong>.
-                    </p>
-
-                    <p>
-                    Uma máquina abstrata recebe uma sequência de símbolos como entrada e decide se essa sequência pertence ou não a uma determinada linguagem.
-                    Por isso, dizemos que essas máquinas atuam como <strong>reconhecedores de linguagens</strong>.
-                    </p>
-
-                    <p>
-                    Dependendo do tipo de máquina utilizada, conseguimos reconhecer linguagens mais simples ou mais complexas.
-                    Por exemplo:
-                    </p>
-
-                    <ul>
-                        <li><strong>Autômatos finitos</strong>: reconhecem linguagens regulares.</li>
-                        <li><strong>Autômatos com pilha</strong>: reconhecem linguagens livres de contexto.</li>
-                        <li><strong>Máquinas de Turing</strong>: reconhecem linguagens recursivamente enumeráveis.</li>
-                    </ul>
-
-                    <p>
-                    Esses modelos estão diretamente relacionados à <a href="/test-site/HTML/Teoria da Computação/04-hierarquia-de-chomsky.html" target="_blank">Hierarquia de Chomsky</a> e ajudam a entender os limites do que pode ser reconhecido por um sistema computacional.
-                    </p>
-                    
-                    <img src="/test-site/assets/IMAGES/teoria-da-computacao/maquinaabstrata.png" alt="Máquina Abstrata" style="height: 5%;">
+    <header>
+        <h1>Problemas Indecidíveis da Teoria da Computação</h1>
+        <p>
+        Nem todo problema pode ser resolvido por um algoritmo. Neste artigo, exploramos o conceito de indecidibilidade e apresentamos alguns dos principais problemas que estabelecem limites fundamentais da computação - limites que independem de tecnologia, linguagem ou poder de processamento.
+        </p>
+        <hr>
+    </header>
 
 
-                <p>
-                    Um dos modelos mais importantes é a <strong>Máquina de Turing</strong>, que serve como base para definir formalmente o conceito de algoritmo e decidibilidade.
-                </p>
+    <h2>O que é decidibilidade?</h2>
+    <p>
+    Antes de apresentar os problemas indecidíveis, é importante entender o conceito de <strong>decidibilidade</strong>.
+    Um problema é dito <strong>decidível</strong> quando existe um algoritmo capaz de resolvê-lo em um número finito de passos - ou seja, o algoritmo sempre termina e retorna uma resposta correta, seja ela sim ou não.
+    Já um problema é dito <strong>indecidível</strong> quando não existe nenhum algoritmo capaz de resolvê-lo para todos os casos possíveis.
+    </p>
+    <p>
+    É importante destacar que indecidibilidade <strong>não é uma limitação tecnológica</strong>.
+    Não se trata de falta de processamento, memória ou tempo, mas sim de uma limitação matemática fundamental.
+    Esse resultado foi estabelecido por Alan Turing em 1936 e permanece válido até hoje.
+    </p>
+    <img src="/test-site/assets/IMAGES/teoria-da-computacao/decidibilidade.png" alt="Ilustração">
+    <hr>
 
-                <p>
-                    A seguir, apresentamos alguns exemplos clássicos de problemas indecidíveis.
-                </p>
 
-                <hr>
+    <h2>Máquinas Abstratas</h2>
+    <p>
+    Na Teoria da Computação, utilizamos <strong>máquinas abstratas</strong> para modelar o funcionamento de computadores de forma matemática e simplificada.
+    Essas máquinas não são físicas, mas sim modelos teóricos que nos permitem entender <strong>como linguagens podem ser reconhecidas</strong>.
+    </p>
+    <p>
+    Uma máquina abstrata recebe uma sequência de símbolos como entrada e decide se essa sequência pertence ou não a uma determinada linguagem.
+    Por isso, dizemos que essas máquinas atuam como <strong>reconhecedores de linguagens</strong>.
+    </p>
+    <p>
+    Dependendo do tipo de máquina utilizada, conseguimos reconhecer linguagens mais simples ou mais complexas.
+    Por exemplo:
+    </p>
+    <ul>
+        <li><strong>Autômatos finitos</strong>: reconhecem linguagens regulares.</li>
+        <li><strong>Autômatos com pilha</strong>: reconhecem linguagens livres de contexto.</li>
+        <li><strong>Máquinas de Turing</strong>: reconhecem linguagens recursivamente enumeráveis.</li>
+    </ul>
+    <p>
+    Esses modelos estão diretamente relacionados à <a href="/test-site/HTML/Teoria da Computação/04-hierarquia-de-chomsky.html" target="_blank">Hierarquia de Chomsky</a> e ajudam a entender os limites do que pode ser reconhecido por um sistema computacional.
+    </p>
+    <img src="/test-site/assets/IMAGES/teoria-da-computacao/maquinaabstrata.png" alt="Máquina Abstrata" style="height: 5%;">
+    <p>
+    Um dos modelos mais importantes é a <strong>Máquina de Turing</strong>, que serve como base para definir formalmente o conceito de algoritmo e decidibilidade.
+    </p>
+    <p>
+    A seguir, apresentamos alguns exemplos clássicos de problemas indecidíveis.
+    </p>
+    <hr>
 
-                <h3>1 - Problema da Parada</h3>
 
-                <p>
-                    O <strong>Problema da Parada</strong>, proposto por <strong>Alan Turing</strong>, questiona se é possível determinar se um programa irá terminar ou executar para sempre.
-                    A resposta é <strong>não</strong>: esse problema é indecidível.
-                </p>
+    <h3>1 - Problema da Parada</h3>
+    <p>
+    O <strong>Problema da Parada</strong>, proposto por <strong>Alan Turing</strong>, questiona se é possível determinar se um programa irá terminar ou executar para sempre.
+    A resposta é <strong>não</strong>: esse problema é indecidível.
+    </p>
+    <p>
+    Para ilustrar:
+    </p>
+    <img src="/test-site/assets/IMAGES/teoria-da-computacao/code-problema-da-parada.png" alt="Problema da parada" width="60%">
+    <p>
+    A função <em>vai_parar(programa)</em> seria um verificador hipotético que tenta prever o comportamento de qualquer programa.
+    Já a função <em>paradoxo()</em> faz exatamente o oposto da previsão, gerando uma contradição lógica.
+    Portanto, tal verificador não pode existir.
+    </p>
+    <hr>
 
-                <p>
-                    Para ilustrar:
-                </p>
 
-                <img src="/test-site/assets/IMAGES/teoria-da-computacao/code-problema-da-parada.png" alt="Problema da parada" width="60%">
+    <h3>2 - Problema da Totalidade - Totality problem</h3>
+    <p>
+    O <strong>Problema da Totalidade</strong> é semelhante ao Problema da Parada, mas com uma diferença fundamental: enquanto o Problema da Parada questiona se um programa termina para <strong>uma entrada específica</strong>, o Problema da Totalidade questiona se um programa termina para <strong>todas as entradas possíveis</strong>.
+    </p>
+    <p>
+    Em outras palavras, ele pergunta: "existe alguma entrada capaz de fazer esse programa rodar para sempre?"
+    Assim como o Problema da Parada, o Problema da Totalidade é <strong>indecidível</strong> - não existe algoritmo capaz de responder essa pergunta para qualquer programa arbitrário.
+    </p>
+    <hr>
 
-                <p>
-                    A função <em>vai_parar(programa)</em> seria um verificador hipotético que tenta prever o comportamento de qualquer programa.
-                    Já a função <em>paradoxo()</em> faz exatamente o oposto da previsão, gerando uma contradição lógica.
-                    Portanto, tal verificador não pode existir.
-                </p>
+    
+    <h3>3 - Problema de parada sem entrada - No-input halting problem</h3>
+    <p>
+    O <strong>Problema da Parada sem Entrada</strong> é uma variação mais simples do Problema da Parada: em vez de perguntar se um programa termina para uma entrada específica, ele questiona se um programa termina quando <strong>nenhuma entrada é fornecida</strong>.
+    </p>
+    <p>
+    Apesar de parecer mais simples, esse problema também é <strong>indecidível</strong> - não existe algoritmo capaz de determinar, para qualquer programa sem entrada, se ele irá terminar ou não.
+    É uma prova de que a indecidibilidade não depende da complexidade da entrada, mas sim da natureza do problema em si.
+    </p>
+    <hr>
 
-                <hr>
+    
+    <h3>4 - Problema da Equivalência - Program equivalence</h3>
+    <p>
+    O <strong>Problema da Equivalência</strong> questiona se dois programas distintos produzem <strong>exatamente a mesma saída para qualquer entrada possível</strong> - ou seja, se os dois programas são funcionalmente idênticos, mesmo que escritos de formas diferentes.
+    </p>
+    <p>
+    Esse problema também é <strong>indecidível</strong>: não existe algoritmo capaz de determinar, para quaisquer dois programas arbitrários, se eles são equivalentes entre si.
+    Na prática, isso significa que não é possível criar uma ferramenta que verifique automaticamente se duas implementações diferentes de um mesmo algoritmo produzem sempre os mesmos resultados.
+    </p>
+    <hr>
 
-                <h3>2 - Problema da Totalidade - Totality problem</h3>
-                
-                <p>
-                    O <strong>Problema da Totalidade</strong> é semelhante ao Problema da Parada, mas com uma diferença fundamental: enquanto o Problema da Parada questiona se um programa termina para <strong>uma entrada específica</strong>, o Problema da Totalidade questiona se um programa termina para <strong>todas as entradas possíveis</strong>.
-                </p>
-                
-                <p>
-                    Em outras palavras, ele pergunta: "existe alguma entrada capaz de fazer esse programa rodar para sempre?"
-                    Assim como o Problema da Parada, o Problema da Totalidade é <strong>indecidível</strong> - não existe algoritmo capaz de responder essa pergunta para qualquer programa arbitrário.
-                </p>
-            
-                <hr>
-                
-                <h3>3 - Problema de parada sem entrada - No-input halting problem</h3>
+    
+    <h3>5 - Variável não inicializada - Uninitialized variables</h3>
+    <p>
+    O problema de <strong>variáveis não inicializadas</strong> questiona se é possível determinar, para qualquer programa, se ele utiliza alguma variável antes de atribuir um valor a ela.
+    Utilizar uma variável sem inicializá-la é um erro comum em programação - o programa pode ler um valor indefinido da memória, produzindo resultados imprevisíveis e inconsistentes.
+    </p>
+    <p>
+    Assim como os problemas anteriores, determinar automaticamente se um programa arbitrário possui esse tipo de erro é <strong>indecidível</strong> - não existe algoritmo capaz de garantir a detecção de todas as variáveis não inicializadas em qualquer programa possível.
+    </p>
+    <hr>
+    
 
-                <p>
-                    O <strong>Problema da Parada sem Entrada</strong> é uma variação mais simples do Problema da Parada: em vez de perguntar se um programa termina para uma entrada específica, ele questiona se um programa termina quando <strong>nenhuma entrada é fornecida</strong>.
-                </p>
+    <h3>6 - Eliminação de código morto - Dead-code elimination</h3>
+    <p>
+    <strong>Código morto</strong> é todo trecho de código que nunca será executado, independentemente da entrada fornecida ao programa.
+    O problema da Eliminação de Código Morto questiona se é possível determinar, para qualquer programa, quais partes do código jamais serão alcançadas durante a execução.
+    </p>
+    <p>
+    Identificar e remover código morto é desejável pois torna o programa mais limpo, eficiente e fácil de manter.
+    No entanto, assim como os problemas anteriores, determinar automaticamente se um trecho de código é morto em qualquer programa arbitrário é <strong>indecidível</strong> - os compiladores modernos conseguem detectar apenas casos simples e específicos, mas não podem garantir a detecção completa em todos os casos possíveis.
+    </p>
 
-                <p>
-                    Apesar de parecer mais simples, esse problema também é <strong>indecidível</strong> - não existe algoritmo capaz de determinar, para qualquer programa sem entrada, se ele irá terminar ou não.
-                    É uma prova de que a indecidibilidade não depende da complexidade da entrada, mas sim da natureza do problema em si.
-                </p>
-            
-                <hr>
-                
-                <h3>4 - Problema da Equivalência - Program equivalence</h3>
-                <p>
-                    O <strong>Problema da Equivalência</strong> questiona se dois programas distintos produzem <strong>exatamente a mesma saída para qualquer entrada possível</strong> - ou seja, se os dois programas são funcionalmente idênticos, mesmo que escritos de formas diferentes.
-                </p>
-                
-                <p>
-                    Esse problema também é <strong>indecidível</strong>: não existe algoritmo capaz de determinar, para quaisquer dois programas arbitrários, se eles são equivalentes entre si.
-                    Na prática, isso significa que não é possível criar uma ferramenta que verifique automaticamente se duas implementações diferentes de um mesmo algoritmo produzem sempre os mesmos resultados.
-                </p>
-            
-                <hr>
-                
-                <h3>5 - Variável não inicializada - Uninitialized variables</h3>
-                <p>
-                    O problema de <strong>variáveis não inicializadas</strong> questiona se é possível determinar, para qualquer programa, se ele utiliza alguma variável antes de atribuir um valor a ela.
-                    Utilizar uma variável sem inicializá-la é um erro comum em programação - o programa pode ler um valor indefinido da memória, produzindo resultados imprevisíveis e inconsistentes.
-                </p>
 
-                <p>
-                    Assim como os problemas anteriores, determinar automaticamente se um programa arbitrário possui esse tipo de erro é <strong>indecidível</strong> - não existe algoritmo capaz de garantir a detecção de todas as variáveis não inicializadas em qualquer programa possível.
-                </p>
-            
-                <hr>
-                
-                <h3>6 - Eliminação de código morto - Dead-code elimination</h3>
-                <p>
-                    <strong>Código morto</strong> é todo trecho de código que nunca será executado, independentemente da entrada fornecida ao programa.
-                    O problema da Eliminação de Código Morto questiona se é possível determinar, para qualquer programa, quais partes do código jamais serão alcançadas durante a execução.
-                </p>
-
-                <p>
-                    Identificar e remover código morto é desejável pois torna o programa mais limpo, eficiente e fácil de manter.
-                    No entanto, assim como os problemas anteriores, determinar automaticamente se um trecho de código é morto em qualquer programa arbitrário é <strong>indecidível</strong> - os compiladores modernos conseguem detectar apenas casos simples e específicos, mas não podem garantir a detecção completa em todos os casos possíveis.
-                </p>
-
-                <div class="summary">
-                    <!-- <h2>Resumo</h2> -->
-                                    
-                    <ul>
-
-                    </ul>
-                </div>
-
-                <div class="questions">
-                    
-                </div>
-
-                <div class="bibliography">
-                    <!-- <h2>Referências</h2> -->
-                    <ul>
-                        
-                    </ul>
-                </div>
-
-            </article>
-            
-            <footer id="footer"></footer>
-        </main>
-        
-        <aside class="toc" id="toc"></aside>
+    <div class="summary">
     </div>
 
+    <div class="questions">
+    </div>
+
+    <div class="bibliography">
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Página | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    
+    <header>
+    </header>
+
+    <h2>O que é um Autômato?</h2>
+    <p>
+    Para entender autômatos, pense em um sistema de controle de portas automáticas.
+    Esse sistema possui dois estados possíveis - <b>aberta</b> e <b>fechada</b> - e reage a eventos do ambiente, como a aproximação de uma pessoa pela frente, por trás, ou a ausência de movimento.
+    <b>A cada evento, o sistema decide qual estado assumir a seguir, seguindo regras fixas e sem precisar lembrar nada do passado</b> - apenas o estado atual e o evento presente determinam o próximo passo.
+    <p>
+    Esse é exatamente o princípio por trás de um <strong>autômato</strong> - um modelo matemático de uma máquina abstrata com <b>memória limitada</b> que reage a entradas seguindo regras de transição bem definidas.
+    Apesar de sua simplicidade, autômatos são ferramentas poderosas com aplicações em compiladores, editores de texto, protocolos de rede e verificação de circuitos.
+    </p>
+    <p>
+    Um autômato finito é composto por três elementos principais, observe na ilustração:
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/teoria-da-computacao/automato-divisoes.png" alt="Estrutura de um autômato finito">
+    </figure>
+    <ul>
+        <li><b>Fita de entrada</b> - sequência finita de símbolos lida da esquerda para a direita.</li>
+        <li><b>Cabeçote de leitura</b> - percorre a fita símbolo a símbolo, avançando uma posição por vez.</li>
+        <li><b>Unidade de controle</b> - mantém o estado atual e determina o próximo estado com base no símbolo lido e em uma função de transição.</li>
+    </ul>
+    <p>
+    O autômato parte de um <b>estado inicial</b> e processa cada símbolo da fita até o fim.
+    Ao terminar, verifica se o estado em que se encontra é um <b>estado de aceitação</b> - se sim, a cadeia é aceita e pertence à linguagem reconhecida pelo autômato.
+    Caso contrário, a cadeia é rejeitada.
+    </p>
+    <hr>
+
+
+    <h2>Definição Formal</h2>
+    <p>
+    Um <strong>Autômato Finito Determinístico</strong> - do inglês <em>Deterministic Finite Automaton</em>, ou <b>DFA</b> - é definido formalmente como uma <b>5-tupla</b>:
+    </p>
+    <p>
+    <b>(Q, &Sigma;, &delta;, q<sub>0</sub>, F)</b>
+    </p>
+    <p>
+    Cada elemento dessa tupla tem um papel específico e bem definido:
+    </p>
+    <ul>
+        <li>
+        <b>Q</b> - conjunto finito de <b>estados</b>.
+        Representa todos os possíveis "modos" em que o autômato pode se encontrar durante o processamento de uma cadeia.
+        No exemplo da porta automática, Q = {<b>Aberta</b>, <b>Fechada</b>} - a porta só pode estar em um desses dois estados a cada momento.
+        </li><br>
+
+        <li>
+        <b>&Sigma;</b> - <b>alfabeto</b> finito.
+        É o conjunto de símbolos que o autômato é capaz de ler na fita de entrada.
+        No exemplo da porta, &Sigma; = {<b>Movimento na frente</b>, <b>Movimento atrás</b>, <b>Nenhuma movimento</b>} - são os únicos eventos que o sistema reconhece e reage.
+        </li><br>
+
+        <li>
+        <b>&delta; : Q &times; &Sigma; &rarr; Q</b> - <b>função de transição</b>.
+        Define, para cada par (estado atual, símbolo lido), qual será o próximo estado.
+        No exemplo da porta: se o estado atual é <b>Fechada</b> e o evento é <b>Frente</b>, a função de transição determina que o próximo estado é <b>Aberta</b>.
+        Por ser determinística, cada par possui exatamente um próximo estado definido, nunca dois ou nenhum.
+        </li><br>
+
+        <li>
+        <b>q<sub>0</sub> &isin; Q</b> - <b>estado inicial</b>.
+        É o estado em que o autômato se encontra antes de começar a ler qualquer símbolo da fita.
+        No exemplo da porta, q<sub>0</sub> = <b>Fechada</b> - a porta começa fechada antes de receber qualquer evento.
+        </li><br>
+
+        <li>
+        <b>F &sube; Q</b> - conjunto de <b>estados de aceitação</b>.
+        É o subconjunto de Q formado pelos estados que, ao final da leitura, indicam que a cadeia pertence à linguagem reconhecida pelo autômato.
+        No exemplo da porta, poderíamos definir F = {<b>Aberta</b>} - ou seja, uma sequência de eventos é aceita se ao final a porta estiver aberta.
+        Se o autômato terminar em um estado de F, a cadeia é aceita. Caso contrário, é rejeitada.
+        </li><br>
+    </ul>
+    <hr>
+
+
+    <h3>Exemplo mais comum no estudo de Teoria da Computação</h3>
+    <p>
+    Considere o seguinte DFA D<sub>1</sub> = (Q, &Sigma;, &delta;, q<sub>0</sub>, F), onde:
+    </p>
+    <ul>
+        <li><b>Q</b> = {q<sub>0</sub>, q<sub>1</sub>}</li>
+        <li><b>&Sigma;</b> = {a, b}</li>
+        <li><b>q<sub>0</sub></b> = q<sub>0</sub></li>
+        <li><b>F</b> = {q<sub>1</sub>}</li>
+    </ul>
+    <p>
+    A função de transição &delta; é definida pela seguinte tabela:
+    </p>
+    <table>
+        <thead>
+        <tr>
+        <th>Estado atual</th>
+        <th>a (simbolo lido)</th>
+        <th>b (simbolo lido)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>q<sub>0</sub></td>
+        <td>q<sub>1</sub></td>
+        <td>q<sub>0</sub></td>
+        </tr>
+        <tr>
+        <td>q<sub>1</sub></td>
+        <td>q<sub>0</sub></td>
+        <td>q<sub>1</sub></td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+    Lendo a tabela: se o autômato está no estado <b>q<sub>0</sub></b> e lê o símbolo <b>a</b>, transita para <b>q<sub>1</sub></b>.
+    Se está em <b>q<sub>0</sub></b> e lê <b>b</b>, permanece em <b>q<sub>0</sub></b>.
+    Se está em <b>q<sub>1</sub></b> e lê <b>a</b>, volta para <b>q<sub>0</sub></b>.
+    Se está em <b>q<sub>1</sub></b> e lê <b>b</b>, permanece em <b>q<sub>1</sub></b>.
+    Como F = {q<sub>1</sub>}, esse autômato aceita todas as cadeias que terminam com um número <b>ímpar</b> de letras <b>a</b>.
+    </p>
+    <p>
+    Para melhor compreender, vamos fazer algumas simulações para entender o funcionamento de um automata.
+    </p>
+    <p>
+    Para começar, vamos simular a leitura da cadeia <b>abba</b>:
+    </p>
+    <ul>
+        <li>Início: estado <b>q<sub>0</sub></b>.</li>
+        <li>Lê <b>a</b>: transita para <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>b</b>: permanece em <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>b</b>: permanece em <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>a</b>: volta para <b>q<sub>0</sub></b>.</li>
+        <li>Fim da fita: estado atual é <b>q<sub>0</sub></b>, que não pertence ao conjunto F - cadeia <b>rejeitada</b>.</li>
+    </ul>
+    <p>
+    Agora simulando a cadeia <b>aba</b>:
+    </p>
+    <ul>
+        <li>Início: estado <b>q<sub>0</sub></b>.</li>
+        <li>Lê <b>a</b>: transita para <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>b</b>: permanece em <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>a</b>: volta para <b>q<sub>0</sub></b>.</li>
+        <li>Fim da fita: estado atual é <b>q<sub>0</sub></b>, que não pertence a F - cadeia <b>rejeitada</b>.</li>
+    </ul>
+    <p>
+    E a cadeia <b>aab</b>:
+    </p>
+    <ul>
+        <li>Início: estado <b>q<sub>0</sub></b>.</li>
+        <li>Lê <b>a</b>: transita para <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>a</b>: volta para <b>q<sub>0</sub></b>.</li>
+        <li>Lê <b>b</b>: permanece em <b>q<sub>0</sub></b>.</li>
+        <li>Fim da fita: estado atual é <b>q<sub>0</sub></b>, que não pertence a F - cadeia <b>rejeitada</b>.</li>
+    </ul>
+    <p>
+    Por fim, a cadeia <b>ab</b>:
+    </p>
+    <ul>
+        <li>Início: estado <b>q<sub>0</sub></b>.</li>
+        <li>Lê <b>a</b>: transita para <b>q<sub>1</sub></b>.</li>
+        <li>Lê <b>b</b>: permanece em <b>q<sub>1</sub></b>.</li>
+        <li>Fim da fita: estado atual é <b>q<sub>1</sub></b>, que pertence a F - cadeia <b>aceita</b>.</li>
+    </ul>
+    <hr>
+    
+    
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+        </ul>
+    </div>
+
+
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <ul>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

@@ -1,122 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de Problemas na Computação | Big-O Academy</title>
-    <meta name="description" content="Conheça os principais tipos de problemas da Teoria da Computação: decisão, otimização, enumeração e busca. Entenda como eles se diferenciam.">
-
-    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
-
-    <script src="/test-site/scripts/loadComponents.js" defer></script>
-    <script src="/test-site/scripts/generatorToc.js" defer></script>
-    <script src="/test-site/scripts/refs.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipos de Problemas na Computação | Big-O Academy</title>
+<meta name="description" content="Conheça os principais tipos de problemas da Teoria da Computação: decisão, otimização, enumeração e busca. Entenda como eles se diferenciam.">
+<link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+<script src="/test-site/scripts/loadComponents.js" defer></script>
+<script src="/test-site/scripts/generatorToc.js" defer></script>
+<script src="/test-site/scripts/refs.js" defer></script>
 </head>
 
 <body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
 
-    <header id="header"></header>
+    <header>
+        <h1>Tipos de Problemas na Teoria da Computação</h1>
+        <p>
+        Na Teoria da Computação, os problemas são classificados de acordo com o tipo de resposta que se deseja obter.
+        Essa classificação ajuda a entender como diferentes problemas podem ser resolvidos e quais técnicas são mais adequadas para cada caso.
+        </p>
+        <hr>
+    </header>
 
-    <div class="layout">
 
-        <aside class="sidebar" id="sidebar"></aside>
+    <h2>1 - Problemas de Decisão</h2>
+    <p>
+    Problemas de decisão são aqueles cuja resposta é simplesmente <strong>sim</strong> ou <strong>não</strong>.
+    Um exemplo clássico é: <em>"um número inteiro é par?"</em>.
+    Esse é o tipo de problema mais estudado, pois muitos outros problemas podem ser reduzidos a ele.
+    </p>
+    <p>
+    Exemplos:
+    </p>
+    <ul>
+        <li>Um número inteiro é primo?</li>
+        <li>Um grafo possui um caminho entre dois pontos?</li>
+        <li>Uma palavra pertence a uma linguagem?</li>
+    </ul>
+    <hr>
 
-        <main id="main">
-             <article>
 
-                <header>
-                    <h1>Tipos de Problemas na Teoria da Computação</h1>
-                    
-                    <p>
-                        Na Teoria da Computação, os problemas são classificados de acordo com o tipo de resposta que se deseja obter.
-                        Essa classificação ajuda a entender como diferentes problemas podem ser resolvidos e quais técnicas são mais adequadas para cada caso.
-                    </p>
-                </header>
+    <h2>2 - Problemas de Otimização</h2>
+    <p>
+    Problemas de otimização buscam encontrar a <strong>melhor solução possível</strong> entre várias alternativas, de acordo com algum critério.
+    Por exemplo: <em>"qual é a menor quantidade de moedas necessária para um troco?"</em>.
+    </p>
+    <p>Exemplos:</p>
+    <ul>
+        <li>Minimizar a quantidade de moedas em um troco.</li>
+        <li>Distribuir tarefas minimizando o tempo total.</li>
+    </ul>
+    <hr>
 
-                <hr>
 
-                <h2>1 - Problemas de Decisão</h2>
+    <h2>3 - Problemas de Enumeração</h2>
+    <p>
+    Problemas de enumeração exigem listar <strong>todas as soluções possíveis</strong>.
+    Por exemplo: <em>"quais são todos os caminhos possíveis entre dois pontos?"</em>.
+    Esses problemas costumam crescer rapidamente com o tamanho da entrada.
+    </p>
+    <p>
+    Exemplos:
+    </p>
+    <ul>
+        <li>Listar todas as permutações de uma lista.</li>
+        <li>Listar todos os caminhos em um grafo.</li>
+        <li>Listar todos os subconjuntos de um conjunto.</li>
+    </ul>
+    <hr>
 
-                <p>
-                    Problemas de decisão são aqueles cuja resposta é simplesmente <strong>sim</strong> ou <strong>não</strong>.
-                    Um exemplo clássico é: <em>"um número inteiro é par?"</em>.
-                    Esse é o tipo de problema mais estudado, pois muitos outros problemas podem ser reduzidos a ele.
-                </p>
 
-                <p>Exemplos:</p>
-                <ul>
-                    <li>Um número inteiro é primo?</li>
-                    <li>Um grafo possui um caminho entre dois pontos?</li>
-                    <li>Uma palavra pertence a uma linguagem?</li>
-                </ul>
-                
-                <hr>
+    <h2>4 - Problemas de Busca ou Construção</h2>
+    <p>
+    Problemas de busca ou construção exigem que o algoritmo <strong>encontre ou construa uma solução</strong> que satisfaça determinadas condições.
+    Diferentemente dos problemas de otimização, aqui não é necessário encontrar a melhor solução - qualquer solução válida é suficiente.
+    Diferentemente dos problemas de decisão, não basta responder sim ou não - é preciso apresentar a solução concreta.
+    </p>
+    <p>Exemplos:</p>
+    <ul>
+        <li>Encontrar <strong>qualquer</strong> caminho entre dois pontos em um grafo.</li>
+        <li>Construir uma sequência de movimentos que resolva um cubo mágico.</li>
+        <li>Encontrar um número que satisfaça uma equação.</li>
+    </ul>
+    <hr>
 
-                <h2>2 - Problemas de Otimização</h2>
-
-                <p>
-                    Problemas de otimização buscam encontrar a <strong>melhor solução possível</strong> entre várias alternativas, de acordo com algum critério.
-                    Por exemplo: <em>"qual é a menor quantidade de moedas necessária para um troco?"</em>.
-                </p>
-
-                <p>Exemplos:</p>
-                <ul>
-                    <li>Encontrar o menor caminho entre dois pontos.</li>
-                    <li>Minimizar a quantidade de moedas em um troco.</li>
-                    <li>Distribuir tarefas minimizando o tempo total.</li>
-                </ul>
-
-                <hr>
-
-                <h2>3 - Problemas de Enumeração</h2>
-
-                <p>
-                    Problemas de enumeração exigem listar <strong>todas as soluções possíveis</strong>.
-                    Por exemplo: <em>"quais são todos os caminhos possíveis entre dois pontos?"</em>.
-                    Esses problemas costumam crescer rapidamente com o tamanho da entrada.
-                </p>
-
-                <p>Exemplos:</p>
-                <ul>
-                    <li>Listar todas as permutações de uma lista.</li>
-                    <li>Listar todos os caminhos em um grafo.</li>
-                    <li>Listar todos os subconjuntos de um conjunto.</li>
-                </ul>
-
-                <hr>
-
-                <h3>4 - Problemas de Busca ou Construção</h3>
-                
-                <p>
-                Problemas de busca ou construção exigem que o algoritmo <strong>encontre ou construa uma solução</strong> que satisfaça determinadas condições.
-                Diferentemente dos problemas de otimização, aqui não é necessário encontrar a melhor solução - qualquer solução válida é suficiente.
-                Diferentemente dos problemas de decisão, não basta responder sim ou não - é preciso apresentar a solução concreta.
-                </p>
-
-                <p>Exemplos:</p>
-                <ul>
-                    <li>Encontrar <strong>qualquer</strong> caminho entre dois pontos em um grafo.</li>
-                    <li>Construir uma sequência de movimentos que resolva um cubo mágico.</li>
-                    <li>Encontrar um número que satisfaça uma equação.</li>
-                </ul>
-
-                <hr>
-
-                <div class="questions"></div>
-                <div class="summary"></div>
-
-                <div class="bibliography">
-                    <h2>Referências</h2>
-                    <ul></ul>
-                </div>
-
-            </article>
-            
-            <footer id="footer"></footer>
-        </main>
-        
-        <aside class="toc" id="toc"></aside>
+    <div class="summary">
+    </div>
+    
+    <div class="questions">
     </div>
 
+    <div class="bibliography">
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>

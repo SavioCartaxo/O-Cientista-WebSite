@@ -1,154 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Página | Big-O Academy</title>
-
-    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
-
-    <script src="/test-site/scripts/loadComponents.js" defer></script>
-    <script src="/test-site/scripts/generatorToc.js" defer></script>
-    <script src="/test-site/scripts/refs.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<title>Página | Big-O Academy</title>
+<link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+<script src="/test-site/scripts/loadComponents.js" defer></script>
+<script src="/test-site/scripts/generatorToc.js" defer></script>
+<script src="/test-site/scripts/refs.js" defer></script>
 </head>
 
 <body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
 
-    <header id="header"></header>
+    <header>
+        <h1>Hierarquia de Chomsky</h1>
+        <p>
+        Neste artigo, exploraremos a <strong>Hierarquia de Chomsky</strong> - uma classificação das linguagens formais de acordo com seu poder expressivo e computacional.
+        Para facilitar a compreensão, utilizaremos um mesmo alfabeto base ao longo de todos os exemplos, observando como cada nível da hierarquia consegue impor regras progressivamente mais complexas.
+        </p>
+        <hr>
+    </header>
 
-    <div class="layout">
 
-        <aside class="sidebar" id="sidebar"></aside>
+    <h2>A Hierarquia de Chomsky</h2>
+    <p>
+    Em 1959, o linguista e matemático <strong>Noam Chomsky</strong> propôs uma classificação das linguagens formais de acordo com seu poder expressivo e computacional - conhecida hoje como a <strong>Hierarquia de Chomsky</strong>.
+    Essa hierarquia divide as linguagens em quatro tipos, do menos ao mais poderoso, cada um associado a um tipo de gramática e a um modelo de máquina capaz de reconhecê-la.
+    </p>
+    <img src="/test-site/assets/IMAGES/teoria-da-computacao/classificacao-das-linguagens.png" alt="Hierarquia de Chomsky - classificação das linguagens formais">
+    <p>
+    Para mencionado anteriormente, vamos utilizar uma mesma linguagem base ao longo de todos os exemplos: um alfabeto formado pelos símbolos <strong>{a, b, c, d, e}</strong>.
+    A ideia é observar como cada tipo da hierarquia consegue impor regras cada vez mais complexas sobre essas letras.
+    </p>
+    <hr>
+   
+   
+    <h3>Tipo 3 - Linguagens Regulares</h3>
+    <p>
+    As <strong>linguagens regulares</strong> são o tipo mais simples da hierarquia. Elas conseguem reconhecer padrões básicos, mas não são capazes de "lembrar" quantidades arbitrárias de símbolos.
+    Ou seja, conseguem identificar sequências e repetições simples, mas não conseguem garantir relações entre partes distantes da palavra.
+    </p>
+    <p>
+    Por exemplo, podemos definir uma linguagem onde aparecem primeiro várias letras <strong>a</strong>, seguidas de várias letras <strong>b</strong>, sem nenhuma relação entre as quantidades:
+    <strong>L = { aⁿ bᵐ | n ≥ 0, m ≥ 0 }</strong>.
+    </p>
+    <p>
+    Essa linguagem aceita palavras como ε, a, b, aaab, bbbb e aaaaabbbbb. Note que não importa quantos <strong>a</strong> ou <strong>b</strong> existem - não há nenhuma dependência entre eles.
+    </p>
+    <hr>
 
-        <main id="main">
-            <article>
-                <header>
 
-                </header>
+    <h3>Tipo 2 - Linguagens Livres de Contexto</h3>
+    <p>
+    As <strong>linguagens livres de contexto</strong> possuem maior poder expressivo. Elas conseguem impor dependências entre partes da palavra, como exigir que certas quantidades sejam iguais.
+    Isso é possível porque utilizam pilhas como estruturas de memória auxiliares.
+    </p>
+    <p>
+    Um exemplo clássico é a linguagem <strong>L = { aⁿ bⁿ | n ≥ 0 }</strong>, onde o número de letras <strong>a</strong> deve ser exatamente igual ao número de letras <strong>b</strong>.
+    </p>
+    <p>
+    São palavras válidas: ε, ab, aabb, aaabbb. Já palavras como aab, abb ou aaabbbb não pertencem à linguagem, pois quebram essa igualdade.
+    </p>
+    <p>
+    Aqui já é necessário "lembrar" quantos <strong>a</strong> apareceram para depois comparar com os <strong>b</strong>.
+    </p>
+    <hr>
 
-                    <h2>A Hierarquia de Chomsky</h2>
-
-                    <p>
-                    Em 1959, o linguista e matemático <strong>Noam Chomsky</strong> propôs uma classificação das linguagens formais de acordo com seu poder expressivo e computacional - conhecida hoje como a <strong>Hierarquia de Chomsky</strong>.
-                    Essa hierarquia divide as linguagens em quatro tipos, do menos ao mais poderoso, cada um associado a um tipo de gramática e a um modelo de máquina capaz de reconhecê-la.
-                    </p>
-
-                    <img src="/test-site/assets/IMAGES/teoria-da-computacao/classificacao-das-linguagens.png" alt="Hierarquia de Chomsky - classificação das linguagens formais">
-
-                    <p>
-                    Para facilitar a compreensão, vamos utilizar uma mesma linguagem base ao longo de todos os exemplos: um alfabeto formado pelos símbolos <strong>{a, b, c, d, e}</strong>.
-                    A ideia é observar como cada tipo da hierarquia consegue impor regras cada vez mais complexas sobre essas letras.
-                    </p>
-
-                    <h3>Tipo 3 - Linguagens Regulares</h3>
-
-                    <p>
-                    As <strong>linguagens regulares</strong> são o tipo mais simples da hierarquia. Elas conseguem reconhecer padrões básicos, mas não são capazes de "lembrar" quantidades arbitrárias de símbolos.
-                    Ou seja, conseguem identificar sequências e repetições simples, mas não conseguem garantir relações entre partes distantes da palavra.
-                    </p>
-
-                    <p>
-                    Por exemplo, podemos definir uma linguagem onde aparecem primeiro várias letras <strong>a</strong>, seguidas de várias letras <strong>b</strong>, sem nenhuma relação entre as quantidades:
-                    <strong>L = { aⁿ bᵐ | n ≥ 0, m ≥ 0 }</strong>.
-                    </p>
-
-                    <p>
-                    Essa linguagem aceita palavras como ε, a, b, aaab, bbbb e aaaaabbbbb. Note que não importa quantos <strong>a</strong> ou <strong>b</strong> existem - não há nenhuma dependência entre eles.
-                    </p>
-
-                    <hr>
-
-                    <h3>Tipo 2 - Linguagens Livres de Contexto</h3>
-
-                    <p>
-                    As <strong>linguagens livres de contexto</strong> possuem maior poder expressivo. Elas conseguem impor dependências entre partes da palavra, como exigir que certas quantidades sejam iguais.
-                    Isso é possível porque utilizam pilhas como estruturas de memória auxiliares.
-                    </p>
-
-                    <p>
-                    Um exemplo clássico é a linguagem <strong>L = { aⁿ bⁿ | n ≥ 0 }</strong>, onde o número de letras <strong>a</strong> deve ser exatamente igual ao número de letras <strong>b</strong>.
-                    </p>
-
-                    <p>
-                    São palavras válidas: ε, ab, aabb, aaabbb. Já palavras como aab, abb ou aaabbbb não pertencem à linguagem, pois quebram essa igualdade.
-                    </p>
-
-                    <p>
-                    Aqui já é necessário "lembrar" quantos <strong>a</strong> apareceram para depois comparar com os <strong>b</strong>.
-                    </p>
-
-                    <hr>
-
-                    <h3>Tipo 1 - Linguagens Sensíveis ao Contexto</h3>
-
-                    <p>
-                    As <strong>linguagens sensíveis ao contexto</strong> conseguem impor regras ainda mais complexas, envolvendo múltiplos símbolos ao mesmo tempo.
-                    Agora não basta comparar duas quantidades - podemos exigir relações entre três ou mais grupos.
-                    </p>
-
-                    <p>
-                    Considere a linguagem <strong>L = { aⁿ bⁿ cⁿ | n ≥ 1 }</strong>, onde o número de <strong>a</strong>, <strong>b</strong> e <strong>c</strong> deve ser exatamente o mesmo.
-                    </p>
-
-                    <p>
-                    Exemplos válidos incluem abc, aabbcc e aaabbbccc. Já palavras como aabbc, abbccc ou aaabbbcc não pertencem à linguagem.
-                    </p>
-
-                    <p>
-                    Esse tipo de verificação exige um controle mais sofisticado, pois envolve várias dependências simultâneas.
-                    </p>
-
-                    <hr>
-
-                    <h3>Tipo 0 - Linguagens Recursivamente Enumeráveis</h3>
-
-                    <p>
-                    No topo da hierarquia estão as <strong>linguagens recursivamente enumeráveis</strong>, que representam o limite máximo do que pode ser computado.
-                    Elas permitem definir regras gerais sem restrições estruturais.
-                    </p>
-
-                    <p>
-                    Usando todo o alfabeto { a, b, c, d, e }, podemos definir uma linguagem ainda mais complexa:
-                    <strong>L = { w ∈ { a, b, c, d, e }* | número de a = número de b = número de c = número de d = número de e }</strong>.
-                    </p>
-
-                    <p>
-                    Exemplos válidos incluem abcde e aabbccddee. Já palavras como aabbccdde ou abcdd não satisfazem a condição.
-                    </p>
-
-                    <p>
-                    Aqui estamos exigindo que cinco quantidades diferentes sejam iguais ao mesmo tempo, algo que só pode ser tratado por modelos com poder computacional máximo, como as Máquinas de Turing.
-                    </p>
-
-                <hr>
-
-                <div class="summary">
-                    <!-- <h2>Resumo</h2> -->
-                                    
-                    <ul>
-
-                    </ul>
-                </div>
-
-                <div class="questions">
-                    
-                </div>
-
-                <div class="bibliography">
-                    <!-- <h2>Referências</h2> -->
-                    <ul>
-                        
-                    </ul>
-                </div>
-
-            </article>
-            
-            <footer id="footer"></footer>
-        </main>
         
-        <aside class="toc" id="toc"></aside>
+    <h3>Tipo 1 - Linguagens Sensíveis ao Contexto</h3>
+    <p>
+    As <strong>linguagens sensíveis ao contexto</strong> conseguem impor regras ainda mais complexas, envolvendo múltiplos símbolos ao mesmo tempo.
+    Agora não basta comparar duas quantidades - podemos exigir relações entre três ou mais grupos.
+    </p>
+    <p>
+    Considere a linguagem <strong>L = { aⁿ bⁿ cⁿ | n ≥ 1 }</strong>, onde o número de <strong>a</strong>, <strong>b</strong> e <strong>c</strong> deve ser exatamente o mesmo.
+    </p>
+    <p>
+    Exemplos válidos incluem abc, aabbcc e aaabbbccc. Já palavras como aabbc, abbccc ou aaabbbcc não pertencem à linguagem.
+    </p>
+    <p>
+    Esse tipo de verificação exige um controle mais sofisticado, pois envolve várias dependências simultâneas.
+    </p>
+    <hr>
+
+
+    <h3>Tipo 0 - Linguagens Recursivamente Enumeráveis</h3>
+    <p>
+    No topo da hierarquia estão as <strong>linguagens recursivamente enumeráveis</strong>, que representam o limite máximo do que pode ser computado.
+    Elas permitem definir regras gerais sem restrições estruturais.
+    </p>
+    <p>
+    Usando todo o alfabeto { a, b, c, d, e }, podemos definir uma linguagem ainda mais complexa:
+    <strong>L = { w ∈ { a, b, c, d, e }* | número de a = número de b = número de c = número de d = número de e }</strong>.
+    </p>
+    <p>
+    Exemplos válidos incluem abcde e aabbccddee. Já palavras como aabbccdde ou abcdd não satisfazem a condição.
+    </p>
+    <p>
+    Aqui estamos exigindo que cinco quantidades diferentes sejam iguais ao mesmo tempo, algo que só pode ser tratado por modelos com poder computacional máximo, como as Máquinas de Turing.
+    </p>
+    <hr>
+
+    <div class="summary"></div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+        </ul>
     </div>
 
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
 </body>
 </html>
