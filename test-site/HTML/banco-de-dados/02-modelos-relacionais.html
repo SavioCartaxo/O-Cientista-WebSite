@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<title>Modelos Relacionais | Big-O Academy</title>
+<link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+<script src="/test-site/scripts/loadComponents.js" defer></script>
+<script src="/test-site/scripts/generatorToc.js" defer></script>
+<script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Modelo Relacional</h1>
+        <p>
+        Neste artigo, exploraremos o <strong>modelo relacional</strong> - a base matemática por trás dos bancos de dados relacionais modernos.
+        Veremos como os dados são organizados em tabelas, quais regras garantem sua consistência e como as operações de atualização interagem com essas regras.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>Conceitos Básicos</h2>
+    <p>
+    O <strong>modelo de dados relacional</strong> foi proposto por <b>E. F. Codd em 1970</b> e revolucionou a área de bancos de dados.
+    Ele é baseado no conceito de <b>relação</b>, derivado da teoria dos conjuntos, e possui uma forte fundamentação matemática que serviu de base para a criação da linguagem <strong>SQL</strong>.
+    </p>
+    <p>
+    Na prática, os dados são organizados em <b>tabelas compostas por linhas e colunas</b> - uma estrutura simples, intuitiva e poderosa que facilita tanto o armazenamento quanto a consulta de informações.
+    </p>
+    <hr>
+
+
+    <h2>Definições Informais</h2>
+    <p>
+    Antes de entrarmos nas definições formais, é útil compreender os conceitos de forma intuitiva.
+    Uma <strong>relação</strong> pode ser entendida como uma tabela de valores, onde cada <b>linha</b> representa um fato do mundo real - chamada formalmente de <b>tupla</b> - e cada <b>coluna</b> representa uma característica dos dados - chamada de <b>atributo</b>.
+    </p>
+    <p>
+    Uma <strong>chave</strong> é um atributo, ou conjunto de atributos, capaz de identificar unicamente cada linha da tabela - por exemplo, o número de CPF pode ser uma chave que identifica uma pessoa em um BD.
+    Em alguns casos, quando nenhum atributo natural serve como identificador único, utiliza-se um <b>identificador artificial</b> como chave primária.
+    </p>
+    <hr>
+
+
+    <h2>Definições Formais</h2>
+
+    <h3>Esquema de Relação</h3>
+    <p>
+    O <strong>esquema de uma relação</strong> representa sua estrutura e é definido no formato <b>R(A1, A2, ..., An)</b>, onde R é o nome da relação e cada Ai representa um atributo - ou seja, uma coluna da tabela.
+    Cada atributo pertence a um <b>domínio</b>, que define o conjunto de valores válidos para aquele atributo.
+    </p>
+
+    <h3>Tupla</h3>
+    <p>
+    Uma <strong>tupla</strong> é um conjunto ordenado de valores pertencentes aos domínios definidos no esquema da relação.
+    Cada linha de uma tabela corresponde a uma tupla - ou seja, a um registro armazenado no banco.
+    </p>
+
+    <h3>Estado da Relação</h3>
+    <p>
+    O <strong>estado de uma relação</strong> corresponde ao conjunto atual de tuplas armazenadas na tabela em um determinado momento.
+    Esse estado também pode ser chamado de <b>povoamento da relação</b> - e muda a cada operação de inserção, remoção ou atualização de dados.
+    </p>
+    <hr>
+
+
+    <h2>Características das Relações</h2>
+
+    <h3>Ordenação</h3>
+    <p>
+    As tuplas de uma relação <b>não possuem ordenação obrigatória</b> - a ordem em que aparecem não carrega nenhum significado especial.
+    Já os atributos normalmente são tratados de forma ordenada dentro do esquema da relação.
+    </p>
+
+    <h3>Atomicidade</h3>
+    <p>
+    Todos os valores de uma tupla devem ser <b>atômicos</b> - ou seja, indivisíveis.
+    Isso significa que cada célula da tabela deve conter um único valor, sem listas ou estruturas aninhadas.
+    </p>
+
+    <h3>Domínio</h3>
+    <p>
+    Cada valor armazenado deve pertencer ao domínio definido para o atributo correspondente.
+    Por exemplo, um atributo do tipo inteiro não pode receber um valor textual.
+    </p>
+
+    <h3>Notação</h3>
+    <p>
+    Os valores de uma tupla podem ser acessados utilizando a notação <b>t[Ai]</b> ou <b>t.Ai</b>, onde t é a tupla e Ai é o atributo desejado.
+    </p>
+    <hr>
+
+
+    <h2>Constraints (Restrições)</h2>
+    <p>
+    As <strong>constraints</strong> definem quais valores são permitidos em um banco de dados, garantindo a integridade e a consistência das informações.
+    Existem três tipos principais:
+    </p>
+
+    <h3>Restrições Inerentes</h3>
+    <p>
+    São restrições impostas pela própria natureza do modelo relacional, independentemente de qualquer definição explícita.
+    Um exemplo clássico é a proibição de <b>tuplas duplicadas</b> - em uma relação, não podem existir duas linhas idênticas.
+    </p>
+
+    <h3>Restrições Baseadas no Esquema</h3>
+    <p>
+    São regras explicitamente definidas no banco de dados e normalmente implementadas por meio de SQL.
+    Incluem restrições de domínio, chaves primárias, chaves estrangeiras e restrições de integridade.
+    </p>
+
+    <h3>Restrições Semânticas</h3>
+    <p>
+    São regras de negócio específicas da aplicação que não podem ser expressas diretamente no esquema do banco.
+    Geralmente são implementadas no nível da aplicação, por meio de validações no código.
+    </p>
+    <hr>
+
+
+    <h2>Restrições de Integridade</h2>
+
+    <h3>Restrição de Domínio</h3>
+    <p>
+    Todo valor armazenado deve pertencer ao domínio definido para o atributo - garantindo que os dados sejam sempre do tipo e formato esperados.
+    </p>
+
+    <h3>Restrição de Chave</h3>
+    <p>
+    As chaves garantem a <b>unicidade das tuplas</b> dentro de uma relação - nenhuma chave pode se repetir entre linhas diferentes da tabela.
+    </p>
+
+    <h3>Superchave</h3>
+    <p>
+    Uma <strong>superchave</strong> é um conjunto de atributos capaz de identificar unicamente uma tupla.
+    Toda chave é uma superchave, mas nem toda superchave é uma chave.
+    </p>
+
+    <h3>Chave</h3>
+    <p>
+    Uma <strong>chave</strong> é uma superchave <b>mínima</b> - ou seja, nenhum de seus atributos pode ser removido sem perder a propriedade de unicidade.
+    </p>
+
+    <h3>Chave Primária</h3>
+    <p>
+    A <strong>chave primária</strong> é escolhida entre as chaves candidatas para identificar unicamente cada tupla da relação.
+    Seus valores não podem ser nulos e não podem se repetir.
+    </p>
+    <hr>
+
+
+    <h2>Integridade de Entidade</h2>
+    <p>
+    A <strong>integridade de entidade</strong> estabelece que os atributos que compõem a chave primária <b>não podem possuir valores NULL</b>.
+    Essa restrição garante que cada tupla possa ser identificada de forma única e inequívoca dentro da relação.
+    </p>
+    <hr>
+
+
+    <h2>Integridade Referencial</h2>
+    <p>
+    A <strong>integridade referencial</strong> estabelece relações entre tabelas por meio de <b>chaves estrangeiras</b>.
+    Uma chave estrangeira referencia a chave primária de outra relação, garantindo que os dados relacionados entre tabelas sejam sempre consistentes.
+    Em outras palavras, não é possível referenciar um registro que não existe.
+    </p>
+    <hr>
+
+
+    <h2>Esquema de Banco Relacional</h2>
+    <p>
+    Um <strong>esquema de banco de dados relacional</strong> é formado por um conjunto de relações e suas restrições de integridade.
+    Cada relação possui atributos, domínios, chaves e constraints associadas - formando uma estrutura completa e coesa que representa o mini-mundo modelado.
+    </p>
+    <hr>
+
+
+    <h2>Estado do Banco de Dados</h2>
+    <p>
+    O <strong>estado de um banco de dados</strong> corresponde ao conjunto de estados de todas as relações presentes no sistema em um determinado momento.
+    Um estado é considerado <b>válido</b> quando respeita todas as restrições de integridade definidas no esquema.
+    </p>
+    <hr>
+
+
+    <h2>Operações de Atualização</h2>
+    <p>
+    As três principais operações de manipulação de dados em um banco relacional são <b>INSERT</b>, <b>DELETE</b> e <b>UPDATE</b>.
+    Todas devem respeitar as restrições de integridade definidas - caso contrário, a operação é rejeitada ou tratada por uma ação corretiva.
+    </p>
+    <hr>
+
+
+    <h2>Possíveis Violações</h2>
+    <p>
+    Cada operação de atualização pode violar diferentes tipos de restrições:
+    </p>
+
+    <h3>INSERT</h3>
+    <p>
+    Uma inserção pode violar restrições de <b>domínio</b> - valor fora do tipo esperado - restrições de <b>chave</b> - valor duplicado - <b>integridade de entidade</b> - chave primária nula - e <b>integridade referencial</b> - chave estrangeira referenciando registro inexistente.
+    </p>
+
+    <h3>DELETE</h3>
+    <p>
+    Uma remoção pode violar a <b>integridade referencial</b> quando o registro removido é referenciado como chave estrangeira em outra tabela.
+    </p>
+
+    <h3>UPDATE</h3>
+    <p>
+    Uma atualização pode violar restrições de <b>domínio</b>, <b>chave primária</b> e <b>integridade referencial</b>, dependendo dos atributos modificados.
+    </p>
+
+    <h3>Ações de Correção</h3>
+    <p>
+    Quando uma violação é detectada, o banco pode adotar diferentes estratégias de correção:
+    </p>
+    <ul>
+        <li><b>RESTRICT</b> - rejeita a operação que causaria a violação.</li>
+        <li><b>CASCADE</b> - propaga a operação automaticamente para os registros relacionados.</li>
+        <li><b>SET NULL</b> - define como NULL os valores que referenciam o registro afetado.</li>
+    </ul>
+    <hr>
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Modelo relacional:</strong> proposto por E. F. Codd em 1970, organiza dados em tabelas com fundamentação matemática.</li>
+            <li><strong>Relação:</strong> tabela composta por tuplas (linhas) e atributos (colunas).</li>
+            <li><strong>Esquema:</strong> estrutura da relação - R(A1, A2, ..., An).</li>
+            <li><strong>Estado:</strong> conjunto atual de tuplas armazenadas em um determinado momento.</li>
+            <li><strong>Domínio:</strong> conjunto de valores válidos para um atributo.</li>
+            <li><strong>Chave primária:</strong> atributo ou conjunto de atributos que identifica unicamente cada tupla - não pode ser nulo.</li>
+            <li><strong>Integridade referencial:</strong> chaves estrangeiras devem referenciar registros existentes.</li>
+            <li><strong>Operações:</strong> INSERT, DELETE e UPDATE devem respeitar todas as restrições de integridade.</li>
+            <li><strong>Ações de correção:</strong> RESTRICT, CASCADE e SET NULL.</li>
+        </ul>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li>ELMASRI, Ramez; NAVATHE, Shamkant. Sistemas de Banco de Dados.</li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

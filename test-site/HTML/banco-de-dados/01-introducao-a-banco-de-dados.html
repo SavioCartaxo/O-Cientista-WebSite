@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introdução aos conceitos fundamentais de Bancos de Dados e SGBDs">
+<title>Introdução a Bancos de Dados | Big-O Academy</title>
+<link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+<script src="/test-site/scripts/loadComponents.js" defer></script>
+<script src="/test-site/scripts/generatorToc.js" defer></script>
+<script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Introdução a Bancos de Dados</h1>
+        <p>
+        O foco desta disciplina é apresentar os conceitos fundamentais de bancos de dados tradicionais, abordando organização, armazenamento, manipulação e gerenciamento de informações por meio de Sistemas Gerenciadores de Banco de Dados (SGBDs).
+        Pois bem, comecemos do básico.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>O que é um Banco de Dados?</h2>
+    <p>
+    Um <strong>Banco de Dados (BD)</strong> é uma coleção organizada de dados relacionados entre si, armazenados para um propósito específico.
+    Os dados representam fatos conhecidos que possuem significado e podem ser utilizados para representar parte do mundo real.
+    </p>
+    <p>
+    Essa parte do mundo real representada pelo banco é chamada de <strong>mini-mundo</strong> ou <strong>universo de discurso</strong>.
+    Um banco de dados não é apenas um conjunto aleatório de informações - ele é projetado, construído e populado para atender necessidades específicas de usuários ou aplicações.
+    </p>
+    <p>
+    Alguns exemplos de bancos de dados presentes no dia a dia:
+    </p>
+    <ul>
+        <li>Sistemas acadêmicos: controle de alunos, notas e disciplinas.</li>
+        <li>Sistemas bancários: transações, contas e clientes.</li>
+        <li>Redes sociais: perfis, publicações e conexões.</li>
+        <li>Lojas virtuais: produtos, pedidos e estoque.</li>
+        <li>Sistemas hospitalares: prontuários, consultas e medicamentos.</li>
+    </ul>
+    <hr>
+
+
+    <h2>SGBD</h2>
+    <p>
+    O <strong>Sistema Gerenciador de Banco de Dados (SGBD)</strong> é o software responsável por criar, manipular, armazenar e controlar o acesso aos bancos de dados.
+    Um sistema de banco de dados completo é formado pela combinação de três elementos: o <b>SGBD</b>, o <b>Banco de Dados</b> em si e as <b>aplicações</b> que utilizam os dados.
+    </p>
+    <hr>
+
+    <h3>Principais funções do SGBD</h3>
+    <p>
+    O SGBD é responsável por uma ampla gama de funções que garantem o funcionamento correto e eficiente do sistema:
+    </p>
+    <ul>
+        <li>Definição da estrutura do banco.</li>
+        <li>Construção e armazenamento dos dados.</li>
+        <li>Manipulação e atualização das informações.</li>
+        <li>Compartilhamento de dados entre usuários.</li>
+        <li>Controle de acesso e segurança.</li>
+        <li>Backup e recuperação de falhas.</li>
+        <li>Processamento eficiente de consultas.</li>
+    </ul>
+
+    <h3>Natureza auto-descritiva</h3>
+    <p>
+    O SGBD mantém um <b>catálogo</b> contendo informações sobre a estrutura do banco, tipos de dados, restrições e organização das tabelas.
+    Essas informações são chamadas de <strong>metadados</strong> - ou seja, dados sobre os próprios dados.
+    Isso permite que o SGBD saiba como interpretar e manipular as informações armazenadas sem depender de cada aplicação individualmente.
+    </p>
+
+    <h3>Independência entre programas e dados</h3>
+    <p>
+    Uma das grandes vantagens do SGBD é permitir <b>alterar a estrutura do banco sem a necessidade de modificar todas as aplicações</b> que utilizam os dados.
+    Isso reduz significativamente os custos de manutenção e facilita a evolução dos sistemas ao longo do tempo.
+    </p>
+
+    <h3>Abstração de dados</h3>
+    <p>
+    Os detalhes físicos de armazenamento são ocultados dos usuários e desenvolvedores.
+    Dessa forma, quem trabalha com o banco pode focar na <b>modelagem e organização lógica</b> das informações, sem precisar se preocupar com como os dados são fisicamente guardados no disco.
+    </p>
+
+    <h3>Múltiplas visões dos dados</h3>
+    <p>
+    Diferentes usuários podem visualizar apenas os dados relevantes para suas funções.
+    Em um sistema universitário, por exemplo, <b>alunos</b> visualizam suas notas, <b>professores</b> visualizam suas turmas e <b>administradores</b> têm acesso a relatórios gerais.
+    Cada um enxerga uma visão diferente do mesmo banco de dados.
+    </p>
+
+    <h3>Controle de concorrência</h3>
+    <p>
+    O SGBD permite que vários usuários acessem o banco simultaneamente sem comprometer a integridade das informações.
+    Esse controle é essencial em sistemas que exigem alta disponibilidade, como <b>sistemas bancários</b>, <b>lojas virtuais</b> e <b>aplicações corporativas</b>.
+    </p>
+
+    <h3>Transações</h3>
+    <p>
+    Uma <strong>transação</strong> representa um conjunto de operações executadas como uma única unidade lógica - ou todas acontecem com sucesso, ou nenhuma é aplicada.
+    Exemplos comuns incluem transferências bancárias, compras online e matrículas acadêmicas.
+    O SGBD garante que essas operações sejam executadas corretamente, mesmo em situações de falha.
+    </p>
+
+    <h3>Outros benefícios dos SGBDs</h3>
+    <ul>
+        <li>Redução de redundância de dados.</li>
+        <li>Controle de acesso não autorizado.</li>
+        <li>Maior integridade dos dados.</li>
+        <li>Processamento eficiente de consultas com uso de índices.</li>
+        <li>Serviços de backup e recuperação.</li>
+    </ul>
+    <hr>
+
+
+    <h2>Aplicações de Bancos de Dados</h2>
+    <p>
+    Bancos de dados estão presentes em praticamente todas as áreas da computação e do cotidiano.
+    Suas aplicações vão desde sistemas tradicionais até soluções modernas de grande escala.
+    </p>
+
+    <h3>Aplicações tradicionais</h3>
+    <ul>
+        <li>Dados numéricos e textuais em sistemas empresariais.</li>
+        <li>Controle acadêmico - alunos, notas e disciplinas.</li>
+        <li>Sistemas de gestão financeira e contábil.</li>
+    </ul>
+
+    <h3>Aplicações modernas</h3>
+    <ul>
+        <li>Armazenamento de multimídia - imagens, vídeos e áudios.</li>
+        <li>Dados geográficos e sistemas de navegação.</li>
+        <li>Bioinformática e análise de genoma.</li>
+        <li>Data Warehouses para análise de grandes volumes de dados.</li>
+        <li>Sistemas móveis e em tempo real.</li>
+        <li>Redes sociais e motores de busca.</li>
+    </ul>
+    <hr>
+
+
+    <h2>Conceitos Importantes</h2>
+    <p>
+    Antes de avançarmos, é importante familiarizar-se com alguns conceitos fundamentais que aparecem em todo o estudo de bancos de dados.
+    </p>
+
+    <h3>Entidades</h3>
+    <p>
+    <strong>Entidades</strong> representam objetos do mundo real que serão armazenados no banco de dados.
+    Em um sistema universitário, por exemplo, as entidades seriam <b>Aluno</b>, <b>Professor</b>, <b>Disciplina</b> e <b>Departamento</b>.
+    </p>
+
+    <h3>Relacionamentos</h3>
+    <p>
+    <strong>Relacionamentos</strong> representam associações entre entidades.
+    No mesmo sistema universitário: um <b>Aluno cursa uma Disciplina</b>, um <b>Professor ministra uma Turma</b> e uma <b>Disciplina pertence a um Departamento</b>.
+    </p>
+
+    <h3>Usuários de Banco de Dados</h3>
+    <p>
+    Em um sistema de banco de dados, diferentes perfis de usuários interagem com o sistema de formas distintas:
+    </p>
+    <ul>
+        <li><b>Usuários finais</b> - utilizam as aplicações para consultar e inserir dados.</li>
+        <li><b>Desenvolvedores</b> - constroem as aplicações que acessam o banco.</li>
+        <li><b>Administradores de Banco de Dados (DBAs)</b> - gerenciam, monitoram e otimizam o banco.</li>
+        <li><b>Projetistas do SGBD</b> - desenvolvem o próprio software gerenciador.</li>
+    </ul>
+
+    <hr>
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Banco de Dados:</strong> coleção organizada de dados relacionados, projetada para um propósito específico.</li>
+            <li><strong>Mini-mundo:</strong> parte do mundo real representada pelo banco.</li>
+            <li><strong>SGBD:</strong> software responsável por criar, manipular e controlar o acesso ao banco.</li>
+            <li><strong>Metadados:</strong> dados sobre a estrutura do próprio banco, mantidos no catálogo do SGBD.</li>
+            <li><strong>Transação:</strong> conjunto de operações executadas como uma única unidade lógica.</li>
+            <li><strong>Entidade:</strong> objeto do mundo real armazenado no banco.</li>
+            <li><strong>Relacionamento:</strong> associação entre entidades.</li>
+        </ul>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li>Material de aula - Introdução a Bancos de Dados.</li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>
