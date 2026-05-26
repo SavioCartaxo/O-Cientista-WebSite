@@ -180,6 +180,36 @@
         <li>Fim da fita: estado atual é <b>q<sub>1</sub></b>, que pertence a F - cadeia <b>aceita</b>.</li>
     </ul>
     <hr>
+
+    <h2>Diagrama de Estados</h2>
+    <p>
+    Uma forma visual e intuitiva de representar um DFA é por meio do <strong>diagrama de estados</strong>.
+    Nele, cada estado é representado por um <b>círculo</b>, as transições são representadas por <b>setas</b> rotuladas com o símbolo lido, o <b>estado inicial</b> é indicado por uma seta sem origem apontando para ele e os <b>estados de aceitação</b> são representados por círculos duplos.
+    </p>
+
+    <figure>
+        <img src="/test-site/assets/IMAGES/teoria-da-computacao/diagrama-dfa.png" alt="Diagrama de estados do DFA D1">
+        <figcaption>Diagrama de estados do DFA D<sub>1</sub></figcaption>
+    </figure>
+
+    <p>
+    Analisando o diagrama do DFA D<sub>1</sub>:
+    </p>
+
+    <ul>
+        <li>A seta sem origem aponta para <b>q<sub>0</sub></b> - indicando que é o estado inicial.</li>
+        <li>O estado <b>q<sub>1</sub></b> possui círculo duplo - indicando que é o estado de aceitação.</li>
+        <li>A seta rotulada <b>a</b> de q<sub>0</sub> para q<sub>1</sub> indica que ao ler <b>a</b> em q<sub>0</sub>, o autômato transita para q<sub>1</sub>.</li>
+        <li>A seta rotulada <b>a</b> de q<sub>1</sub> para q<sub>0</sub> indica que ao ler <b>a</b> em q<sub>1</sub>, o autômato volta para q<sub>0</sub>.</li>
+        <li>As setas rotuladas <b>b</b> em cada estado apontam para o próprio estado - indicando que ao ler <b>b</b>, o autômato permanece onde está.</li>
+    </ul>
+
+    <p>
+    O diagrama torna evidente o comportamento do autômato: cada vez que um <b>a</b> é lido, o estado alterna entre q<sub>0</sub> e q<sub>1</sub>.
+    Cada vez que um <b>b</b> é lido, nada muda.
+    Como q<sub>1</sub> é o único estado de aceitação, a cadeia é aceita apenas quando termina com um número <b>ímpar</b> de letras <b>a</b> - não se preocupe, você entenderá melhor isso mais adiante.
+    </p>
+    <hr>
     
     
     <div class="summary">
