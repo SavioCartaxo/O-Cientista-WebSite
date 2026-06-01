@@ -9,6 +9,7 @@
 @import url(style-pagina-padrao/components.css);
 @import url(style-pagina-padrao/responsive.css);
 @import url(style-pagina-padrao/images.css);
+@import url(style-pagina-padrao/toc.css);
 
 /*CSS's classes*/
 @import url(class/summary-class.css);
