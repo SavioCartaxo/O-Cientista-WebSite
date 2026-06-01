@@ -71,6 +71,7 @@ blockquote footer {
 
 /*FIGCAPTION*/
 figcaption {
+    font-family: "Roboto Mono", monospace;
     text-align: center;
     font-size: 0.85rem;
     color: var(--figcaption_color);

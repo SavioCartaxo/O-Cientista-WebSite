@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução aos grafos ponderados: conceito de peso, aplicações e exemplos práticos.">
+    <title>Grafos Ponderados | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Grafos Ponderados</h1>
+        <p>
+        Neste artigo, exploraremos os <strong>grafos ponderados</strong> - grafos onde cada aresta carrega um valor numérico associado, chamado de <strong>peso</strong>.
+        Veremos o que esse peso representa, onde esse tipo de grafo é utilizado e como ele se relaciona com os grafos direcionados.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>O que é um Grafo Ponderado?</h2>
+    <p>
+    Um <strong>grafo ponderado</strong> é um grafo onde cada aresta possui um <b>peso</b> associado - um valor numérico que representa alguma grandeza relevante para o problema modelado.
+    </p>
+    <p>
+    A principal diferença em relação aos grafos comuns é que, aqui, as arestas carregam informação adicional além da simples existência de uma conexão.
+    Dois vértices podem estar conectados por uma aresta de <strong>peso 1 ou por uma aresta de peso 100</strong> - e essa diferença tem impacto direto nos algoritmos que operam sobre o grafo.
+    </p>
+    <p>
+    O grafo abaixo exemplifica a ideia de ponderação ao atribuir valores numéricos às arestas. 
+    Esses pesos podem <strong>representar diferentes grandezas</strong>, como distância, tempo ou custo. 
+    Observe que a ligação direta entre os vértices T e V possui peso 101, enquanto outros caminhos entre os mesmos vértices apresentam custos diferentes. 
+    Em grafos ponderados, algoritmos de busca podem utilizar essas informações para determinar o caminho de menor custo, tornando a análise muito mais rica do que simplesmente verificar se existe ou não uma conexão entre dois vértices.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-ponderado.png" alt="Exemplo de grafo ponderado">
+        <figcaption>Exemplo de grafo ponderado com diferentes pesos associados às arestas.</figcaption>
+    </figure>
+    <p>
+    Grafos ponderados podem ser tanto <b>direcionados</b> quanto <b>não-direcionados</b> - a ponderação é independente da direção.
+    </p>
+    <hr>
+
+
+    <h2>O que o Peso Representa?</h2>
+    <p>
+    O significado do peso depende inteiramente do problema que está sendo modelado.
+    Alguns exemplos comuns:
+    </p>
+    <ul>
+        <li><b>Distância</b> - em mapas e sistemas de navegação, o peso representa a distância entre duas cidades ou pontos.</li>
+        <li><b>Custo</b> - em redes de transporte ou telecomunicações, o peso representa o custo de utilizar uma conexão.</li>
+        <li><b>Tempo</b> - em sistemas de logística, o peso representa o tempo de deslocamento entre dois pontos.</li>
+        <li><b>Capacidade</b> - em redes de fluxo, o peso representa a capacidade máxima de um canal de comunicação ou tubulação.</li>
+        <li><b>Similaridade</b> - em sistemas de recomendação, o peso pode representar o grau de semelhança entre dois itens.</li>
+    </ul>
+    <hr>
+
+
+    <h2>Aplicações</h2>
+    <p>
+    Grafos ponderados são amplamente utilizados em problemas práticos que envolvem otimização e análise de redes.
+    Alguns exemplos:
+    </p>
+    <ul>
+        <li>Sistemas de navegação - encontrar o menor caminho entre dois pontos em um mapa.</li>
+        <li>Redes de computadores - otimizar o roteamento de pacotes de dados.</li>
+        <li>Logística - planejar rotas de entrega com menor custo ou tempo.</li>
+        <li>Redes elétricas - analisar fluxo de energia entre subestações.</li>
+        <li>Algoritmos de clustering - agrupar dados com base em similaridade.</li>
+    </ul>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Grafo ponderado:</strong> grafo onde cada aresta possui um peso numérico associado.</li>
+            <li>O peso representa uma grandeza do problema modelado - distância, custo, tempo, capacidade, etc.</li>
+            <li>Grafos ponderados podem ser direcionados ou não-direcionados.</li>
+            <li>São amplamente utilizados em problemas de otimização e análise de redes.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_ponderado" target="_blank">Grafo Ponderado (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

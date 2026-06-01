@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução aos grafos direcionados: arcos, grau de entrada e saída, vizinhança e grafo base.">
+    <title>Grafos Direcionados | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Grafos Direcionados</h1>
+        <p>
+        Neste artigo, exploraremos os <strong>grafos direcionados</strong> - também chamados de <strong>dígrafos</strong> - onde as arestas possuem um sentido definido.
+        Veremos como o conceito de grau e vizinhança se adapta a esse tipo de grafo, e o que é o grafo base de um dígrafo.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>O que é um Grafo Direcionado?</h2>
+    <p>
+    Um <strong>grafo direcionado</strong> - ou <strong>dígrafo</strong> - é um grafo onde cada aresta possui uma <b>direção</b>.
+    Essas arestas direcionadas são chamadas de <b>arcos</b>, e indicam que a conexão entre dois vértices só vale em um sentido específico.
+    </p>
+    <p>
+    Em um grafo não-direcionado, uma aresta entre A e B significa que A se conecta a B e B se conecta a A.
+    Em um dígrafo, um arco de A para B significa apenas que <b>A se conecta a B</b> - não necessariamente o contrário. Veja no exemplo:
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafos-direcionados.png" alt="digrafo exemplo">
+    </figure>
+    <p>
+    Dígrafos são amplamente utilizados para modelar situações onde a direção da relação importa, como:
+    </p>
+    <ul>
+        <li>Sistemas de ruas de mão única.</li>
+        <li>Fluxo de dados em redes de computadores.</li>
+        <li>Relações de dependência entre tarefas.</li>
+        <li>Páginas web e seus links.</li>
+    </ul>
+    <hr>
+
+
+    <h2>Grau em Grafos Direcionados</h2>
+    <p>
+    Em grafos não-direcionados, o grau de um vértice é simplesmente o número de arestas incidentes a ele.
+    Em um dígrafo, como cada arco possui direção, o grau se divide em dois:
+    </p>
+    <ul>
+        <li><b>Grau de entrada</b> - número de arcos que <b>chegam</b> ao vértice.</li>
+        <li><b>Grau de saída</b> - número de arcos que <b>partem</b> do vértice.</li>
+    </ul>
+    <p>
+    O grau total de um vértice em um dígrafo é a soma do seu grau de entrada com o seu grau de saída.
+    </p>
+    <div class="img-group">
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-1.png" alt="exemplo para falar de graus">
+        <figcaption>aresta A : Grau de entrada 0, Grau de saida 1, Grau 1<br>aresta B : Grau de entrada 2, Grau de saida 0, Grau 2<br>aresta C : Grau de entrada 0, Grau de saida 1, Grau 1</figcaption>
+    </figure>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-2.png" alt="exemplo para falar de graus">
+        <figcaption>aresta D : Grau de entrada 0, Grau de saida 1, Grau 1<br>aresta E : Grau de entrada 1, Grau de saida 0, Grau 1</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <h2>Vizinhança em Grafos Direcionados</h2>
+    <p>
+    Da mesma forma que o grau, o conceito de vizinhança também se divide em dois tipos em dígrafos:
+    </p>
+    <ul>
+        <li><b>Vizinhos de entrada</b> - vértices que possuem um arco <b>apontando para</b> o vértice em questão.</li>
+        <li><b>Vizinhos de saída</b> - vértices para os quais o vértice em questão possui <b>arcos apontando</b>.</li>
+    </ul>
+    <p>
+    Por exemplo: no primeiro dígrafo apresentado anteriormente, o vértice B possui dois vizinhos de entrada e nenhum vizinho de saída.
+    Esses conceitos são fundamentais para algoritmos de busca e análise em dígrafos, como o cálculo de componentes fortemente conectadas e ordenação topológica.
+    </p>
+    <hr>
+
+
+    <h2>Grafo Base</h2>
+    <p>
+    O <strong>grafo base</strong> de um dígrafo é o grafo não-direcionado obtido ao <b>ignorar a direção de todos os arcos</b>.
+    Cada arco do dígrafo vira uma aresta comum no grafo base, sem nenhuma direção associada. O grafo abaixo corresponde ao grafo base dos dígrafos apresentados anteriormente.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-base.png" alt="Grafo Base">
+        <figcaption>Grafo base dos exemplos acima.</figcaption>
+    </figure>
+    <p>
+    Esse conceito é útil quando queremos analisar a estrutura de conectividade do grafo sem considerar as direções - por exemplo, para verificar se todos os vértices estão conectados entre si, independentemente do sentido dos arcos.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Dígrafo:</strong> grafo onde as arestas possuem direção - chamadas de arcos.</li>
+            <li><strong>Arco:</strong> aresta direcionada que conecta dois vértices em um único sentido.</li>
+            <li><strong>Grau de entrada:</strong> número de arcos que chegam a um vértice.</li>
+            <li><strong>Grau de saída:</strong> número de arcos que partem de um vértice.</li>
+            <li><strong>Vizinhos de entrada:</strong> vértices que possuem arcos apontando para o vértice.</li>
+            <li><strong>Vizinhos de saída:</strong> vértices para os quais o vértice possui arcos apontando.</li>
+            <li><strong>Grafo base:</strong> grafo não-direcionado obtido ao ignorar as direções de um dígrafo.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_dirigido" target="_blank">Grafo Dirigido (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>
