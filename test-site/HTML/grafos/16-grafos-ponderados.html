@@ -21,7 +21,7 @@
         <h1>Grafos Ponderados</h1>
         <p>
         Neste artigo, exploraremos os <strong>grafos ponderados</strong> - grafos onde cada aresta carrega um valor numérico associado, chamado de <strong>peso</strong>.
-        Veremos o que esse peso representa, onde esse tipo de grafo é utilizado e como ele se relaciona com os grafos direcionados.
+        Veremos o que esse peso representa e onde esse tipo de grafo é utilizado.
         </p>
         <hr>
     </header>
@@ -33,7 +33,7 @@
     </p>
     <p>
     A principal diferença em relação aos grafos comuns é que, aqui, as arestas carregam informação adicional além da simples existência de uma conexão.
-    Dois vértices podem estar conectados por uma aresta de <strong>peso 1 ou por uma aresta de peso 100</strong> - e essa diferença tem impacto direto nos algoritmos que operam sobre o grafo.
+    Dois vértices podem estar conectados por uma aresta de peso 1, 100, 150, etc. - e essa diferença tem impacto direto nos algoritmos que operam sobre o grafo.
     </p>
     <p>
     O grafo abaixo exemplifica a ideia de ponderação ao atribuir valores numéricos às arestas. 
@@ -46,38 +46,80 @@
         <figcaption>Exemplo de grafo ponderado com diferentes pesos associados às arestas.</figcaption>
     </figure>
     <p>
-    Grafos ponderados podem ser tanto <b>direcionados</b> quanto <b>não-direcionados</b> - a ponderação é independente da direção.
+    Grafos ponderados podem ser tanto <b>direcionados</b> quanto <b>não-direcionados</b> - a ponderação é independente da direção. Note que o exemplo acima é não direcionado.
     </p>
-    <hr>
-
-
-    <h2>O que o Peso Representa?</h2>
-    <p>
-    O significado do peso depende inteiramente do problema que está sendo modelado.
-    Alguns exemplos comuns:
-    </p>
-    <ul>
-        <li><b>Distância</b> - em mapas e sistemas de navegação, o peso representa a distância entre duas cidades ou pontos.</li>
-        <li><b>Custo</b> - em redes de transporte ou telecomunicações, o peso representa o custo de utilizar uma conexão.</li>
-        <li><b>Tempo</b> - em sistemas de logística, o peso representa o tempo de deslocamento entre dois pontos.</li>
-        <li><b>Capacidade</b> - em redes de fluxo, o peso representa a capacidade máxima de um canal de comunicação ou tubulação.</li>
-        <li><b>Similaridade</b> - em sistemas de recomendação, o peso pode representar o grau de semelhança entre dois itens.</li>
-    </ul>
     <hr>
 
 
     <h2>Aplicações</h2>
     <p>
-    Grafos ponderados são amplamente utilizados em problemas práticos que envolvem otimização e análise de redes.
-    Alguns exemplos:
+    O significado do peso depende inteiramente do problema que está sendo modelado.
+    Alguns exemplos comuns:
     </p>
     <ul>
-        <li>Sistemas de navegação - encontrar o menor caminho entre dois pontos em um mapa.</li>
-        <li>Redes de computadores - otimizar o roteamento de pacotes de dados.</li>
-        <li>Logística - planejar rotas de entrega com menor custo ou tempo.</li>
-        <li>Redes elétricas - analisar fluxo de energia entre subestações.</li>
-        <li>Algoritmos de clustering - agrupar dados com base em similaridade.</li>
+        <li><b>Distância</b> - em mapas e sistemas de navegação, o peso pode representar a distância entre duas cidades ou pontos.</li>
+        <li><b>Custo</b> - em redes de transporte ou telecomunicações, o peso pode representar o custo de utilizar uma conexão.</li>
+        <li><b>Tempo</b> - em sistemas de logística, o peso pode representar o tempo de deslocamento entre dois pontos.</li>
+        <li><b>Capacidade</b> - em redes de fluxo, o peso pode representar a capacidade máxima de um canal de comunicação ou tubulação.</li>
+        <li><b>Similaridade</b> - em sistemas de recomendação, o peso pode representar o grau de semelhança entre dois itens.</li>
     </ul>
+    <hr>
+
+
+        <h2>Menor Caminho</h2>
+    <p>
+    Em um grafo, o <strong>menor caminho</strong> entre dois vértices pode ser definido de duas formas distintas:
+    </p>
+    <ul>
+        <li><b>Menor tamanho</b> - caminho com o menor número de arestas entre origem e destino, sem considerar pesos.</li>
+        <li><b>Menor peso</b> - caminho com a menor soma de pesos das arestas, em grafos ponderados.</li>
+    </ul>
+    <p>
+    É importante destacar que o caminho de menor tamanho e o caminho de menor peso <b>nem sempre são o mesmo</b>.
+    Um caminho com poucas arestas pode ter um peso total maior do que um caminho mais longo, mas com arestas de menor peso.
+    Para melhor visualizar esta ideia, vamos analisar o grafo ponderado abaixo:
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-ponderado.png" alt="Exemplo de grafo ponderado">
+    </figure>
+
+
+    <h3>Caminho de T a V</h3>
+    <p>
+    Considere o caminho de <b>T</b> até <b>V</b>.
+    Existem três caminhos possíveis:
+    </p>
+    <ul>
+        <li><b>Caminho direto:</b> T - V, com apenas <b>1 aresta</b> e peso total <b>101</b>.</li>
+        <li><b>Caminho alternativo 1:</b> T - U - X - V, com <b>3 arestas</b> e peso total <b>1 + 42 + 100 = 143</b>.</li>
+        <li><b>Caminho alternativo 2:</b> T - W - Y - V, com <b>3 arestas</b> e peso total <b>100 + 1 + 1 = 102</b>.</li>
+    </ul>
+    <p>
+    Nesse caso, o caminho de <b>menor tamanho</b> - T - V com 1 aresta - é também o caminho de <b>menor peso</b> com peso 101.
+    Isso acontece por mera coincidência - o caminho mais curto em número de arestas também resulta no menor custo total.
+    </p>
+    <p>
+    Note que, ao buscarmos o caminho menos custoso, intuitivamente, poderíamos ser tentados a escolher o caminho T - U pela aresta de peso 1 ser a de menor custo no momento - buscando uma <b>ótima escolha local</b> - e pensar-mos que, ao fazer tal escolha, iriamos encontrar o menor caminho total.
+    No entanto, essa decisão nos levaria a um caminho com peso total 143, muito maior do que o caminho direto de peso 101.
+    Esse é um exemplo claro de que <b>a melhor escolha local não determina o melhor resultado final quando falamos de grafos ponderados</b>.
+    </p>
+
+
+    <h3>Caminho de W a V</h3>
+    <p>
+    Agora considere o caminho de <b>W</b> até <b>V</b>.
+    Existem dois caminhos possíveis:
+    </p>
+    <ul>
+        <li><b>Caminho via Y:</b> W - Y - V, com <b>2 arestas</b> e peso total <b>1 + 1 = 2</b>.</li>
+        <li><b>Caminho via T:</b> W - T - V, com <b>2 arestas</b> e peso total <b>100 + 101 = 201</b>.</li>
+    </ul>
+    <p>
+    Aqui temos um caso interessante: os dois caminhos possuem exatamente o <b>mesmo número de arestas</b> - 2 cada.
+    Portanto, em termos de tamanho, são equivalentes.
+    No entanto, em termos de peso, o caminho W - Y - V é drasticamente mais barato - peso 2 contra peso 201.
+    Isso ilustra bem que <b>o número de arestas não é um bom indicador do custo de um caminho</b> em grafos ponderados.
+    </p>
     <hr>
 
 
@@ -88,6 +130,8 @@
             <li>O peso representa uma grandeza do problema modelado - distância, custo, tempo, capacidade, etc.</li>
             <li>Grafos ponderados podem ser direcionados ou não-direcionados.</li>
             <li>São amplamente utilizados em problemas de otimização e análise de redes.</li>
+            <li><strong>Menor caminho por tamanho:</strong> caminho com o menor número de arestas.</li>
+            <li><strong>Menor caminho por peso:</strong> caminho com a menor soma de pesos das arestas.</li>
         </ul>
         <hr>
     </div>
@@ -99,6 +143,7 @@
         <ul>
             <li><a href="https://pt.wikipedia.org/wiki/Grafo_ponderado" target="_blank">Grafo Ponderado (Wikipedia)</a></li>
             <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Caminho_(teoria_dos_grafos)" target="_blank">Caminho - Teoria dos Grafos (Wikipedia)</a></li>
         </ul>
     </div>
 

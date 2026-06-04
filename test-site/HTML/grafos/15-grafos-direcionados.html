@@ -43,7 +43,7 @@
     Dígrafos são amplamente utilizados para modelar situações onde a direção da relação importa, como:
     </p>
     <ul>
-        <li>Sistemas de ruas de mão única.</li>
+        <li>Sistemas de GPS para representar ruas de mão única.</li>
         <li>Fluxo de dados em redes de computadores.</li>
         <li>Relações de dependência entre tarefas.</li>
         <li>Páginas web e seus links.</li>
@@ -61,17 +61,17 @@
         <li><b>Grau de saída</b> - número de arcos que <b>partem</b> do vértice.</li>
     </ul>
     <p>
-    O grau total de um vértice em um dígrafo é a soma do seu grau de entrada com o seu grau de saída.
+    Além disso, o grau total de um vértice em um dígrafo é a soma do seu grau de entrada com o seu grau de saída.
     </p>
     <div class="img-group">
-    <figure>
-        <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-1.png" alt="exemplo para falar de graus">
-        <figcaption>aresta A : Grau de entrada 0, Grau de saida 1, Grau 1<br>aresta B : Grau de entrada 2, Grau de saida 0, Grau 2<br>aresta C : Grau de entrada 0, Grau de saida 1, Grau 1</figcaption>
-    </figure>
-    <figure>
-        <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-2.png" alt="exemplo para falar de graus">
-        <figcaption>aresta D : Grau de entrada 0, Grau de saida 1, Grau 1<br>aresta E : Grau de entrada 1, Grau de saida 0, Grau 1</figcaption>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-1.png" alt="exemplo para falar de graus">
+            <figcaption>aresta A: grau de entrada 0, grau de saida 1, grau 1<br>aresta B: grau de entrada 2, grau de saida 0, grau 2<br>aresta C: grau de entrada 0, grau de saida 1, grau 1</figcaption>
         </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-2.png" alt="exemplo para falar de graus">
+            <figcaption>aresta D: grau de entrada 0, grau de saida 1, grau 1<br>aresta E: grau de entrada 1, grau de saida 0, grau 1</figcaption>
+            </figure>
     </div>
     <hr>
 
@@ -88,6 +88,49 @@
     Por exemplo: no primeiro dígrafo apresentado anteriormente, o vértice B possui dois vizinhos de entrada e nenhum vizinho de saída.
     Esses conceitos são fundamentais para algoritmos de busca e análise em dígrafos, como o cálculo de componentes fortemente conectadas e ordenação topológica.
     </p>
+    <hr>
+
+
+    <h2>Caminhos em Grafos Direcionados</h2>
+    <p>
+    Em grafos direcionados, um caminho entre dois vértices deve <b>respeitar a direção dos arcos</b>.
+    Isso significa que, mesmo que dois vértices estejam conectados, pode não existir um caminho direcionado entre eles em um determinado sentido.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/digrafo-exemplo-1.png" alt="exemplo para falar de graus">
+    </figure>
+    <p>
+    No exemplo acima, o vértice A está conectado a B, mas o contrário não é verdade, pois não há um arco de B para A.
+    </p>
+    <hr>
+
+
+    <h2>Ciclos Simples em Grafos Direcionados</h2>
+    <p>
+    Em grafos direcionados, os <strong>ciclos simples</strong> também devem respeitar a direção dos arcos - o percurso deve seguir o sentido das setas em cada arco percorrido. Veja os exemplos abaixo.
+    </p>
+    <div class="img-group">
+        <figure >
+            <img src="/test-site/assets/IMAGES/grafos/digrafo-ciclo-1.png" alt="exemplo para falar de graus">
+            <figcaption>Digrafo ciclo</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/digrafo-ciclo-2.png" alt="exemplo para falar de graus">
+            <figcaption>Digrafo que contém ciclo</figcaption>
+        </figure>
+    </div>
+    <p>
+    Repare que o primeiro exemplo é um digrafo ciclo verdadeiro - todas as vértices possuem grau 2, sendo 1 de entrada e um de saida.
+    Enquanto isso, o segunfo exemplo é apenas um digrafo que possui ciclo, já que o vértice <b>I</b> não faz parte do cicilo.
+    </p>
+    <p>
+    A identificação de ciclos simples é fundamental em diversas aplicações:
+    </p>
+    <ul>
+        <li>Detecção de dependências circulares em sistemas de software.</li>
+        <li>Análise de fluxos em redes.</li>
+        <li>Verificação de propriedades de grafos.</li>
+    </ul>
     <hr>
 
 
@@ -115,6 +158,8 @@
             <li><strong>Grau de saída:</strong> número de arcos que partem de um vértice.</li>
             <li><strong>Vizinhos de entrada:</strong> vértices que possuem arcos apontando para o vértice.</li>
             <li><strong>Vizinhos de saída:</strong> vértices para os quais o vértice possui arcos apontando.</li>
+            <li><strong>Caminhos em dígrafos:</strong> devem respeitar a direção dos arcos.</li>
+            <li><strong>Ciclos simples em dígrafos:</strong> ciclos que respeitam a direção dos arcos e não repetem vértices.</li>
             <li><strong>Grafo base:</strong> grafo não-direcionado obtido ao ignorar as direções de um dígrafo.</li>
         </ul>
         <hr>

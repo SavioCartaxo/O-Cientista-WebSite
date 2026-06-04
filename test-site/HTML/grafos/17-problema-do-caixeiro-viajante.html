@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caminhos em grafos direcionados, ciclos simples e o Problema do Caixeiro Viajante.">
+    <title>Caminhos, Ciclos e TSP | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Problema do caieiro viajante - TSP</h1>
+        <p>
+        Neste artigo, estudaremos o <strong>Problema do Caixeiro Viajante</strong> - um dos problemas mais estudados da teoria dos grafos e da computação.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>Problema do Caixeiro Viajante</h2>
+    <p>
+    Do inglês <em>Traveling Salesman Problem</em>, ou <b>TSP</b> - é um dos problemas mais famosos da computação e da matemática combinatória.
+    O problema consiste em: dado um conjunto de cidades e as distâncias entre cada par delas, <b>encontrar o menor percurso possível que visite todas as cidades exatamente uma vez e retorne à cidade de origem</b>.
+    </p>
+    <p>
+    Em termos de grafos, o TSP busca encontrar um <b>ciclo hamiltoniano</b> - que passa por todos os vértices do grafo exatamente uma vez - de peso mínimo em um grafo ponderado completo - ou seja, um ciclo que passe por todos os vértices exatamente uma vez, com o menor custo total possível.
+    </p>
+
+    <h3>Por que é difícil?</h3>
+    <p>
+    O TSP é um problema <b>NP-difícil</b> - não existe algoritmo eficiente conhecido capaz de resolvê-lo de forma exata para qualquer instância em tempo razoável.
+    Para n cidades, o número de rotas possíveis cresce de forma fatorial - para 10 cidades, são mais de 3 milhões de rotas possíveis, e para 20 cidades, esse número ultrapassa 2 quintilhões.
+    </p>
+    <p>
+    Por isso, na prática, utiliza-se <b>algoritmos de aproximação</b> - que não garantem a solução ótima, mas produzem soluções de boa qualidade em tempo viável.
+    Esses algoritmos encontram um passeio fechado com custo minimizado que passa por todos os vértices, com garantia de não repetição de vértices apenas para grafos completos.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>TSP:</strong> encontrar o menor percurso que visita todos os vértices exatamente uma vez e retorna à origem.</li>
+            <li><strong>NP-difícil:</strong> não existe algoritmo eficiente exato conhecido para o TSP.</li>
+            <li><strong>Algoritmos de aproximação:</strong> produzem soluções de boa qualidade em tempo viável, sem garantia de otimalidade.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Problema_do_caixeiro-viajante" target="_blank">Problema do Caixeiro Viajante (Wikipedia)</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Caminho_(teoria_dos_grafos)" target="_blank">Caminho - Teoria dos Grafos (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>
