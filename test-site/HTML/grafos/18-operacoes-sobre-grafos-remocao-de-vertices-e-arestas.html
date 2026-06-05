@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Remoção de vértices e arestas em grafos">
+    <title>Remoção de vértices e arestas em grafos | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    
+    <header>
+        <h1>Operações Sobre Grafos: Remoção de Vértices e Arestas</h1>
+        <p>
+        Neste artigo, abordaremos as operações de remoção de vértices e arestas em grafos. 
+        Essas estão entre as manipulações mais básicas que podem ser realizadas sobre essas estruturas e são fundamentais para a compreensão de conceitos e operações mais avançados.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>Remoção de Arestas</h2>
+    <p>
+    A remoção de arestas é a operação mais simples que pode ser realizada sobre um grafo. Ela consiste em <strong>remover uma ou mais arestas do conjunto de arestas</strong>, preservando todos os vértices existentes.
+    </p>
+    <p>
+    Ao remover uma aresta, apenas uma conexão entre dois vértices deixa de existir. Dependendo da estrutura do grafo, essa remoção pode alterar propriedades importantes, como a conectividade, a existência de ciclos ou a quantidade de caminhos disponíveis entre dois vértices.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacao-sobre-grafo-grafo-base.png" alt="Grafo original">
+            <figcaption>Grafo original.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacao-sobre-grafo-grafo-base-remocao-de-aresta.png" alt="Grafo após a remoção da aresta BC">
+            <figcaption>Grafo após a remoção da aresta BC.</figcaption>
+        </figure>
+    </div>
+    <p>
+    No exemplo acima, a aresta BC foi removida. Note que os vértices B e C continuam existindo no grafo, porém a ligação direta entre eles deixa de existir.
+    </p>
+    <p>
+    Observe também que o ciclo formado pelos vértices A, B e C foi destruído. Isso mostra que a <strong>remoção de uma única aresta pode modificar significativamente a estrutura do grafo</strong>.
+    </p>
+    <hr>
+
+
+    <h2>Remoção de Vértices</h2>
+    <p>
+    A remoção de vértices é uma operação mais impactante. Quando um vértice é removido, <strong>todas as arestas incidentes a ele também devem ser removidas</strong>, pois deixam de possuir um de seus extremos.
+    </p>
+    <p>
+    Em outras palavras, remover um vértice significa eliminar simultaneamente o vértice e todas as conexões associadas a ele.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacao-sobre-grafo-grafo-base.png" alt="Grafo original">
+            <figcaption>Grafo original.</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacao-sobre-grafo-grafo-base-remocao-de-vertice.png" alt="Grafo após a remoção do vértice D">
+            <figcaption>Grafo após a remoção do vértice D.</figcaption>
+        </figure>
+    </div>
+    <p>
+    No exemplo acima, o vértice D foi removido. Como consequência, as arestas CD e DE também foram removidas automaticamente.
+    Perceba que o vértice E permaneceu no grafo, mas tornou-se um vértice isolado, pois sua única conexão com os demais vértices passava por D.
+    </p>
+    <p>
+    Esse exemplo ilustra como a remoção de um único vértice pode afetar diversas partes da estrutura do grafo simultaneamente.
+    </p>
+    <hr>
+
+
+    <h2>Diferença Entre as Operações</h2>
+    <p>
+    Embora ambas as operações modifiquem um grafo, seus efeitos são diferentes.
+    </p>
+    <ul>
+        <li>A remoção de uma aresta elimina apenas uma conexão.</li>
+        <li>A remoção de um vértice elimina o vértice e todas as arestas incidentes a ele.</li>
+        <li>A remoção de vértices geralmente provoca mudanças mais significativas na estrutura do grafo.</li>
+    </ul>
+    <p>
+    Essas operações são amplamente utilizadas para modelar falhas em redes, simplificar grafos e estudar o impacto que determinados componentes exercem sobre a conectividade da estrutura.
+    </p>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Remoção de aresta</strong>: significa eliminar uma, ou mais, conexão do grafo.</li>
+            <li><strong>Remoção de vértice</strong>: todas as arestas incidentes a ele também são removidas.</li>
+            <li>A remoção de vértices costuma causar impactos maiores do que a remoção de arestas.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

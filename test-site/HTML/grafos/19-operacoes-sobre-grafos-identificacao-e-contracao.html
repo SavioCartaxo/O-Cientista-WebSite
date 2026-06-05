@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Identificação de Vértices e Contração de Arestas">
+    <title>Identificação de Vértices e Contração de Arestas | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+    
+    <header>
+    <h1>Operações Sobre Grafos: Identificação de Vértices e Contração de Arestas</h1>
+    <p>
+    Neste artigo, abordaremos duas operações importantes da teoria dos grafos: a <strong>identificação de vértices</strong> e a <strong>contração de arestas</strong>.
+    Ambas modificam a estrutura do grafo ao unir 2 vértices em um só, simplificando a representação da rede e preservando as conexões relevantes.
+    Apesar de serem definidas de maneiras diferentes, o resultado visual produzido pelas duas operações pode ser exatamente o mesmo.
+    </p>
+    <hr>
+    </header>
+ 
+ 
+    <h2>Identificação de Vértices</h2>
+    <p>
+    A identificação de <strong>vértices não adjacentes</strong> consiste em substituir dois vértices por um único vértice.
+    O novo vértice passa a ser incidente a todas as arestas que anteriormente eram incidentes a qualquer um dos vértices identificados.
+    No exemplo abaixo, os vértices B e C são identificados, dando origem ao novo vértice BC.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacoes-sobre-grafo-antes-da-identificacao.png" alt="Grafo antes da identificação de vértices">
+            <figcaption>Grafo original.</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacoes-sobre-grafo-depois-da-identificacao.png" alt="Grafo após a identificação dos vértices B e C">
+            <figcaption>Grafo após a identificação dos vértices B e C.</figcaption>
+        </figure>
+    </div>
+    <p>
+    Observe que os vértices B e C deixam de existir individualmente e passam a ser representados por um único vértice BC.
+    Como ambos possuíam ligação com o vértice A, o novo vértice mantém essas incidências, resultando em duas arestas ligando A a BC.
+    </p>
+    <hr>
+
+    
+    <h2>Contração de Arestas</h2>
+    <p>
+    A contração de uma aresta é uma operação definida sobre uma aresta específica do grafo.
+    Ao contrair uma aresta, essa aresta é removida e seus dois vértices terminais são identificados em um único vértice.
+    </p>
+    <p>
+    Em outras palavras, a contração de uma aresta pode ser vista como uma identificação de vértices precedida pela remoção da aresta que os conecta.
+    </p>
+
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacoes-sobre-grafo-antes-da-contracao.png" alt="Grafo antes da contração da aresta BC">
+            <figcaption>Grafo original.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/operacoes-sobre-grafo-depois-da-identificacao.png" alt="Grafo após a contração da aresta BC">
+            <figcaption>Grafo após a contração da aresta BC.</figcaption>
+        </figure>
+    </div>
+    <p>
+    Nesse exemplo, a aresta BC é contraída.
+    </p>
+    <p>
+    Os vértices B e C são fundidos em um único vértice BC, produzindo o mesmo grafo obtido anteriormente pela identificação dos vértices.
+    </p>
+    <hr>
+
+
+    <h2>Diferença Conceitual</h2>
+    <p>
+    Embora os resultados apresentados sejam <strong>visualmente idênticos</strong>, as operações possuem definições diferentes.
+    </p>
+    <ul>
+        <li>Na <strong>identificação de vértices</strong>, escolhem-se dois vértices para serem fundidos em um único vértice.</li>
+        <li>Na <strong>contração de arestas</strong>, escolhe-se uma aresta específica, que é removida enquanto seus vértices terminais são identificados.</li>
+    </ul>
+    <p>
+    Portanto, a principal diferença entre essas operações está na forma como são definidas, e não necessariamente no resultado visual produzido visualmente.
+    Em muitos casos, como os exemplos apresentados neste artigo, os grafos resultantes são indistinguíveis apenas pela observação da figura.
+    </p>
+    <p>
+    Esses processos são importantes nas mais diversas áreas, como redes de comunicação, engenharia elétrica, análise de circuitos, otimização de rotas e modelagem de sistemas complexos.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Identificação de vértices:</strong> substitui dois vértices por um único vértice.</li>
+            <li><strong>Herança de incidências:</strong> o novo vértice herda todas as conexões dos vértices originais.</li>
+            <li><strong>Contração de arestas:</strong> remove uma aresta e identifica seus vértices terminais.</li>
+            <li><strong>Relação entre operações:</strong> a contração pode ser vista como um caso particular de identificação de vértices adjacentes.</li>
+            <li><strong>Equivalência visual:</strong> as duas operações podem produzir exatamente o mesmo resultado no grafo.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

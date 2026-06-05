@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução aos conceitos de divisão de vértice e subdivisão de aresta em teoria dos grafos: definições, propriedades e exemplos visuais.">
+    <title>Divisão de Vértice e Subdivisão de Aresta | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Divisão de Vértice e Subdivisão de Aresta</h1>
+        <p>
+        Neste artigo, exploraremos dois conceitos fundamentais em teoria dos grafos: a <strong>divisão de vértice</strong> e a <strong>subdivisão de aresta</strong>.
+        Essas operações permitem transformar grafos de maneiras controladas, preservando ou alterando propriedades estruturais importantes, e são amplamente utilizadas em demonstrações e algoritmos de grafos.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>Divisão de Vértice</h2>
+    <p>
+    A <strong>divisão de vértice</strong> é uma operação que transforma um único vértice <em>v</em> em <b>dois novos vértices v' e v''</b>, conectados por uma nova aresta <em>e</em>.
+    O resultado é um grafo com um vértice a mais e uma aresta a mais do que o grafo original.
+    </p>
+    <p>
+    Cada aresta que era incidente a <em>v</em> passa a ser incidente a <b>v' ou v''</b>, mas não a ambos.
+    Ou seja, as arestas originais do vértice <em>v</em> são distribuídas entre os dois novos vértices, de forma que cada aresta pertença exclusivamente a um deles.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/aresta-subdivisao-1.png" alt="Grafo Base">
+            <figcaption>Grafo base para a analise</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/aresta-subdivisao-2.png" alt="Redistribuição das arestas incidentes após a divisão do vértice">
+            <figcaption>Divisão do vértice <em>v</em> em dois vértices <em>v'</em> e <em>v''</em> com uma nova aresta <em>e</em></figcaption>
+        </figure>
+    </div>
+    <p>
+    As arestas incidentes a <em>v</em> são redistribuídas entre <em>v'</em> e <em>v''</em>. 
+    É importante destacar que a divisão de um vértice <b>não é única</b>: dependendo de como as arestas originais são distribuídas entre v' e v'', diferentes grafos podem ser obtidos a partir do mesmo vértice <em>v</em>.
+    </p>
+    <hr>
+
+
+    <h2>Subdivisão de Aresta</h2>
+    <p>
+    A <strong>subdivisão de aresta</strong> é uma operação aplicada sobre uma aresta <em>e</em> de um grafo.
+    Ela consiste na <b>remoção da aresta <em>e</em></b> e na <b>adição de um novo vértice <em>x</em></b>, juntamente com <b>2 novas arestas</b> que conectam <em>x</em> a cada um dos terminais originais de <em>e</em>.
+    </p>
+    <p>
+    O efeito visual dessa operação é o de "inserir" um vértice no meio de uma aresta existente, dividindo-a em dois segmentos.
+    O grau de cada terminal original permanece o mesmo, enquanto o novo vértice <em>x</em> possui grau 2.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/aresta-subdivisao-3.png" alt="Subdivisão de aresta e com inserção do vértice x">
+        <figcaption>Subdivisão da aresta <em>e</em>: remoção de <em>e</em> e inserção do vértice <em>x</em> com duas novas arestas conectando-o aos terminais de <em>e</em></figcaption>
+    </figure>
+    <hr>
+
+
+    <h2>Subdivisão de Grafo</h2>
+    <p>
+    Ao aplicar a operação de subdivisão de aresta repetidamente a um grafo <em>G</em>, obtemos um novo grafo chamado de <strong>subdivisão de G</strong>.
+    Formalmente, um grafo <em>H</em> é uma subdivisão de <em>G</em> se <em>H</em> pode ser obtido a partir de <em>G</em> por meio de uma sequência de zero ou mais subdivisões de arestas.
+    </p>
+    <p>
+    O grafo original <em>G</em> é considerado uma subdivisão de si mesmo (com zero subdivisões aplicadas).
+    Cada subdivisão de aresta <b>aumenta o número de vértices e arestas</b> do grafo em 1 unidade cada, preservando a estrutura topológica geral.
+    </p>
+    <hr>
+
+
+    <h2>Propriedades e Observações</h2>
+    <ul>
+        <li>A subdivisão de uma aresta <b>não altera o grau</b> dos vértices terminais originais da aresta subdividida.</li>
+        <li>O novo vértice introduzido por uma subdivisão sempre possui <b>grau 2</b>.</li>
+        <li>A divisão de vértice e a subdivisão de aresta são operações <b>inversíveis</b>: é possível reverter ambas para recuperar o grafo original.</li>
+        <li>Grafos que são subdivisões um do outro possuem a mesma <strong>estrutura topológica</strong>, sendo usados na caracterização de grafos planares pelo <strong>Teorema de Kuratowski</strong>.</li>
+        <li>Subdivisões preservam a planaridade: se <em>G</em> é planar, toda subdivisão de <em>G</em> também é planar.</li>
+    </ul>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Divisão de vértice:</strong> transforma um vértice <em>v</em> em dois vértices <em>v'</em> e <em>v''</em> conectados por uma nova aresta; as arestas incidentes a <em>v</em> são distribuídas entre os dois novos vértices.</li>
+            <li>A distribuição das arestas entre <em>v'</em> e <em>v''</em> não é única — diferentes distribuições geram grafos diferentes.</li>
+            <li><strong>Subdivisão de aresta:</strong> remove a aresta <em>e</em> e insere um novo vértice <em>x</em> com duas arestas ligando-o aos terminais originais de <em>e</em>.</li>
+            <li>O novo vértice <em>x</em> sempre possui grau 2 após a subdivisão.</li>
+            <li><strong>Subdivisão de grafo:</strong> grafo obtido de <em>G</em> após zero ou mais subdivisões de arestas — preserva a estrutura topológica de <em>G</em>.</li>
+            <li>Subdivisões são fundamentais no <strong>Teorema de Kuratowski</strong> para caracterização de grafos planares.</li>
+        </ul>
+    </div>
+
+    
+    <div class="questions"></div>
+
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Subdivis%C3%A3o_(teoria_dos_grafos)" target="_blank">Subdivisão em Teoria dos Grafos (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>
