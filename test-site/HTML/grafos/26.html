@@ -1,0 +1,62 @@
+<h3>Teorema do Ciclo</h3>
+    <p>
+    <b>Seja G um grafo no qual todos os vértices têm grau no mínimo 2. Então G contém um ciclo.</b>
+    </p>
+    <p>
+    Esse teorema nos diz que, se não existe nenhum vértice com grau 0 ou 1 no grafo, a existência de um ciclo é garantida.
+    É importante destacar que o teorema é válido apenas para grafos com grau mínimo 2 - para grafos com grau mínimo 0 ou 1, nada podemos afirmar.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/teorema-ciclo-grau2.png" alt="Grafos com grau mínimo 2 que contêm um ciclo simples">
+            <figcaption>Grafos com grau mínimo 2 - ciclo garantido pelo teorema</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/teorema-ciclo-grau1.png" alt="Grafos com grau mínimo 1, um com ciclo e outro sem ciclo">
+            <figcaption>Grafos com grau mínimo 1 - ciclo não garantido</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <h2>Grafo Acíclico</h2>
+    <p>
+    Um grafo é <strong>acíclico</strong> se <b>não contém nenhum ciclo</b>.
+    Em grafos direcionados, a acicliidade se refere à ausência de ciclos direcionados.
+    </p>
+    <p>
+    Uma propriedade importante: <b>todo grafo acíclico não-trivial possui pelo menos dois vértices com grau menor que 2</b>.
+    Isso é uma consequência direta do Teorema do Ciclo - se todos os vértices tivessem grau no mínimo 2, o grafo necessariamente conteria um ciclo.
+    </p>
+
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-aciclico.png" alt="Exemplo de grafo acíclico">
+        <figcaption>Exemplo de grafo acíclico - nenhum ciclo pode ser encontrado</figcaption>
+    </figure>
+
+    <hr>
+
+
+    <h2>Cintura e Circunferência</h2>
+    <p>
+    Dois conceitos importantes para caracterizar os ciclos de um grafo são a <strong>cintura</strong> e a <strong>circunferência</strong>.
+    </p>
+
+
+    <h3>Cintura (Girth)</h3>
+    <p>
+    A <strong>cintura</strong> de um grafo é o <b>tamanho do menor ciclo</b> contido nele.
+    Para grafos sem nenhum ciclo - ou seja, grafos acíclicos - a cintura é considerada <b>infinita</b>.
+    </p>
+
+
+    <h3>Circunferência (Circumference)</h3>
+    <p>
+    A <strong>circunferência</strong> de um grafo é o <b>tamanho do maior ciclo simples</b> contido nele.
+    Um grafo <b>hamiltoniano</b> de n vértices possui circunferência n - pois contém um ciclo que passa por todos os n vértices exatamente uma vez.
+    </p>
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/cintura-circunferencia.png" alt="Exemplo de grafo com cintura e circunferência identificadas">
+        <figcaption>Exemplo de grafo - menor ciclo (cintura) destacado em azul e maior ciclo simples (circunferência) destacado em vermelho</figcaption>
+    </figure>
+    <hr>
