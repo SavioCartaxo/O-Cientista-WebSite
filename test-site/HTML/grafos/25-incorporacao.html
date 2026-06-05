@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução ao conceito de incorporação de grafos, teorema do ciclo, grafos acíclicos, cintura e circunferência.">
+    <title>Incorporação de Grafos | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Incorporação de Grafos</h1>
+        <p>
+        Neste artigo, exploraremos o conceito de <strong>incorporação</strong> - uma generalização do conceito de subgrafo inspirada no isomorfismo.
+        Veremos também o Teorema do Ciclo, grafos acíclicos e as propriedades de cintura e circunferência.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>O que é Incorporação?</h2>
+    <p>
+    O conceito de <b>subgrafo</b> pode ter sua aplicação limitada em alguns contextos, pois exige que os vértices, arestas e a função de incidência estejam literalmente contidos no supergrafo.
+    Para contornar essa limitação, surge o conceito de <strong>incorporação</strong> - uma forma mais geral de estudar quando a estrutura de um grafo está presente em outro.
+    </p>
+    <p>
+    Uma <strong>incorporação</strong> de um grafo F em um grafo G é um <b>isomorfismo entre F e um subgrafo de G</b>.
+    Em outras palavras, se F está incorporado em G, podemos afirmar que G contém um subgrafo com exatamente a mesma estrutura de F - mesmo que os vértices e arestas tenham nomes diferentes.
+    </p>
+    <p>
+    Para entender a diferença: F pode não ser subgrafo de G - seus vértices podem nem existir em G - mas ainda assim estar incorporado nele, se G possuir algum subgrafo isomórfico a F.
+    </p>
+
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/incorporacao-exemplo.png" alt="Exemplo de incorporação: grafo F incorporado nos grafos G1 e G2">
+        <figcaption>Grafo F incorporado em G1 e G2 - F não é subgrafo de nenhum deles, mas ambos contêm subgrafos isomórficos a F</figcaption>
+    </figure>
+
+    <hr>
+
+
+    <h2>Incorporação de Ciclos</h2>
+    <p>
+    Ciclos são estruturas amplamente investigadas na análise de grafos.
+    Quando um <b>ciclo de tamanho n</b> está incorporado em um grafo G, dizemos que G <b>contém</b> esse ciclo.
+    O tamanho do ciclo é determinado pelo número de arestas que o define.
+    </p>
+    <p>
+    Nesta seção, o termo <b>ciclo</b> se refere sempre ao <b>ciclo simples</b> - sem repetição de vértices.
+    </p>
+
+    <h3>Teorema do Ciclo</h3>
+    <p>
+    <b>Seja G um grafo no qual todos os vértices têm grau no mínimo 2. Então G contém um ciclo.</b>
+    </p>
+    <p>
+    Esse teorema nos diz que, se não existe nenhum vértice com grau 0 ou 1 no grafo, a existência de um ciclo é garantida.
+    É importante destacar que o teorema é válido apenas para grafos com grau mínimo 2 - para grafos com grau mínimo 0 ou 1, nada podemos afirmar.
+    </p>
+
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/teorema-ciclo-grau2.png" alt="Grafos com grau mínimo 2 que contêm um ciclo simples">
+            <figcaption>Grafos com grau mínimo 2 - ciclo garantido pelo teorema</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/teorema-ciclo-grau1.png" alt="Grafos com grau mínimo 1, um com ciclo e outro sem ciclo">
+            <figcaption>Grafos com grau mínimo 1 - ciclo não garantido</figcaption>
+        </figure>
+    </div>
+
+    <h3>Prova do Teorema do Ciclo</h3>
+    <p>
+    A prova utiliza o conceito de <b>caminho simples mais longo</b> - aquele que passa pelo maior número possível de vértices distintos.
+    Pode existir mais de um caminho simples mais longo em um grafo.
+    </p>
+    <p>
+    Se G possui um <b>loop</b>, então contém um ciclo de tamanho 1.
+    Se G possui <b>arestas paralelas</b>, então contém um ciclo de tamanho 2.
+    Para o caso mais geral, assumimos que G é um grafo simples.
+    </p>
+    <p>
+    Seja <b>P = v<sub>0</sub> v<sub>1</sub> ... v<sub>k-1</sub> v<sub>k</sub></b> o caminho simples mais longo em G.
+    Como o grau de v<sub>k</sub> é no mínimo 2, ele possui um vizinho <b>v</b> diferente de v<sub>k-1</sub>.
+    Se <b>v</b> não estiver em P, então P não seria o caminho simples mais longo - contradição.
+    Portanto, <b>v = v<sub>i</sub></b> para algum <b>0 &le; i &le; k-2</b>, e a sequência v<sub>0</sub> v<sub>1</sub> ... v<sub>k</sub> v<sub>i</sub> contém um ciclo.
+    </p>
+    <hr>
+
+
+    <h2>Grafo Acíclico</h2>
+    <p>
+    Um grafo é <strong>acíclico</strong> se <b>não contém nenhum ciclo</b>.
+    Em grafos direcionados, a acicliidade se refere à ausência de ciclos direcionados.
+    </p>
+    <p>
+    Uma propriedade importante: <b>todo grafo acíclico não-trivial possui pelo menos dois vértices com grau menor que 2</b>.
+    Isso é uma consequência direta do Teorema do Ciclo - se todos os vértices tivessem grau no mínimo 2, o grafo necessariamente conteria um ciclo.
+    </p>
+
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/grafo-aciclico.png" alt="Exemplo de grafo acíclico">
+        <figcaption>Exemplo de grafo acíclico - nenhum ciclo pode ser encontrado</figcaption>
+    </figure>
+
+    <hr>
+
+
+    <h2>Cintura e Circunferência</h2>
+    <p>
+    Dois conceitos importantes para caracterizar os ciclos de um grafo são a <strong>cintura</strong> e a <strong>circunferência</strong>.
+    </p>
+
+    <h3>Cintura (Girth)</h3>
+    <p>
+    A <strong>cintura</strong> de um grafo é o <b>tamanho do menor ciclo</b> contido nele.
+    Para grafos sem nenhum ciclo - ou seja, grafos acíclicos - a cintura é considerada <b>infinita</b>.
+    </p>
+
+    <h3>Circunferência (Circumference)</h3>
+    <p>
+    A <strong>circunferência</strong> de um grafo é o <b>tamanho do maior ciclo simples</b> contido nele.
+    Um grafo <b>hamiltoniano</b> de n vértices possui circunferência n - pois contém um ciclo que passa por todos os n vértices exatamente uma vez.
+    </p>
+
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/cintura-circunferencia.png" alt="Exemplo de grafo com cintura e circunferência identificadas">
+        <figcaption>Exemplo de grafo - menor ciclo (cintura) destacado em azul e maior ciclo simples (circunferência) destacado em vermelho</figcaption>
+    </figure>
+
+    <hr>
+
+
+    <h2>Automorfismo</h2>
+    <p>
+    Um <strong>automorfismo</strong> em um grafo simples G é um <b>isomorfismo de G com ele mesmo</b>.
+    Formalmente, é definido por uma permutação <b>&alpha;</b> do conjunto de vértices de G que <b>preserva adjacência</b>: se uv é uma aresta de G, então &alpha;(u)&alpha;(v) também é uma aresta de G.
+    </p>
+    <p>
+    Os vértices <b>u</b> e <b>&alpha;(u)</b> são chamados de <b>vértices similares</b>.
+    O automorfismo captura a ideia de <b>simetria estrutural</b> do grafo - um automorfismo não-trivial indica que o grafo possui alguma forma de simetria interna.
+    </p>
+
+    <figure>
+        <img src="/test-site/assets/IMAGES/grafos/automorfismo.png" alt="Exemplo de automorfismo em um grafo simétrico">
+        <figcaption>Exemplo de automorfismo - a permutação &alpha; mapeia o grafo nele mesmo preservando todas as adjacências</figcaption>
+    </figure>
+
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Incorporação:</strong> isomorfismo entre um grafo F e um subgrafo de G - G contém a estrutura de F.</li>
+            <li>F pode estar incorporado em G mesmo sem ser subgrafo de G.</li>
+            <li><strong>Teorema do Ciclo:</strong> se todos os vértices de G têm grau no mínimo 2, então G contém um ciclo.</li>
+            <li><strong>Grafo acíclico:</strong> grafo sem nenhum ciclo - possui pelo menos dois vértices com grau menor que 2.</li>
+            <li><strong>Cintura:</strong> tamanho do menor ciclo do grafo - infinita para grafos acíclicos.</li>
+            <li><strong>Circunferência:</strong> tamanho do maior ciclo simples do grafo.</li>
+            <li><strong>Automorfismo:</strong> isomorfismo de um grafo com ele mesmo - captura a simetria estrutural do grafo.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Isomorfismo_de_grafos" target="_blank">Isomorfismo de Grafos (Wikipedia)</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Grafo_hamiltoniano" target="_blank">Grafo Hamiltoniano (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução ao conceito de isomorfismo entre grafos: definição formal, exemplos práticos e aplicações.">
+    <title>Isomorfismo de Grafos | Big-O Academy</title>
+    <link rel="stylesheet" href="/test-site/styles/style-pagina-padrao.css">
+    <script src="/test-site/scripts/loadComponents.js" defer></script>
+    <script src="/test-site/scripts/generatorToc.js" defer></script>
+    <script src="/test-site/scripts/refs.js" defer></script>
+</head>
+
+<body>
+<header id="header"></header>
+<div class="layout">
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main">
+<article>
+
+    <header>
+        <h1>Isomorfismo de Grafos</h1>
+        <p>
+        Neste artigo, exploraremos o conceito de <strong>isomorfismo entre grafos</strong> - uma relação que nos permite identificar quando dois grafos possuem a mesma estrutura, independentemente de como seus vértices são nomeados ou de como são desenhados.
+        Veremos a definição formal, exemplos práticos e como identificar - ou descartar - o isomorfismo entre dois grafos.
+        </p>
+        <hr>
+    </header>
+
+
+    <h2>Por que isomorfismo é importante?</h2>
+    <p>
+    Imagine uma rede de amizades entre 4 pessoas e uma rede de conexões entre 4 computadores.
+    São contextos completamente diferentes, mas ambos podem ser representados por grafos com exatamente a mesma estrutura de conexões.
+    </p>
+    <p>
+    Nesse caso, qualquer propriedade que descobrirmos sobre a estrutura de um grafo - como o número máximo de saltos para chegar de um nó a outro - se aplica automaticamente ao outro.
+    Esse é o poder do isomorfismo: ele nos permite <b>transferir conhecimento entre estruturas equivalentes</b>, mesmo que os objetos representados sejam completamente diferentes.
+    </p>
+    <div class="img-group">
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/isomorfismo-amizades.png" alt="Grafo G - rede de amizades com vértices Ana, Bruno, Carla e Diego">
+            <figcaption>Grafo G - rede de amizades</figcaption>
+        </figure>
+        <figure>
+            <img src="/test-site/assets/IMAGES/grafos/isomorfismo-computadores.png" alt="Grafo H - rede de computadores com vértices PC1, PC2, PC3 e PC4">
+            <figcaption>Grafo H - rede de computadores</figcaption>
+        </figure>
+    </div>
+    <hr>
+
+
+    <h2>Definição Formal</h2>
+    <p>
+    Dois grafos G e H são <strong>isomórficos</strong> - representado por <b>G &cong; H</b> - se existem duas bijeções:
+    </p>
+    <ul>
+        <li><b>&theta; : V(G) -> V(H)</b> - mapeamento entre os vértices de G e os vértices de H.</li>
+        <li><b>&phi; : E(G) -> E(H)</b> - mapeamento entre as arestas de G e as arestas de H.</li>
+    </ul>
+    <p>
+    Tal que as adjacências sejam preservadas: uma aresta <b>e</b> conecta os vértices <b>u</b> e <b>v</b> em G <b>se e somente se</b> a aresta &phi;(e) conecta os vértices &theta;(u) e &theta;(v) em H.
+    </p>
+    <p>
+    Em termos simples: se renomearmos os vértices de G usando o mapeamento &theta; e renomearmos suas arestas usando &phi;, obtemos exatamente o grafo H.
+    O exemplo acima ilustra bem essa ideia - a rede de amizades e a rede de computadores possuem exatamente as mesmas relações entre seus elementos, e ao renomear os vértices de um usando o mapeamento, obtemos precisamente o outro.
+    </p>
+    <hr>
+
+
+    <h2>Como Identificar Isomorfismo?</h2>
+    <p>
+    Verificar se dois grafos são isomórficos é um problema computacionalmente desafiador para grafos grandes.
+    Uma estratégia eficiente é começar verificando <b>propriedades invariantes</b> - características que dois grafos isomórficos necessariamente compartilham.
+    Se qualquer uma dessas propriedades for diferente, os grafos certamente não são isomórficos:
+    </p>
+    <ul>
+        <li>Número de vértices.</li>
+        <li>Número de arestas.</li>
+        <li>Sequência de graus dos vértices - ordenada de forma crescente ou decrescente.</li>
+        <li>Número de ciclos simples de cada tamanho.</li>
+        <li>Número de vértices com cada grau específico.</li>
+    </ul>
+    <p>
+    Se todas as propriedades invariantes forem iguais, é necessário tentar construir o mapeamento explicitamente.
+    Para isso, existem algoritmos especializados - como o <b>algoritmo VF2</b> - amplamente utilizados na prática.
+    </p>
+    <hr>
+
+
+    <h2>Aplicações</h2>
+    <p>
+    O isomorfismo é uma ferramenta poderosa em diversas áreas:
+    </p>
+    <ul>
+        <li><b>Química computacional</b> - identificar moléculas com a mesma estrutura mas átomos em posições diferentes.</li>
+        <li><b>Reconhecimento de padrões</b> - detectar estruturas equivalentes em imagens ou redes.</li>
+        <li><b>Engenharia de software</b> - reutilizar soluções entre sistemas com a mesma estrutura de relacionamentos.</li>
+        <li><b>Verificação formal</b> - provar que dois modelos de sistema são equivalentes estruturalmente.</li>
+    </ul>
+    <p>
+    A propriedade mais importante do isomorfismo é que <b>qualquer propriedade estrutural verdadeira para um grafo também é verdadeira para todos os grafos isomórficos a ele</b>.
+    Isso permite transferir conhecimento e soluções entre domínios completamente diferentes.
+    </p>
+    <hr>
+
+
+    <div class="summary">
+        <h2>Resumo</h2>
+        <ul>
+            <li><strong>Isomorfismo (G &cong; H):</strong> existe um mapeamento entre vértices e arestas que preserva todas as adjacências.</li>
+            <li>Grafos isomórficos podem ter representações visuais completamente diferentes.</li>
+            <li><strong>Propriedades invariantes:</strong> número de vértices, arestas e sequência de graus devem ser iguais em grafos isomórficos.</li>
+            <li>Se qualquer propriedade invariante for diferente, os grafos certamente não são isomórficos.</li>
+            <li>Qualquer propriedade estrutural verdadeira para um grafo vale para todos os seus isomórficos.</li>
+            <li>O algoritmo VF2 é um dos métodos mais utilizados para detectar isomorfismo.</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="questions"></div>
+
+    <div class="bibliography">
+        <h2>Referências</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Isomorfismo_de_grafos" target="_blank">Isomorfismo de Grafos (Wikipedia)</a></li>
+            <li><a href="https://www.ime.usp.br/~mota/bookFiles/livro_grafos.pdf" target="_blank">Teoria dos Grafos - Guilherme Mota (IME-USP)</a></li>
+            <li><a href="https://repositorio.ufpb.br/jspui/bitstream/tede/7549/5/arquivototal.pdf" target="_blank">Introdução à Teoria dos Grafos (UFPB)</a></li>
+        </ul>
+    </div>
+
+</article>
+<footer id="footer"></footer>
+</main>
+<aside class="toc" id="toc"></aside>
+</div>
+</body>
+</html>
