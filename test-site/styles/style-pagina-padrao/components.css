@@ -1,22 +1,37 @@
 /* table, hr, nav */
 
-/*Tabelas*/
 table {
     margin: 1rem auto;
     width: 90%;
-    border: 1px solid black;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    font-size: 0.9rem;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 8px;
+th {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    text-align: left;
 }
 
+td {
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    color: var(--text-secondary);
+}
 
-/*OUTROS*/
+tr:nth-child(even) td {
+    background-color: var(--bg-secondary);
+}
+
 hr {
     border: none;
-    height: 2px;
-    background-color: var(--hr_color);
-    margin: 0.5em;
+    height: 1px;
+    background-color: var(--hr-color);
+    margin: 0.5em 1rem;
 }
